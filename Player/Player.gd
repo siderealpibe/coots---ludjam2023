@@ -1,26 +1,36 @@
+class_name Player
 extends KinematicBody2D
 
 signal grounded_updated(touching_ground)
 
-const UP = Vector2(0,-1)
-const SLOPE_STOP = 100;
+export var JUMP_GRAVITY : int = 4
+export var JUMP_FORCE : int= 200
+export var MIN_JUMP : int = 500
+export var GRAVITY : int = 10
+export var WALK_SPEED : int = 100
+export var MAX_HEALTH : int = 100
+var velocity : Vector2 = Vector2.ZERO
 
-var velocity = Vector2()
-var speed = 1000
-var gravity = 1200
-var jump_velocity = -1200
-var touching_ground
-var facingForward = true
-
+onready var animations = $AnimationPlayer
+onready var states = $StateManager
 onready var raycasts = $Raycasts
+onready var current_health : int = 100
 
-func _ready():
-	pass
+func _ready() -> void:
+	# Initialize the state machine, passing a reference of the player to the states,
+	# that way they can move and react accordingly
+	states.init(self)
 
+func _unhandled_input(event: InputEvent) -> void:
+	states.input(event)
+
+func _physics_process(delta: float) -> void:
+	states.physics_process(delta)
+"""
 func _process(delta):
 	_get_input()
-	velocity.y += gravity * delta;
-	velocity = move_and_slide(velocity, UP,SLOPE_STOP)
+	#velocity.y += gravity * delta;
+	#velocity = move_and_slide(velocity, UP,SLOPE_STOP)
 	
 	var was_grounded = touching_ground
 	touching_ground = _touching_ground()
@@ -75,4 +85,4 @@ func _handle_animations():
 		anim = "jump"
 	elif velocity.x != 0:
 		anim = "run"
-	
+"""

@@ -60,8 +60,13 @@ position = Vector2( -4803, 865 )
 scale = Vector2( 25, 1 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( -8669, 362 )
+position = Vector2( -8448, 497 )
+JUMP_FORCE = 800
+WALK_SPEED = 600
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 5 )
 autoplay = true
+
+[node name="TileMap" type="TileMap" parent="."]
+format = 1
