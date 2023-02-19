@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Player/states/StateManager.gd" type="Script" id=1]
 [ext_resource path="res://Player/states/idle_right.gd" type="Script" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://Player/states/slap_right.gd" type="Script" id=7]
 [ext_resource path="res://Player/states/fall_left.gd" type="Script" id=8]
 [ext_resource path="res://Player/states/jump_left.gd" type="Script" id=9]
+[ext_resource path="res://Player/states/slap_left.gd" type="Script" id=10]
 [ext_resource path="res://Player/states/idle_left.gd" type="Script" id=11]
 
 [node name="StateManager" type="Node"]
@@ -20,7 +21,7 @@ animation_name = "Idle_forward"
 
 [node name="idle_left" type="Node" parent="."]
 script = ExtResource( 11 )
-animation_name = "Idle_backward"
+animation_name = "Idle_backwards"
 
 [node name="walk_right" type="Node" parent="."]
 script = ExtResource( 5 )
@@ -30,9 +31,12 @@ animation_name = "Running_forward"
 script = ExtResource( 6 )
 animation_name = "Running_backwards"
 
+[node name="slap_left" type="Node" parent="."]
+script = ExtResource( 10 )
+
 [node name="slap_right" type="Node" parent="."]
 script = ExtResource( 7 )
-animation_name = "Normal_slap"
+animation_name = "Normal_slap_forward"
 
 [node name="jump_right" type="Node" parent="."]
 script = ExtResource( 3 )

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/test.png-764e88ee899d372f8b6ef43d83501de5.stex"
+path="res://.import/normal_slap.png-f14925f276897489ce13b71fe1252fbf.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/test.png"
-dest_files=[ "res://.import/test.png-764e88ee899d372f8b6ef43d83501de5.stex" ]
+source_file="res://Assets/Ludwig/normal_slap.png"
+dest_files=[ "res://.import/normal_slap.png-f14925f276897489ce13b71fe1252fbf.stex" ]
 
 [params]
 
