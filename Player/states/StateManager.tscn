@@ -33,6 +33,7 @@ animation_name = "Running_backwards"
 
 [node name="slap_left" type="Node" parent="."]
 script = ExtResource( 10 )
+animation_name = "Normal_slap_backwards"
 
 [node name="slap_right" type="Node" parent="."]
 script = ExtResource( 7 )

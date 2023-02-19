@@ -1,5 +1,10 @@
 extends BaseState
 
+func input(event: InputEvent) -> int:
+	if event is InputEventMouseButton:
+		return State.SlapRight
+	return .input(event)
+
 func physics_process(delta: float) -> int:
 	var move = 0
 	if Input.is_action_pressed("ui_left"):

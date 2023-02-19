@@ -7,6 +7,8 @@ func enter() -> void:
 	player.velocity.y = -player.JUMP_FORCE
 
 func input(event: InputEvent) -> int:
+	if event is InputEventMouseButton:
+		return State.SlapLeft
 	if event.is_action_released("ui_select") && player.velocity.y < -player.MIN_JUMP: 
 		player.velocity.y = -player.MIN_JUMP
 	return .input(event)

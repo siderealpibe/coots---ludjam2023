@@ -191,7 +191,7 @@ tracks/3/keys = {
 "transitions": PoolRealArray( 1 ),
 "values": [ {
 "args": [  ],
-"method": "idle_right"
+"method": "idle_left"
 } ]
 }
 tracks/4/type = "value"
@@ -531,6 +531,7 @@ JUMP_FORCE = 700
 MIN_JUMP = 400
 GRAVITY = 20
 WALK_SPEED = 500
+SLAP_FRICTION = 20
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
 position = Vector2( 13, -69 )

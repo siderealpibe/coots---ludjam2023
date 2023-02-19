@@ -1,5 +1,10 @@
 extends BaseState
 
+func input(event: InputEvent) -> int:
+	if event is InputEventMouseButton:
+		return State.SlapLeft
+	return .input(event)
+
 func physics_process(delta: float) -> int:
 	var move = 0
 	if Input.is_action_pressed("ui_left"):
@@ -13,8 +18,8 @@ func physics_process(delta: float) -> int:
 
 	if player.is_on_floor():
 		if move != 0:
-			return State.WalkRight
+			return State.WalkLeft
 		else:
-			return State.IdleRight
+			return State.IdleLeft
 	
 	return State.Null

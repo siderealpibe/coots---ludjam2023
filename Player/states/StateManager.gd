@@ -47,5 +47,8 @@ func input(event: InputEvent) -> void:
 		change_state(new_state)
 		
 func idle_right() -> void:
-	
 	change_state(BaseState.State.IdleRight)
+	
+func idle_left() -> void:
+	change_state(BaseState.State.IdleLeft)
+
