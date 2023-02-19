@@ -10,6 +10,7 @@ enum State {
 	IdleLeft,
 	WalkRight,
 	WalkLeft,
+	SlapLeft,
 	SlapRight,
 	JumpRight,
 	JumpLeft,

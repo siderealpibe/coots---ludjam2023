@@ -5,6 +5,7 @@ onready var states = {
 	BaseState.State.IdleLeft: $idle_left,
 	BaseState.State.WalkRight: $walk_right,
 	BaseState.State.WalkLeft: $walk_left,
+	BaseState.State.SlapLeft: $slap_left,
 	BaseState.State.SlapRight: $slap_right,
 	BaseState.State.JumpRight: $jump_right,
 	BaseState.State.JumpLeft: $jump_left,
