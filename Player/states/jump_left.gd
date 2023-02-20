@@ -8,14 +8,14 @@ func enter() -> void:
 
 func input(event: InputEvent) -> int:
 	if event is InputEventMouseButton:
-		return State.SlapLeft
+		return State.SlapLeft      
 	if event.is_action_released("ui_select") && player.velocity.y < -player.MIN_JUMP: 
 		player.velocity.y = -player.MIN_JUMP
 	return .input(event)
 
 func physics_process(delta: float) -> int:
 	var move = 0
-		
+	
 	if Input.is_action_pressed("ui_left"):
 		move = -1
 	elif Input.is_action_pressed("ui_right"):

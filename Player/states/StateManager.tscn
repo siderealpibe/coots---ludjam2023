@@ -41,12 +41,16 @@ animation_name = "Normal_slap_forward"
 
 [node name="jump_right" type="Node" parent="."]
 script = ExtResource( 3 )
+animation_name = "Jump_forward"
 
 [node name="jump_left" type="Node" parent="."]
 script = ExtResource( 9 )
+animation_name = "Jump_backwards"
 
 [node name="fall_right" type="Node" parent="."]
 script = ExtResource( 4 )
+animation_name = "Fall_forward"
 
 [node name="fall_left" type="Node" parent="."]
 script = ExtResource( 8 )
+animation_name = "Fall_backwards"

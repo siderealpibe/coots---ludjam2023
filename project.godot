@@ -19,6 +19,16 @@ _global_script_classes=[ {
 "language": "NativeScript",
 "path": "res://addons/godot-git-plugin/git_api.gdns"
 }, {
+"base": "Area2D",
+"class": "HitBox",
+"language": "GDScript",
+"path": "res://HitBox.gd"
+}, {
+"base": "Area2D",
+"class": "HurtBox",
+"language": "GDScript",
+"path": "res://HurtBox.gd"
+}, {
 "base": "KinematicBody2D",
 "class": "Player",
 "language": "GDScript",
@@ -27,6 +37,8 @@ _global_script_classes=[ {
 _global_script_class_icons={
 "BaseState": "",
 "GitAPI": "",
+"HitBox": "",
+"HurtBox": "",
 "Player": ""
 }
 
