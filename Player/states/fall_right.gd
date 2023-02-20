@@ -24,3 +24,4 @@ func physics_process(delta: float) -> int:
 		return State.FallLeft
 	
 	return State.Null
+
