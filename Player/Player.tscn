@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://Player/Player.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Ludwig/idle_and_run.png" type="Texture" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://Assets/Sfx/SLAP.wav" type="AudioStream" id=5]
 [ext_resource path="res://Player/states/StateManager.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Assets/Ludwig/jump_and_fall.png" type="Texture" id=7]
+[ext_resource path="res://Scripts/ScreenShake.tscn" type="PackedScene" id=8]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 84.0
@@ -878,5 +879,7 @@ drag_margin_top = 0.75
 script = ExtResource( 3 )
 
 [node name="ShiftTween" type="Tween" parent="Camera2D"]
+
+[node name="ScreenShake" parent="Camera2D" instance=ExtResource( 8 )]
 
 [node name="StateManager" parent="." instance=ExtResource( 6 )]
