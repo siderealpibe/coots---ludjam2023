@@ -16,8 +16,8 @@ enum State {
 	JumpLeft,
 	FallRight,
 	FallLeft,
-	#Fall,
-	#Jump,
+	KnockRight,
+	KnockLeft,
 }
 
 export (String) var animation_name

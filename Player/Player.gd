@@ -10,11 +10,15 @@ export var WALK_SPEED : int = 100
 export var MAX_HEALTH : int = 100
 export var SLAP_MOVEMENT : int = 700
 export var SLAP_FRICTION : int = 50
+export var KNOCK_FORCE_Y : int = 700
+export var KNOCK_FORCE_X : int = 500
 var velocity : Vector2 = Vector2.ZERO
 
-onready var animations = $AnimationPlayer
+onready var animations : AnimationPlayer = $AnimationPlayer
 onready var states = $StateManager
-onready var current_health : int = 100
+onready var hurtbox : HurtBox = $HurtBox
+onready var hurtcapsule : CollisionShape2D = $HurtBox/HurtCapsule
+onready var current_health : int = 5
 
 func _ready() -> void:
 	# Initialize the state machine, passing a reference of the player to the states,
@@ -26,3 +30,11 @@ func _unhandled_input(event: InputEvent) -> void:
 
 func _physics_process(delta: float) -> void:
 	states.physics_process(delta)
+	
+func take_damage(hitbox: EnemyHurtBox) -> void:
+	var direction = position.x - hitbox.position.x
+	if direction > 0:
+		states.knock_right()
+	else:
+		states.knock_left()
+	animations.play("Hurt_forward")
