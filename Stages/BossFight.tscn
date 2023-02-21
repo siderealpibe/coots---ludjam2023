@@ -3,9 +3,9 @@
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Enemies/Smilebot/Smilebot.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Stages/BossFight.gd" type="Script" id=3]
-[ext_resource path="res://Assets/test4.png" type="Texture" id=4]
 [ext_resource path="res://Assets/Music/Coots Boss Battle.wav" type="AudioStream" id=5]
 [ext_resource path="res://Assets/tilemap.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Coots/Coots.tscn" type="PackedScene" id=7]
 
 [sub_resource type="ConvexPolygonShape2D" id=2]
 points = PoolVector2Array( 90.8391, 128, 38.1771, 128, 34.7048, 0, 87.9456, 0 )
@@ -468,9 +468,8 @@ points = PoolVector2Array( 128, 69.7928, 111.246, 69.7928, 85.7834, 93.5196, 86.
 [node name="BossFight" type="Node"]
 script = ExtResource( 3 )
 
-[node name="Coots" type="Sprite" parent="."]
-position = Vector2( 2524, -790 )
-texture = ExtResource( 4 )
+[node name="Coots" parent="." instance=ExtResource( 7 )]
+position = Vector2( 5297, 564 )
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource( 1 )
