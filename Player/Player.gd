@@ -15,6 +15,7 @@ export var KNOCK_FORCE_X : int = 500
 var velocity : Vector2 = Vector2.ZERO
 
 onready var animations : AnimationPlayer = $AnimationPlayer
+onready var damage_animation : AnimationPlayer = $DamagePlayer
 onready var states = $StateManager
 onready var hurtbox : HurtBox = $HurtBox
 onready var hurtcapsule : CollisionShape2D = $HurtBox/HurtCapsule
@@ -37,4 +38,4 @@ func take_damage(hitbox: EnemyHurtBox) -> void:
 		states.knock_right()
 	else:
 		states.knock_left()
-	animations.play("Hurt_forward")
+	damage_animation.play("Hurt")

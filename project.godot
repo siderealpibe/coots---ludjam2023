@@ -14,10 +14,20 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Player/states/base_state.gd"
 }, {
+"base": "KinematicBody2D",
+"class": "Enemy",
+"language": "GDScript",
+"path": "res://Enemies/Enemy.gd"
+}, {
 "base": "Area2D",
 "class": "EnemyHurtBox",
 "language": "GDScript",
 "path": "res://EnemyHurtBox.gd"
+}, {
+"base": "Node",
+"class": "EnemyState",
+"language": "GDScript",
+"path": "res://Enemies/enemy_state.gd"
 }, {
 "base": "",
 "class": "GitAPI",
@@ -38,14 +48,22 @@ _global_script_classes=[ {
 "class": "Player",
 "language": "GDScript",
 "path": "res://Player/Player.gd"
+}, {
+"base": "Enemy",
+"class": "SmileBot",
+"language": "GDScript",
+"path": "res://Enemies/Smilebot/Smilebot.gd"
 } ]
 _global_script_class_icons={
 "BaseState": "",
+"Enemy": "",
 "EnemyHurtBox": "",
+"EnemyState": "",
 "GitAPI": "",
 "HitBox": "",
 "HurtBox": "",
-"Player": ""
+"Player": "",
+"SmileBot": ""
 }
 
 [application]
