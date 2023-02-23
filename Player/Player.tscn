@@ -1109,6 +1109,30 @@ tracks/9/keys = {
 "update": 0,
 "values": [ false ]
 }
+tracks/10/type = "value"
+tracks/10/path = NodePath("../DeflectLeftBox/CollisionShape2D:disabled")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/11/type = "value"
+tracks/11/path = NodePath("../DeflectRightBox/CollisionShape2D:disabled")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
 
 [sub_resource type="Animation" id=5]
 resource_name = "Running_backwards"
@@ -1348,7 +1372,7 @@ stream = ExtResource( 5 )
 texture = ExtResource( 2 )
 hframes = 5
 vframes = 4
-frame = 1
+frame = 4
 
 [node name="DeflectIndicator" type="Sprite" parent="Body"]
 visible = false
@@ -1405,6 +1429,7 @@ script = ExtResource( 11 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DeflectLeftBox"]
 position = Vector2( -157, -4 )
 shape = SubResource( 23 )
+disabled = true
 
 [node name="DeflectRightBox" type="Area2D" parent="."]
 script = ExtResource( 11 )
@@ -1412,3 +1437,4 @@ script = ExtResource( 11 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DeflectRightBox"]
 position = Vector2( 212, 0 )
 shape = SubResource( 23 )
+disabled = true
