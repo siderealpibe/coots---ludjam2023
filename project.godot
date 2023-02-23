@@ -20,6 +20,16 @@ _global_script_classes=[ {
 "path": "res://Enemies/Enemy.gd"
 }, {
 "base": "Area2D",
+"class": "EnemyBox",
+"language": "GDScript",
+"path": "res://EnemyBox.gd"
+}, {
+"base": "EnemyBox",
+"class": "EnemyHitBox",
+"language": "GDScript",
+"path": "res://EnemyHitBox.gd"
+}, {
+"base": "EnemyBox",
 "class": "EnemyHurtBox",
 "language": "GDScript",
 "path": "res://EnemyHurtBox.gd"
@@ -49,6 +59,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Player/Player.gd"
 }, {
+"base": "Area2D",
+"class": "PlayerDetectionBox",
+"language": "GDScript",
+"path": "res://PlayerDetectionBox.gd"
+}, {
 "base": "Enemy",
 "class": "SmileBot",
 "language": "GDScript",
@@ -57,12 +72,15 @@ _global_script_classes=[ {
 _global_script_class_icons={
 "BaseState": "",
 "Enemy": "",
+"EnemyBox": "",
+"EnemyHitBox": "",
 "EnemyHurtBox": "",
 "EnemyState": "",
 "GitAPI": "",
 "HitBox": "",
 "HurtBox": "",
 "Player": "",
+"PlayerDetectionBox": "",
 "SmileBot": ""
 }
 

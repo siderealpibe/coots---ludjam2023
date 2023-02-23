@@ -887,8 +887,8 @@ length = 0.001
 radius = 81.0
 height = 300.0
 
-[sub_resource type="RectangleShape2D" id=19]
-extents = Vector2( 55.5, 4.5 )
+[sub_resource type="CapsuleShape2D" id=21]
+height = 76.0
 
 [node name="Player" type="KinematicBody2D"]
 script = ExtResource( 1 )
@@ -973,8 +973,8 @@ script = ExtResource( 9 )
 [node name="HurtCapsule" type="CollisionShape2D" parent="HurtBox"]
 position = Vector2( 26, 3 )
 shape = SubResource( 17 )
-disabled = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 16, 147.5 )
-shape = SubResource( 19 )
+rotation = 1.5708
+shape = SubResource( 21 )

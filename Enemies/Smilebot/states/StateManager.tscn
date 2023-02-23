@@ -1,14 +1,43 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Enemies/Smilebot/states/StateManager.gd" type="Script" id=1]
 [ext_resource path="res://Enemies/Smilebot/states/smile_walk_left.gd" type="Script" id=2]
 [ext_resource path="res://Enemies/Smilebot/states/smile_walk_right.gd" type="Script" id=3]
+[ext_resource path="res://Enemies/Smilebot/states/smile_idle_right.gd" type="Script" id=4]
+[ext_resource path="res://Enemies/Smilebot/states/smile_idle_left.gd" type="Script" id=5]
+[ext_resource path="res://Enemies/enemy_state.gd" type="Script" id=6]
 
 [node name="StateManager" type="Node"]
 script = ExtResource( 1 )
 
-[node name="smile_walk_left" type="Node" parent="."]
-script = ExtResource( 2 )
-
 [node name="smile_walk_right" type="Node" parent="."]
 script = ExtResource( 3 )
+animation_name = "Walk_forward"
+
+[node name="smile_walk_left" type="Node" parent="."]
+script = ExtResource( 2 )
+animation_name = "Walk_backwards"
+
+[node name="smile_attack_right" type="Node" parent="."]
+script = ExtResource( 4 )
+animation_name = "Attack_forward"
+
+[node name="smile_attack_left" type="Node" parent="."]
+script = ExtResource( 5 )
+animation_name = "Attack_backwards"
+
+[node name="smile_idle_right" type="Node" parent="."]
+script = ExtResource( 6 )
+animation_name = "Idle_forward"
+
+[node name="smile_idle_left" type="Node" parent="."]
+script = ExtResource( 6 )
+animation_name = "Idle_backwards"
+
+[node name="smile_knocked_down_right" type="Node" parent="."]
+script = ExtResource( 6 )
+animation_name = "Knocked_Down_forward"
+
+[node name="smile_knocked_down_left" type="Node" parent="."]
+script = ExtResource( 6 )
+animation_name = "Knocked_Down_backwards"

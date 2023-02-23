@@ -24,7 +24,6 @@ func change_state(new_state: int) -> void:
 		current_state.exit()
 
 	current_state = states[new_state]
-	print(current_state)
 	current_state.enter()
 
 # Initialize the state machine by giving each state a reference to the objects

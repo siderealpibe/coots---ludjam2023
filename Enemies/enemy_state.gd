@@ -6,8 +6,14 @@ extends Node
 # This enum is used so that each child state can reference each other for its return value
 enum State {
 	Null,
+	SmileWalkRight,
 	SmileWalkLeft,
-	SmileWalkRight
+	SmileAttackRight,
+	SmileAttackLeft,
+	SmileIdleRight,
+	SmileIdleLeft,
+	SmileKnockedDownRight,
+	SmileKnockedDownLeft
 }
 
 export (String) var animation_name
@@ -16,7 +22,7 @@ export (String) var animation_name
 var enemy: Enemy
 
 func enter() -> void:
-	#enemy.animations.play(animation_name)
+	enemy.animations.play(animation_name)
 	pass
 
 func exit() -> void:

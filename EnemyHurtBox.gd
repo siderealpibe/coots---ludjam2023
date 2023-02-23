@@ -1,5 +1,5 @@
 class_name EnemyHurtBox
-extends Area2D
+extends EnemyBox
 
 func _init() -> void:
 	collision_layer = 4

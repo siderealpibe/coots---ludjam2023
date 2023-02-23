@@ -32,8 +32,8 @@ func _unhandled_input(event: InputEvent) -> void:
 func _physics_process(delta: float) -> void:
 	states.physics_process(delta)
 	
-func take_damage(hitbox: EnemyHurtBox) -> void:
-	var direction = position.x - hitbox.position.x
+func take_damage(hitbox) -> void:
+	var direction = global_position.x - hitbox.global_position.x
 	if direction > 0:
 		states.knock_right()
 	else:
