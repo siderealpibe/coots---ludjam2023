@@ -9,8 +9,10 @@ func input(event: InputEvent) -> int:
 		#	return State.FallLeft
 		#else:
 		return State.JumpLeft
-	elif event is InputEventMouseButton:
+	elif Input.is_action_just_pressed("mouse_left"):
 		return State.SlapLeft
+	elif Input.is_action_just_pressed("mouse_right"):
+		return State.DeflectLeft
 	return .input(event)
 
 func physics_process(delta: float) -> int:

@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Enemies/Smilebot/Smilebot.tscn" type="PackedScene" id=2]
@@ -8,12 +8,13 @@
 [ext_resource path="res://Stages/tileset.tres" type="TileSet" id=6]
 [ext_resource path="res://Coots/Coots.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Enemies/Controller/Controller.tscn" type="PackedScene" id=8]
+[ext_resource path="res://UI/UI.tscn" type="PackedScene" id=9]
 
 [node name="BossFight" type="Node"]
 script = ExtResource( 3 )
 
 [node name="Coots" parent="." instance=ExtResource( 7 )]
-position = Vector2( 146, -572 )
+position = Vector2( 133, -491 )
 
 [node name="Ground" type="TileMap" parent="."]
 tile_set = ExtResource( 6 )
@@ -30,16 +31,20 @@ format = 1
 tile_data = PoolIntArray( 10, 0, 196609, 11, 0, 196610, 12, 0, 196610, 13, 0, 196610, 14, 0, 196611, 131079, 0, 196609, 131080, 0, 196610, 131081, 0, 196610, 131082, 0, 196611, 327653, 0, 196609, 327654, 0, 196610, 327655, 0, 196610, 327656, 0, 196610, 327657, 0, 196610, 327658, 0, 196611, 262154, 0, 196608 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 1553, 356 )
+position = Vector2( 628, 578 )
 WALK_SPEED = 600
+SPAWN = Vector2( 500, 500 )
+UI_PATH = NodePath("../UI")
 
 [node name="Smilebot" parent="." instance=ExtResource( 2 )]
 position = Vector2( 2381, 436 )
 ORIGIN_X = 2500
-CONTROLLER_PATH = NodePath("../Controller")
+CONTROLLER = NodePath("../Controller")
 
 [node name="Controller" parent="." instance=ExtResource( 8 )]
 position = Vector2( 1315, 676 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 5 )
+
+[node name="UI" parent="." instance=ExtResource( 9 )]

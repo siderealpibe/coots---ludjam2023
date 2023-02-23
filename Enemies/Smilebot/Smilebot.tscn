@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=2]
+[gd_scene load_steps=36 format=2]
 
 [ext_resource path="res://Assets/Enemies/Smilebot/smilebot.png" type="Texture" id=1]
 [ext_resource path="res://EnemyHurtBox.gd" type="Script" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://Assets/Sfx/chargeup.wav" type="AudioStream" id=8]
 [ext_resource path="res://EnemyHitBox.gd" type="Script" id=9]
 [ext_resource path="res://PlayerDetectionBox.gd" type="Script" id=10]
+[ext_resource path="res://Particles/Laser.tscn" type="PackedScene" id=11]
 
 [sub_resource type="Animation" id=16]
 resource_name = "Attack_backwards"
@@ -125,7 +126,7 @@ tracks/8/keys = {
 } ]
 }
 tracks/9/type = "value"
-tracks/9/path = NodePath("EnemyHurtBox/CollisionShape2D:disabled")
+tracks/9/path = NodePath("EnemyHurtBox/CollisionShape2D4:disabled")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/imported = false
@@ -136,41 +137,22 @@ tracks/9/keys = {
 "update": 1,
 "values": [ true, false ]
 }
-tracks/10/type = "value"
-tracks/10/path = NodePath("EnemyHurtBox/CollisionShape2D2:disabled")
+tracks/10/type = "method"
+tracks/10/path = NodePath(".")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/imported = false
 tracks/10/enabled = true
 tracks/10/keys = {
-"times": PoolRealArray( 0.4, 0.8 ),
+"times": PoolRealArray( 0, 1.5 ),
 "transitions": PoolRealArray( 1, 1 ),
-"update": 1,
-"values": [ true, false ]
-}
-tracks/11/type = "value"
-tracks/11/path = NodePath("EnemyHurtBox/CollisionShape2D3:disabled")
-tracks/11/interp = 1
-tracks/11/loop_wrap = true
-tracks/11/imported = false
-tracks/11/enabled = true
-tracks/11/keys = {
-"times": PoolRealArray( 0.4, 0.8 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 1,
-"values": [ true, false ]
-}
-tracks/12/type = "value"
-tracks/12/path = NodePath("EnemyHurtBox/CollisionShape2D4:disabled")
-tracks/12/interp = 1
-tracks/12/loop_wrap = true
-tracks/12/imported = false
-tracks/12/enabled = true
-tracks/12/keys = {
-"times": PoolRealArray( 0.4, 0.8 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 1,
-"values": [ true, false ]
+"values": [ {
+"args": [  ],
+"method": "disable_laser"
+}, {
+"args": [  ],
+"method": "enable_laser"
+} ]
 }
 
 [sub_resource type="Animation" id=9]
@@ -287,7 +269,7 @@ tracks/8/keys = {
 } ]
 }
 tracks/9/type = "value"
-tracks/9/path = NodePath("EnemyHurtBox/CollisionShape2D:disabled")
+tracks/9/path = NodePath("EnemyHurtBox/CollisionShape2D4:disabled")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/imported = false
@@ -298,41 +280,22 @@ tracks/9/keys = {
 "update": 1,
 "values": [ true, false ]
 }
-tracks/10/type = "value"
-tracks/10/path = NodePath("EnemyHurtBox/CollisionShape2D2:disabled")
+tracks/10/type = "method"
+tracks/10/path = NodePath(".")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/imported = false
 tracks/10/enabled = true
 tracks/10/keys = {
-"times": PoolRealArray( 0.4, 0.8 ),
+"times": PoolRealArray( 0, 1.5 ),
 "transitions": PoolRealArray( 1, 1 ),
-"update": 1,
-"values": [ true, false ]
-}
-tracks/11/type = "value"
-tracks/11/path = NodePath("EnemyHurtBox/CollisionShape2D3:disabled")
-tracks/11/interp = 1
-tracks/11/loop_wrap = true
-tracks/11/imported = false
-tracks/11/enabled = true
-tracks/11/keys = {
-"times": PoolRealArray( 0.4, 0.8 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 1,
-"values": [ true, false ]
-}
-tracks/12/type = "value"
-tracks/12/path = NodePath("EnemyHurtBox/CollisionShape2D4:disabled")
-tracks/12/interp = 1
-tracks/12/loop_wrap = true
-tracks/12/imported = false
-tracks/12/enabled = true
-tracks/12/keys = {
-"times": PoolRealArray( 0.4, 0.8 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 1,
-"values": [ true, false ]
+"values": [ {
+"args": [  ],
+"method": "disable_laser"
+}, {
+"args": [  ],
+"method": "enable_laser"
+} ]
 }
 
 [sub_resource type="Animation" id=15]
@@ -532,7 +495,7 @@ tracks/3/keys = {
 "values": [ -69.7, 0.0, 0.0, 0.0, 0.0, -69.7 ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("EnemyHurtBox/CollisionShape2D:disabled")
+tracks/4/path = NodePath("EnemyHurtBox/CollisionShape2D4:disabled")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -544,7 +507,7 @@ tracks/4/keys = {
 "values": [ true, false ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("EnemyHurtBox/CollisionShape2D2:disabled")
+tracks/5/path = NodePath("LeftDetection/CollisionShape2D:disabled")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
@@ -556,7 +519,7 @@ tracks/5/keys = {
 "values": [ true, false ]
 }
 tracks/6/type = "value"
-tracks/6/path = NodePath("EnemyHurtBox/CollisionShape2D3:disabled")
+tracks/6/path = NodePath("RightDetection/CollisionShape2D:disabled")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/imported = false
@@ -567,49 +530,13 @@ tracks/6/keys = {
 "update": 1,
 "values": [ true, false ]
 }
-tracks/7/type = "value"
-tracks/7/path = NodePath("EnemyHurtBox/CollisionShape2D4:disabled")
+tracks/7/type = "method"
+tracks/7/path = NodePath("StateManager")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/imported = false
 tracks/7/enabled = true
 tracks/7/keys = {
-"times": PoolRealArray( 0, 4 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 1,
-"values": [ true, false ]
-}
-tracks/8/type = "value"
-tracks/8/path = NodePath("LeftDetection/CollisionShape2D:disabled")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/keys = {
-"times": PoolRealArray( 0, 4 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 1,
-"values": [ true, false ]
-}
-tracks/9/type = "value"
-tracks/9/path = NodePath("RightDetection/CollisionShape2D:disabled")
-tracks/9/interp = 1
-tracks/9/loop_wrap = true
-tracks/9/imported = false
-tracks/9/enabled = true
-tracks/9/keys = {
-"times": PoolRealArray( 0, 4 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 1,
-"values": [ true, false ]
-}
-tracks/10/type = "method"
-tracks/10/path = NodePath("StateManager")
-tracks/10/interp = 1
-tracks/10/loop_wrap = true
-tracks/10/imported = false
-tracks/10/enabled = true
-tracks/10/keys = {
 "times": PoolRealArray( 4 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
@@ -617,25 +544,25 @@ tracks/10/keys = {
 "method": "walk_left"
 } ]
 }
-tracks/11/type = "value"
-tracks/11/path = NodePath("KnockedDownBackwardsBox1:disabled")
-tracks/11/interp = 1
-tracks/11/loop_wrap = true
-tracks/11/imported = false
-tracks/11/enabled = true
-tracks/11/keys = {
+tracks/8/type = "value"
+tracks/8/path = NodePath("KnockedDownBackwardsBox1:disabled")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
 "times": PoolRealArray( 0.7, 3.4 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
 "values": [ false, true ]
 }
-tracks/12/type = "value"
-tracks/12/path = NodePath("KnockedDownBackwardsBox2:disabled")
-tracks/12/interp = 1
-tracks/12/loop_wrap = true
-tracks/12/imported = false
-tracks/12/enabled = true
-tracks/12/keys = {
+tracks/9/type = "value"
+tracks/9/path = NodePath("KnockedDownBackwardsBox2:disabled")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
 "times": PoolRealArray( 0.7, 3.4 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
@@ -694,7 +621,7 @@ tracks/3/keys = {
 "values": [ -69.7, 0.0, 0.0 ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("EnemyHurtBox/CollisionShape2D:disabled")
+tracks/4/path = NodePath("EnemyHurtBox/CollisionShape2D4:disabled")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -706,7 +633,7 @@ tracks/4/keys = {
 "values": [ true ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("EnemyHurtBox/CollisionShape2D2:disabled")
+tracks/5/path = NodePath("LeftDetection/CollisionShape2D:disabled")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
@@ -718,7 +645,7 @@ tracks/5/keys = {
 "values": [ true ]
 }
 tracks/6/type = "value"
-tracks/6/path = NodePath("EnemyHurtBox/CollisionShape2D3:disabled")
+tracks/6/path = NodePath("RightDetection/CollisionShape2D:disabled")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/imported = false
@@ -730,78 +657,57 @@ tracks/6/keys = {
 "values": [ true ]
 }
 tracks/7/type = "value"
-tracks/7/path = NodePath("EnemyHurtBox/CollisionShape2D4:disabled")
+tracks/7/path = NodePath("KnockedDownBackwardsBox1:disabled")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/imported = false
 tracks/7/enabled = true
 tracks/7/keys = {
-"times": PoolRealArray( 0 ),
+"times": PoolRealArray( 0.7 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ true ]
+"values": [ false ]
 }
 tracks/8/type = "value"
-tracks/8/path = NodePath("LeftDetection/CollisionShape2D:disabled")
+tracks/8/path = NodePath("KnockedDownBackwardsBox2:disabled")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/imported = false
 tracks/8/enabled = true
 tracks/8/keys = {
-"times": PoolRealArray( 0 ),
+"times": PoolRealArray( 0.7 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ true ]
+"values": [ false ]
 }
-tracks/9/type = "value"
-tracks/9/path = NodePath("RightDetection/CollisionShape2D:disabled")
+tracks/9/type = "method"
+tracks/9/path = NodePath(".")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/imported = false
 tracks/9/enabled = true
 tracks/9/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ true ]
+"times": PoolRealArray( 0, 0.9 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [  ],
+"method": "disable_laser"
+}, {
+"args": [  ],
+"method": "start_shake"
+} ]
 }
 tracks/10/type = "value"
-tracks/10/path = NodePath("KnockedDownBackwardsBox1:disabled")
+tracks/10/path = NodePath("EnemyHitBox/CollisionShape2D4:disabled")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/imported = false
 tracks/10/enabled = true
 tracks/10/keys = {
-"times": PoolRealArray( 0.7 ),
+"times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ false ]
-}
-tracks/11/type = "value"
-tracks/11/path = NodePath("KnockedDownBackwardsBox2:disabled")
-tracks/11/interp = 1
-tracks/11/loop_wrap = true
-tracks/11/imported = false
-tracks/11/enabled = true
-tracks/11/keys = {
-"times": PoolRealArray( 0.7 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ false ]
-}
-tracks/12/type = "method"
-tracks/12/path = NodePath(".")
-tracks/12/interp = 1
-tracks/12/loop_wrap = true
-tracks/12/imported = false
-tracks/12/enabled = true
-tracks/12/keys = {
-"times": PoolRealArray( 0.9 ),
-"transitions": PoolRealArray( 1 ),
-"values": [ {
-"args": [  ],
-"method": "start_shake"
-} ]
+"values": [ true ]
 }
 
 [sub_resource type="Animation" id=10]
@@ -856,7 +762,7 @@ tracks/3/keys = {
 "values": [ 69.7, 0.0, 0.0, 0.0, 0.0, 69.7 ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("EnemyHurtBox/CollisionShape2D:disabled")
+tracks/4/path = NodePath("EnemyHurtBox/CollisionShape2D4:disabled")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -868,7 +774,7 @@ tracks/4/keys = {
 "values": [ true, false ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("EnemyHurtBox/CollisionShape2D2:disabled")
+tracks/5/path = NodePath("LeftDetection/CollisionShape2D:disabled")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
@@ -880,7 +786,7 @@ tracks/5/keys = {
 "values": [ true, false ]
 }
 tracks/6/type = "value"
-tracks/6/path = NodePath("EnemyHurtBox/CollisionShape2D3:disabled")
+tracks/6/path = NodePath("RightDetection/CollisionShape2D:disabled")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/imported = false
@@ -892,72 +798,36 @@ tracks/6/keys = {
 "values": [ true, false ]
 }
 tracks/7/type = "value"
-tracks/7/path = NodePath("EnemyHurtBox/CollisionShape2D4:disabled")
+tracks/7/path = NodePath("KnockedDownForwardBox1:disabled")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/imported = false
 tracks/7/enabled = true
 tracks/7/keys = {
-"times": PoolRealArray( 0, 4 ),
+"times": PoolRealArray( 0.7, 3.4 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
-"values": [ true, false ]
+"values": [ false, true ]
 }
 tracks/8/type = "value"
-tracks/8/path = NodePath("LeftDetection/CollisionShape2D:disabled")
+tracks/8/path = NodePath("KnockedDownForwardBox2:disabled")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/imported = false
 tracks/8/enabled = true
 tracks/8/keys = {
-"times": PoolRealArray( 0, 4 ),
+"times": PoolRealArray( 0.7, 3.4 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
-"values": [ true, false ]
+"values": [ false, true ]
 }
-tracks/9/type = "value"
-tracks/9/path = NodePath("RightDetection/CollisionShape2D:disabled")
+tracks/9/type = "method"
+tracks/9/path = NodePath("StateManager")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/imported = false
 tracks/9/enabled = true
 tracks/9/keys = {
-"times": PoolRealArray( 0, 4 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 1,
-"values": [ true, false ]
-}
-tracks/10/type = "value"
-tracks/10/path = NodePath("KnockedDownForwardBox1:disabled")
-tracks/10/interp = 1
-tracks/10/loop_wrap = true
-tracks/10/imported = false
-tracks/10/enabled = true
-tracks/10/keys = {
-"times": PoolRealArray( 0.7, 3.4 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 1,
-"values": [ false, true ]
-}
-tracks/11/type = "value"
-tracks/11/path = NodePath("KnockedDownForwardBox2:disabled")
-tracks/11/interp = 1
-tracks/11/loop_wrap = true
-tracks/11/imported = false
-tracks/11/enabled = true
-tracks/11/keys = {
-"times": PoolRealArray( 0.7, 3.4 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 1,
-"values": [ false, true ]
-}
-tracks/12/type = "method"
-tracks/12/path = NodePath("StateManager")
-tracks/12/interp = 1
-tracks/12/loop_wrap = true
-tracks/12/imported = false
-tracks/12/enabled = true
-tracks/12/keys = {
 "times": PoolRealArray( 4 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
@@ -1018,7 +888,7 @@ tracks/3/keys = {
 "values": [ 69.7, 0.0, 0.0 ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("EnemyHurtBox/CollisionShape2D:disabled")
+tracks/4/path = NodePath("EnemyHurtBox/CollisionShape2D4:disabled")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -1030,7 +900,7 @@ tracks/4/keys = {
 "values": [ true ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("EnemyHurtBox/CollisionShape2D2:disabled")
+tracks/5/path = NodePath("LeftDetection/CollisionShape2D:disabled")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
@@ -1042,7 +912,7 @@ tracks/5/keys = {
 "values": [ true ]
 }
 tracks/6/type = "value"
-tracks/6/path = NodePath("EnemyHurtBox/CollisionShape2D3:disabled")
+tracks/6/path = NodePath("RightDetection/CollisionShape2D:disabled")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/imported = false
@@ -1054,78 +924,57 @@ tracks/6/keys = {
 "values": [ true ]
 }
 tracks/7/type = "value"
-tracks/7/path = NodePath("EnemyHurtBox/CollisionShape2D4:disabled")
+tracks/7/path = NodePath("KnockedDownForwardBox1:disabled")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/imported = false
 tracks/7/enabled = true
 tracks/7/keys = {
-"times": PoolRealArray( 0 ),
+"times": PoolRealArray( 0.7 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ true ]
+"values": [ false ]
 }
 tracks/8/type = "value"
-tracks/8/path = NodePath("LeftDetection/CollisionShape2D:disabled")
+tracks/8/path = NodePath("KnockedDownForwardBox2:disabled")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/imported = false
 tracks/8/enabled = true
 tracks/8/keys = {
-"times": PoolRealArray( 0 ),
+"times": PoolRealArray( 0.7 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ true ]
+"values": [ false ]
 }
-tracks/9/type = "value"
-tracks/9/path = NodePath("RightDetection/CollisionShape2D:disabled")
+tracks/9/type = "method"
+tracks/9/path = NodePath(".")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/imported = false
 tracks/9/enabled = true
 tracks/9/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ true ]
+"times": PoolRealArray( 0, 0.9 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [  ],
+"method": "disable_laser"
+}, {
+"args": [  ],
+"method": "start_shake"
+} ]
 }
 tracks/10/type = "value"
-tracks/10/path = NodePath("KnockedDownForwardBox1:disabled")
+tracks/10/path = NodePath("EnemyHitBox/CollisionShape2D4:disabled")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/imported = false
 tracks/10/enabled = true
 tracks/10/keys = {
-"times": PoolRealArray( 0.7 ),
+"times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ false ]
-}
-tracks/11/type = "value"
-tracks/11/path = NodePath("KnockedDownForwardBox2:disabled")
-tracks/11/interp = 1
-tracks/11/loop_wrap = true
-tracks/11/imported = false
-tracks/11/enabled = true
-tracks/11/keys = {
-"times": PoolRealArray( 0.7 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ false ]
-}
-tracks/12/type = "method"
-tracks/12/path = NodePath(".")
-tracks/12/interp = 1
-tracks/12/loop_wrap = true
-tracks/12/imported = false
-tracks/12/enabled = true
-tracks/12/keys = {
-"times": PoolRealArray( 0.9 ),
-"transitions": PoolRealArray( 1 ),
-"values": [ {
-"args": [  ],
-"method": "start_shake"
-} ]
+"values": [ true ]
 }
 
 [sub_resource type="Animation" id=6]
@@ -1310,6 +1159,18 @@ tracks/14/keys = {
 "update": 1,
 "values": [ false ]
 }
+tracks/15/type = "value"
+tracks/15/path = NodePath("EnemyHitBox/CollisionShape2D4:disabled")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
 
 [sub_resource type="Animation" id=23]
 resource_name = "Reanimate_backwards"
@@ -1362,7 +1223,7 @@ tracks/3/keys = {
 "values": [ 0.0, -69.7 ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("EnemyHurtBox/CollisionShape2D:disabled")
+tracks/4/path = NodePath("EnemyHurtBox/CollisionShape2D4:disabled")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -1374,7 +1235,7 @@ tracks/4/keys = {
 "values": [ true, false ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("EnemyHurtBox/CollisionShape2D2:disabled")
+tracks/5/path = NodePath("LeftDetection/CollisionShape2D:disabled")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
@@ -1386,7 +1247,7 @@ tracks/5/keys = {
 "values": [ true, false ]
 }
 tracks/6/type = "value"
-tracks/6/path = NodePath("EnemyHurtBox/CollisionShape2D3:disabled")
+tracks/6/path = NodePath("RightDetection/CollisionShape2D:disabled")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/imported = false
@@ -1398,77 +1259,67 @@ tracks/6/keys = {
 "values": [ true, false ]
 }
 tracks/7/type = "value"
-tracks/7/path = NodePath("EnemyHurtBox/CollisionShape2D4:disabled")
+tracks/7/path = NodePath("KnockedDownBackwardsBox1:disabled")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/imported = false
 tracks/7/enabled = true
 tracks/7/keys = {
-"times": PoolRealArray( 0, 1 ),
+"times": PoolRealArray( 0, 0.4 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
-"values": [ true, false ]
+"values": [ false, true ]
 }
 tracks/8/type = "value"
-tracks/8/path = NodePath("LeftDetection/CollisionShape2D:disabled")
+tracks/8/path = NodePath("KnockedDownBackwardsBox2:disabled")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/imported = false
 tracks/8/enabled = true
 tracks/8/keys = {
-"times": PoolRealArray( 0, 1 ),
+"times": PoolRealArray( 0, 0.4 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
-"values": [ true, false ]
+"values": [ false, true ]
 }
-tracks/9/type = "value"
-tracks/9/path = NodePath("RightDetection/CollisionShape2D:disabled")
+tracks/9/type = "method"
+tracks/9/path = NodePath("StateManager")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/imported = false
 tracks/9/enabled = true
 tracks/9/keys = {
-"times": PoolRealArray( 0, 1 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 1,
-"values": [ true, false ]
-}
-tracks/10/type = "value"
-tracks/10/path = NodePath("KnockedDownBackwardsBox1:disabled")
-tracks/10/interp = 1
-tracks/10/loop_wrap = true
-tracks/10/imported = false
-tracks/10/enabled = true
-tracks/10/keys = {
-"times": PoolRealArray( 0, 0.4 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 1,
-"values": [ false, true ]
-}
-tracks/11/type = "value"
-tracks/11/path = NodePath("KnockedDownBackwardsBox2:disabled")
-tracks/11/interp = 1
-tracks/11/loop_wrap = true
-tracks/11/imported = false
-tracks/11/enabled = true
-tracks/11/keys = {
-"times": PoolRealArray( 0, 0.4 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 1,
-"values": [ false, true ]
-}
-tracks/12/type = "method"
-tracks/12/path = NodePath("StateManager")
-tracks/12/interp = 1
-tracks/12/loop_wrap = true
-tracks/12/imported = false
-tracks/12/enabled = true
-tracks/12/keys = {
 "times": PoolRealArray( 1 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
 "args": [  ],
 "method": "walk_left"
+} ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("EnemyHitBox/CollisionShape2D4:disabled")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/11/type = "method"
+tracks/11/path = NodePath(".")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"times": PoolRealArray( 1 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "enable_laser"
 } ]
 }
 
@@ -1523,7 +1374,7 @@ tracks/3/keys = {
 "values": [ 0.0, 0.0, 69.7 ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("EnemyHurtBox/CollisionShape2D:disabled")
+tracks/4/path = NodePath("EnemyHurtBox/CollisionShape2D4:disabled")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -1535,7 +1386,7 @@ tracks/4/keys = {
 "values": [ true, false ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("EnemyHurtBox/CollisionShape2D2:disabled")
+tracks/5/path = NodePath("LeftDetection/CollisionShape2D:disabled")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
@@ -1547,7 +1398,7 @@ tracks/5/keys = {
 "values": [ true, false ]
 }
 tracks/6/type = "value"
-tracks/6/path = NodePath("EnemyHurtBox/CollisionShape2D3:disabled")
+tracks/6/path = NodePath("RightDetection/CollisionShape2D:disabled")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/imported = false
@@ -1559,72 +1410,36 @@ tracks/6/keys = {
 "values": [ true, false ]
 }
 tracks/7/type = "value"
-tracks/7/path = NodePath("EnemyHurtBox/CollisionShape2D4:disabled")
+tracks/7/path = NodePath("KnockedDownForwardBox1:disabled")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/imported = false
 tracks/7/enabled = true
 tracks/7/keys = {
-"times": PoolRealArray( 0, 1 ),
+"times": PoolRealArray( 0, 0.4 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
-"values": [ true, false ]
+"values": [ false, true ]
 }
 tracks/8/type = "value"
-tracks/8/path = NodePath("LeftDetection/CollisionShape2D:disabled")
+tracks/8/path = NodePath("KnockedDownForwardBox2:disabled")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/imported = false
 tracks/8/enabled = true
 tracks/8/keys = {
-"times": PoolRealArray( 0, 1 ),
+"times": PoolRealArray( 0, 0.4 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
-"values": [ true, false ]
+"values": [ false, true ]
 }
-tracks/9/type = "value"
-tracks/9/path = NodePath("RightDetection/CollisionShape2D:disabled")
+tracks/9/type = "method"
+tracks/9/path = NodePath("StateManager")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/imported = false
 tracks/9/enabled = true
 tracks/9/keys = {
-"times": PoolRealArray( 0, 1 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 1,
-"values": [ true, false ]
-}
-tracks/10/type = "value"
-tracks/10/path = NodePath("KnockedDownForwardBox1:disabled")
-tracks/10/interp = 1
-tracks/10/loop_wrap = true
-tracks/10/imported = false
-tracks/10/enabled = true
-tracks/10/keys = {
-"times": PoolRealArray( 0, 0.4 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 1,
-"values": [ false, true ]
-}
-tracks/11/type = "value"
-tracks/11/path = NodePath("KnockedDownForwardBox2:disabled")
-tracks/11/interp = 1
-tracks/11/loop_wrap = true
-tracks/11/imported = false
-tracks/11/enabled = true
-tracks/11/keys = {
-"times": PoolRealArray( 0, 0.4 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 1,
-"values": [ false, true ]
-}
-tracks/12/type = "method"
-tracks/12/path = NodePath("StateManager")
-tracks/12/interp = 1
-tracks/12/loop_wrap = true
-tracks/12/imported = false
-tracks/12/enabled = true
-tracks/12/keys = {
 "times": PoolRealArray( 1 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
@@ -1632,10 +1447,36 @@ tracks/12/keys = {
 "method": "walk_right"
 } ]
 }
+tracks/10/type = "value"
+tracks/10/path = NodePath("EnemyHitBox/CollisionShape2D4:disabled")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/11/type = "method"
+tracks/11/path = NodePath(".")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"times": PoolRealArray( 1 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "enable_laser"
+} ]
+}
 
 [sub_resource type="Animation" id=8]
 resource_name = "Shoot_Laser"
-length = 2.0
+length = 1.5
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
@@ -1755,6 +1596,30 @@ tracks/9/keys = {
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ 1.9, 1.0 ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("LeftDetection/CollisionShape2D:disabled")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0, 1.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/11/type = "value"
+tracks/11/path = NodePath("RightDetection/CollisionShape2D:disabled")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"times": PoolRealArray( 0, 1.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
 }
 
 [sub_resource type="Animation" id=12]
@@ -1921,7 +1786,7 @@ tracks/8/keys = {
 "values": [ true ]
 }
 tracks/9/type = "value"
-tracks/9/path = NodePath("EnemyHurtBox/CollisionShape2D:disabled")
+tracks/9/path = NodePath("EnemyHurtBox/CollisionShape2D4:disabled")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/imported = false
@@ -1933,7 +1798,7 @@ tracks/9/keys = {
 "values": [ true ]
 }
 tracks/10/type = "value"
-tracks/10/path = NodePath("EnemyHurtBox/CollisionShape2D2:disabled")
+tracks/10/path = NodePath("EnemyHitBox/CollisionShape2D4:disabled")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/imported = false
@@ -1944,8 +1809,8 @@ tracks/10/keys = {
 "update": 1,
 "values": [ true ]
 }
-tracks/11/type = "value"
-tracks/11/path = NodePath("EnemyHurtBox/CollisionShape2D3:disabled")
+tracks/11/type = "method"
+tracks/11/path = NodePath(".")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/imported = false
@@ -1953,20 +1818,10 @@ tracks/11/enabled = true
 tracks/11/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ true ]
-}
-tracks/12/type = "value"
-tracks/12/path = NodePath("EnemyHurtBox/CollisionShape2D4:disabled")
-tracks/12/interp = 1
-tracks/12/loop_wrap = true
-tracks/12/imported = false
-tracks/12/enabled = true
-tracks/12/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ true ]
+"values": [ {
+"args": [  ],
+"method": "disable_laser"
+} ]
 }
 
 [sub_resource type="Animation" id=7]
@@ -2159,21 +2014,9 @@ height = 192.0
 radius = 124.0
 height = 364.0
 
-[sub_resource type="CapsuleShape2D" id=1]
-radius = 119.0
-height = 266.0
-
-[sub_resource type="CapsuleShape2D" id=2]
-radius = 98.6996
-height = 278.377
-
-[sub_resource type="CapsuleShape2D" id=3]
-radius = 97.3378
-height = 261.378
-
 [sub_resource type="CapsuleShape2D" id=4]
-radius = 181.0
-height = 80.0
+radius = 349.0
+height = 46.001
 
 [sub_resource type="CapsuleShape2D" id=17]
 radius = 215.0
@@ -2183,16 +2026,21 @@ height = 458.0
 radius = 248.0
 height = 398.0
 
+[sub_resource type="CapsuleShape2D" id=27]
+radius = 459.0
+height = 1736.0
+
 [node name="Smilebot" type="KinematicBody2D"]
 script = ExtResource( 3 )
+LASER_SCENE = ExtResource( 11 )
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 1 )
+flip_h = true
 hframes = 5
 vframes = 4
 
 [node name="EyeLaser" type="Sprite" parent="."]
-visible = false
 scale = Vector2( 1.5, 1 )
 texture = ExtResource( 7 )
 offset = Vector2( -40, -180 )
@@ -2246,29 +2094,23 @@ disabled = true
 [node name="EnemyHurtBox" type="Area2D" parent="."]
 script = ExtResource( 2 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="EnemyHurtBox"]
-position = Vector2( 15, 103 )
-shape = SubResource( 1 )
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="EnemyHurtBox"]
-position = Vector2( 255, -9.99999 )
-rotation = -0.432842
-shape = SubResource( 2 )
-
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="EnemyHurtBox"]
-position = Vector2( -258, -8 )
-rotation = 0.324631
-shape = SubResource( 3 )
-
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="EnemyHurtBox"]
-position = Vector2( -14, -177 )
+position = Vector2( -10, 31 )
+rotation = 1.5708
+shape = SubResource( 4 )
+
+[node name="EnemyHitBox" type="Area2D" parent="."]
+script = ExtResource( 9 )
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="EnemyHitBox"]
+position = Vector2( -10, 31 )
 rotation = 1.5708
 shape = SubResource( 4 )
 
 [node name="StateManager" parent="." instance=ExtResource( 4 )]
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 5 )
+stream = ExtResource( 6 )
 
 [node name="LeftHitBox" type="Area2D" parent="."]
 collision_layer = 8
@@ -2304,6 +2146,16 @@ script = ExtResource( 10 )
 position = Vector2( 392, -39 )
 shape = SubResource( 18 )
 
+[node name="LaserDetection" type="Area2D" parent="."]
+script = ExtResource( 10 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LaserDetection"]
+position = Vector2( -3, -25 )
+rotation = 1.5708
+shape = SubResource( 27 )
+
 [node name="shake_timer" type="Timer" parent="."]
 
 [node name="up_timer" type="Timer" parent="."]
+
+[node name="laser_timer" type="Timer" parent="."]

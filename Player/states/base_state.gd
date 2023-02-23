@@ -18,6 +18,8 @@ enum State {
 	FallLeft,
 	KnockRight,
 	KnockLeft,
+	DeflectRight,
+	DeflectLeft,
 }
 
 export (String) var animation_name
