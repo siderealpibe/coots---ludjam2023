@@ -9,6 +9,7 @@ onready var states = {
 	EnemyState.State.SmileIdleLeft: $smile_idle_left,
 	EnemyState.State.SmileKnockedDownRight: $smile_knocked_down_right,
 	EnemyState.State.SmileKnockedDownLeft: $smile_knocked_down_left,
+	EnemyState.State.SmileShutDown: $smile_shut_down
 }
 
 var current_state: EnemyState
@@ -64,3 +65,6 @@ func knock_down_right() -> void:
 	
 func knock_down_left() -> void:
 	change_state(EnemyState.State.SmileKnockedDownLeft)
+	
+func shutdown() -> void:
+	change_state(EnemyState.State.SmileShutDown)

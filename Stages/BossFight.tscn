@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Enemies/Smilebot/Smilebot.tscn" type="PackedScene" id=2]
@@ -7,12 +7,13 @@
 [ext_resource path="res://Assets/Music/Coots Boss Battle.wav" type="AudioStream" id=5]
 [ext_resource path="res://Stages/tileset.tres" type="TileSet" id=6]
 [ext_resource path="res://Coots/Coots.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Enemies/Controller/Controller.tscn" type="PackedScene" id=8]
 
 [node name="BossFight" type="Node"]
 script = ExtResource( 3 )
 
 [node name="Coots" parent="." instance=ExtResource( 7 )]
-position = Vector2( 297, 43 )
+position = Vector2( 146, -572 )
 
 [node name="Ground" type="TileMap" parent="."]
 tile_set = ExtResource( 6 )
@@ -35,6 +36,10 @@ WALK_SPEED = 600
 [node name="Smilebot" parent="." instance=ExtResource( 2 )]
 position = Vector2( 2381, 436 )
 ORIGIN_X = 2500
+CONTROLLER_PATH = NodePath("../Controller")
+
+[node name="Controller" parent="." instance=ExtResource( 8 )]
+position = Vector2( 1315, 676 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 5 )

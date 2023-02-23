@@ -13,7 +13,8 @@ enum State {
 	SmileIdleRight,
 	SmileIdleLeft,
 	SmileKnockedDownRight,
-	SmileKnockedDownLeft
+	SmileKnockedDownLeft,
+	SmileShutDown,
 }
 
 export (String) var animation_name
