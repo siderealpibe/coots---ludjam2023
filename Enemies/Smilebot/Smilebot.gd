@@ -7,11 +7,14 @@ export var WALK_SPEED : int = 100
 export var RIGHT_BOUND : int = 200
 export var LEFT_BOUND : int = 200
 export var IS_IDLE : bool = false
+export var CAN_PUNCH : bool = true
+export var CAN_SHOOT : bool = true
 export(float, .9, 5, 0.1) var HALF_TIME_DOWN : float = 3
 export(float, 0, 10, 1) var LASER_RECHARGE_TIME : float = 5
 export(NodePath) var CONTROLLER
 export(NodePath) var LASER_DETECTION
 export(PackedScene) var LASER_SCENE
+
 
 onready var controller : ControllerHitBox = get_node(CONTROLLER)
 onready var states = $StateManager
@@ -19,7 +22,7 @@ onready var animations = $AnimationPlayer
 onready var velocity : Vector2 = Vector2.ZERO
 onready var shake_timer : Timer = $shake_timer
 onready var up_timer : Timer = $up_timer
-onready var can_shoot : bool = true
+
 var laser_detection : PlayerDetectionBox
 onready var laser_timer : Timer = $laser_timer
 
@@ -31,7 +34,8 @@ func _ready() -> void:
 	$RightDetection.connect("area_entered", self, "right_punch")
 	laser_detection = get_node(LASER_DETECTION) if LASER_DETECTION != "" else $LaserDetection
 	laser_detection.connect("area_entered",self,"shoot_laser")
-	controller.connect("destroyed", self, "destruct")
+	if controller != null:
+		controller.connect("destroyed", self, "destruct")
 	shake_timer.one_shot = true
 	shake_timer.connect("timeout", self, "shake")
 	up_timer.one_shot = true
@@ -62,20 +66,22 @@ func walk_backwards() -> void:
 	#velocity = move_and_slide_with_snap(velocity, 10*Vector2.DOWN, Vector2.UP)
 	
 func left_punch(player) -> void:
-	states.left_punch()
+	if CAN_PUNCH:
+		states.left_punch()
 
 func right_punch(player) -> void:
-	states.right_punch()
+	if CAN_PUNCH:
+		states.right_punch()
 
 func shoot_laser(player) -> void:
-	if can_shoot:
+	if CAN_SHOOT:
 		animations.play("Shoot_Laser")
 		yield(animations,"animation_finished")
 		var laser = LASER_SCENE.instance()
 		add_child(laser)
 		laser.position = Vector2(0,-175)
 		laser.shoot((player.global_position - global_position - Vector2(0,-175)).normalized())
-		can_shoot = false
+		CAN_SHOOT = false
 		#LASER_DETECTION.disabled = true
 		laser_timer.start(LASER_RECHARGE_TIME)
 		if $Sprite.flip_h:
@@ -84,7 +90,7 @@ func shoot_laser(player) -> void:
 			states.walk_left()
 			
 func recharge() -> void:
-	can_shoot = true
+	CAN_SHOOT = true
 	#LASER_DETECTION.disabled = false
 
 func enable_laser() -> void:

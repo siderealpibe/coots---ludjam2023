@@ -2036,7 +2036,6 @@ LASER_SCENE = ExtResource( 11 )
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 1 )
-flip_h = true
 hframes = 5
 vframes = 4
 
@@ -2098,6 +2097,7 @@ script = ExtResource( 2 )
 position = Vector2( -10, 31 )
 rotation = 1.5708
 shape = SubResource( 4 )
+disabled = true
 
 [node name="EnemyHitBox" type="Area2D" parent="."]
 script = ExtResource( 9 )
