@@ -93,7 +93,8 @@ func shoot_laser(player) -> void:
 			
 func recharge() -> void:
 	CAN_SHOOT = true
-	#LASER_DETECTION.disabled = false
+	disable_laser()
+	enable_laser()
 
 func enable_laser() -> void:
 	laser_detection.get_node("CollisionShape2D").disabled = false
