@@ -2,7 +2,7 @@ class_name SmileBot
 extends Enemy
 
 #onready var animations : AnimationPlayer = $AnimationPlayer
-export var ORIGIN_X : int
+
 export var WALK_SPEED : int = 100
 export var RIGHT_BOUND : int = 200
 export var LEFT_BOUND : int = 200
@@ -23,6 +23,7 @@ onready var velocity : Vector2 = Vector2.ZERO
 onready var shake_timer : Timer = $shake_timer
 onready var up_timer : Timer = $up_timer
 
+var ORIGIN_X : int
 var laser_detection : PlayerDetectionBox
 onready var laser_timer : Timer = $laser_timer
 
@@ -32,6 +33,7 @@ func _ready() -> void:
 	states.init(self)
 	$LeftDetection.connect("area_entered", self, "left_punch")
 	$RightDetection.connect("area_entered", self, "right_punch")
+	ORIGIN_X = global_position.x
 	laser_detection = get_node(LASER_DETECTION) if LASER_DETECTION != "" else $LaserDetection
 	laser_detection.connect("area_entered",self,"shoot_laser")
 	if controller != null:

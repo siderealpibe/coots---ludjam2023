@@ -38,7 +38,6 @@ UI_PATH = NodePath("../UI")
 
 [node name="Smilebot" parent="." instance=ExtResource( 2 )]
 position = Vector2( 2381, 436 )
-ORIGIN_X = 2500
 CONTROLLER = NodePath("../Controller")
 
 [node name="Controller" parent="." instance=ExtResource( 8 )]
