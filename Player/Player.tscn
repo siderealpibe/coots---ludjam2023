@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=2]
+[gd_scene load_steps=34 format=2]
 
 [ext_resource path="res://Player/Player.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Ludwig/idle_and_run.png" type="Texture" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://HurtBox.gd" type="Script" id=9]
 [ext_resource path="res://Coots/ScreenShake.tscn" type="PackedScene" id=10]
 [ext_resource path="res://DeflectBox.gd" type="Script" id=11]
+[ext_resource path="res://Assets/Particles/deflect_indicator.png" type="Texture" id=12]
 
 [sub_resource type="CapsuleShape2D" id=17]
 radius = 84.0
@@ -117,6 +118,18 @@ tracks/7/keys = {
 "update": 1,
 "values": [ false, true ]
 }
+tracks/8/type = "value"
+tracks/8/path = NodePath("DeflectIndicator:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
 
 [sub_resource type="Animation" id=24]
 resource_name = "Deflect_forward"
@@ -219,6 +232,18 @@ tracks/7/keys = {
 "update": 1,
 "values": [ false, true ]
 }
+tracks/8/type = "value"
+tracks/8/path = NodePath("DeflectIndicator:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
 
 [sub_resource type="Animation" id=11]
 resource_name = "Fall_backwards"
@@ -282,6 +307,18 @@ tracks/4/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ 0 ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("DeflectIndicator:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
 }
 
 [sub_resource type="Animation" id=15]
@@ -347,6 +384,18 @@ tracks/4/keys = {
 "update": 1,
 "values": [ 1 ]
 }
+tracks/5/type = "value"
+tracks/5/path = NodePath("DeflectIndicator:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
 
 [sub_resource type="Animation" id=10]
 resource_name = "Hurt_backwards"
@@ -363,6 +412,18 @@ tracks/0/keys = {
 "update": 0,
 "values": [ Color( 1, 1, 1, 1 ), Color( 0.964706, 0.592157, 0.592157, 1 ), Color( 1, 1, 1, 1 ) ]
 }
+tracks/1/type = "value"
+tracks/1/path = NodePath("DeflectIndicator:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
 
 [sub_resource type="Animation" id=9]
 resource_name = "Hurt_forward"
@@ -378,6 +439,18 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 1 ), Color( 0.964706, 0.592157, 0.592157, 1 ), Color( 1, 1, 1, 1 ), Color( 0.964706, 0.592157, 0.592157, 1 ), Color( 1, 1, 1, 1 ), Color( 0.964706, 0.592157, 0.592157, 1 ), Color( 1, 1, 1, 1 ), Color( 0.964706, 0.592157, 0.592157, 1 ), Color( 1, 1, 1, 1 ), Color( 0.964706, 0.592157, 0.592157, 1 ), Color( 1, 1, 1, 1 ), Color( 0.964706, 0.592157, 0.592157, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("DeflectIndicator:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
 }
 
 [sub_resource type="Animation" id=2]
@@ -444,6 +517,18 @@ tracks/4/keys = {
 "update": 1,
 "values": [ 0, 1, 2, 3, 2, 1 ]
 }
+tracks/5/type = "value"
+tracks/5/path = NodePath("DeflectIndicator:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
 
 [sub_resource type="Animation" id=3]
 resource_name = "Idle_forward"
@@ -509,6 +594,18 @@ tracks/4/keys = {
 "update": 1,
 "values": [ 4, 5, 6, 7, 6, 5 ]
 }
+tracks/5/type = "value"
+tracks/5/path = NodePath("DeflectIndicator:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
 
 [sub_resource type="Animation" id=13]
 resource_name = "Jump_backwards"
@@ -573,6 +670,18 @@ tracks/4/keys = {
 "update": 0,
 "values": [ Vector2( 0, 0 ) ]
 }
+tracks/5/type = "value"
+tracks/5/path = NodePath("DeflectIndicator:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
 
 [sub_resource type="Animation" id=14]
 resource_name = "Jump_forward"
@@ -636,6 +745,18 @@ tracks/4/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 0, 0 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("DeflectIndicator:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
 }
 
 [sub_resource type="Animation" id=8]
@@ -739,6 +860,18 @@ tracks/7/keys = {
 "update": 1,
 "values": [ true, false, true ]
 }
+tracks/8/type = "value"
+tracks/8/path = NodePath("DeflectIndicator:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
 
 [sub_resource type="Animation" id=7]
 resource_name = "Normal_slap_forward"
@@ -840,6 +973,18 @@ tracks/7/keys = {
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 1,
 "values": [ true, false, true ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("DeflectIndicator:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
 }
 
 [sub_resource type="Animation" id=4]
@@ -952,6 +1097,18 @@ tracks/8/keys = {
 "update": 1,
 "values": [ true ]
 }
+tracks/9/type = "value"
+tracks/9/path = NodePath("DeflectIndicator:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
 
 [sub_resource type="Animation" id=5]
 resource_name = "Running_backwards"
@@ -1016,6 +1173,18 @@ tracks/4/keys = {
 "update": 1,
 "values": [ 8, 9, 10, 11, 12 ]
 }
+tracks/5/type = "value"
+tracks/5/path = NodePath("DeflectIndicator:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
 
 [sub_resource type="Animation" id=6]
 resource_name = "Running_forward"
@@ -1079,6 +1248,18 @@ tracks/4/keys = {
 "transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
 "update": 1,
 "values": [ 13, 14, 15, 16, 17 ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("DeflectIndicator:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
 }
 
 [sub_resource type="Animation" id=18]
@@ -1167,7 +1348,11 @@ stream = ExtResource( 5 )
 texture = ExtResource( 2 )
 hframes = 5
 vframes = 4
-frame = 4
+frame = 1
+
+[node name="DeflectIndicator" type="Sprite" parent="Body"]
+visible = false
+texture = ExtResource( 12 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 150, -160 )
@@ -1220,7 +1405,6 @@ script = ExtResource( 11 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DeflectLeftBox"]
 position = Vector2( -157, -4 )
 shape = SubResource( 23 )
-disabled = true
 
 [node name="DeflectRightBox" type="Area2D" parent="."]
 script = ExtResource( 11 )
@@ -1228,4 +1412,3 @@ script = ExtResource( 11 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DeflectRightBox"]
 position = Vector2( 212, 0 )
 shape = SubResource( 23 )
-disabled = true
