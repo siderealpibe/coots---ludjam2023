@@ -13,11 +13,11 @@ func physics_process(delta: float) -> int:
 	if !player.is_on_floor():
 		return State.FallLeft
 	elif Input.is_action_just_pressed("ui_select"):
-		if Input.is_action_pressed("ui_down"):
-			player.position.y += 10
-			return State.FallLeft
-		else:
-			return State.JumpLeft
+		#if Input.is_action_pressed("ui_down"):
+		#	player.position.y += 10
+		#	return State.FallLeft
+		#else:
+		return State.JumpLeft
 	elif Input.is_action_pressed("ui_left"):
 		return State.WalkLeft
 	elif Input.is_action_pressed("ui_right"):

@@ -1356,7 +1356,6 @@ script = ExtResource( 3 )
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 1 )
-flip_h = true
 hframes = 5
 vframes = 4
 

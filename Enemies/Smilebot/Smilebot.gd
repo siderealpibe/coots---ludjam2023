@@ -25,7 +25,6 @@ func _physics_process(delta: float) -> void:
 	states.physics_process(delta)
 
 func take_damage(hitbox) -> void:
-	print("hello")
 	var direction = global_position.x - hitbox.global_position.x
 	if direction > 0:
 		states.knock_down_left()

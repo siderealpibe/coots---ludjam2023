@@ -4,11 +4,11 @@ func input(event: InputEvent) -> int:
 	if Input.is_action_pressed("ui_right"):
 		return State.WalkRight
 	elif Input.is_action_pressed("ui_select"):
-		if Input.is_action_pressed("ui_down"):
-			player.position.y += 10
-			return State.FallLeft
-		else:
-			return State.JumpLeft
+		#if Input.is_action_pressed("ui_down"):
+		#	player.position.y += 10
+		#	return State.FallLeft
+		#else:
+		return State.JumpLeft
 	elif event is InputEventMouseButton:
 		return State.SlapLeft
 	return .input(event)
