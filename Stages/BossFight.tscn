@@ -35,7 +35,6 @@ WALK_SPEED = 600
 [node name="Smilebot" parent="." instance=ExtResource( 2 )]
 position = Vector2( 2381, 436 )
 ORIGIN_X = 2500
-IS_IDLE = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 5 )
