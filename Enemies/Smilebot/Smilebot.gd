@@ -76,6 +76,8 @@ func right_punch(player) -> void:
 		states.right_punch()
 
 func start_walking() -> void:
+	IS_IDLE = false
+	states.is_idle = false
 	states.walk_right()
 
 func shoot_laser(player) -> void:
@@ -96,8 +98,9 @@ func shoot_laser(player) -> void:
 			
 func recharge() -> void:
 	CAN_SHOOT = true
-	disable_laser()
-	enable_laser()
+	if not laser_detection.get_node("CollisionShape2D").disabled:
+		disable_laser()
+		enable_laser()
 
 func enable_laser() -> void:
 	laser_detection.get_node("CollisionShape2D").disabled = false

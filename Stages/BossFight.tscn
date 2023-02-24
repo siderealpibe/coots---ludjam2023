@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://PlayerDetectionBox.gd" type="Script" id=2]
@@ -65,32 +65,36 @@ tracks/0/keys = {
 [sub_resource type="Animation" id=7]
 resource_name = "smilebot_entry"
 length = 2.0
-tracks/0/type = "value"
-tracks/0/path = NodePath("Path2D/PathFollow2D:offset")
+tracks/0/type = "method"
+tracks/0/path = NodePath("Smilebot2")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 2 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ 0.0, 1410.67 ]
+"times": PoolRealArray( 2 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "start_walking"
+} ]
 }
-tracks/1/type = "value"
-tracks/1/path = NodePath("Path2D2/PathFollow2D:offset")
+tracks/1/type = "method"
+tracks/1/path = NodePath("Smilebot")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 2 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ 0.0, 1410.67 ]
+"times": PoolRealArray( 2 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "start_walking"
+} ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("Path2D3/PathFollow2D:offset")
+tracks/2/path = NodePath("Smilebot2:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -99,85 +103,19 @@ tracks/2/keys = {
 "times": PoolRealArray( 0, 2 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ 0.0, 1410.67 ]
+"values": [ Vector2( 0, 2700 ), Vector2( 0, 1330 ) ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("Path2D/PathFollow2D/Smilebot:IS_IDLE")
+tracks/3/path = NodePath("Smilebot:position")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
 tracks/3/enabled = true
 tracks/3/keys = {
-"times": PoolRealArray( 0, 1.9 ),
+"times": PoolRealArray( 0, 2 ),
 "transitions": PoolRealArray( 1, 1 ),
-"update": 1,
-"values": [ true, false ]
-}
-tracks/4/type = "value"
-tracks/4/path = NodePath("Path2D2/PathFollow2D/Smilebot:IS_IDLE")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/keys = {
-"times": PoolRealArray( 0, 1.9 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 1,
-"values": [ true, false ]
-}
-tracks/5/type = "value"
-tracks/5/path = NodePath("Path2D3/PathFollow2D/Smilebot:IS_IDLE")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/keys = {
-"times": PoolRealArray( 0, 1.9 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 1,
-"values": [ true, false ]
-}
-tracks/6/type = "method"
-tracks/6/path = NodePath("Path2D/PathFollow2D/Smilebot")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/keys = {
-"times": PoolRealArray( 2 ),
-"transitions": PoolRealArray( 1 ),
-"values": [ {
-"args": [  ],
-"method": "start_walking"
-} ]
-}
-tracks/7/type = "method"
-tracks/7/path = NodePath("Path2D2/PathFollow2D/Smilebot")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/keys = {
-"times": PoolRealArray( 2 ),
-"transitions": PoolRealArray( 1 ),
-"values": [ {
-"args": [  ],
-"method": "start_walking"
-} ]
-}
-tracks/8/type = "method"
-tracks/8/path = NodePath("Path2D3/PathFollow2D/Smilebot")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/keys = {
-"times": PoolRealArray( 2 ),
-"transitions": PoolRealArray( 1 ),
-"values": [ {
-"args": [  ],
-"method": "start_walking"
-} ]
+"update": 0,
+"values": [ Vector2( -3500, 2700 ), Vector2( -3500, 1330 ) ]
 }
 
 [sub_resource type="Animation" id=5]
@@ -199,11 +137,6 @@ tracks/0/keys = {
 [sub_resource type="Curve2D" id=3]
 _data = {
 "points": PoolVector2Array( -55.5589, -271.903, 55.5589, 271.903, 1056.79, -546.556, 250.788, -81.745, -250.788, 81.745, -282.215, 307.769, 126.773, -14.3076, -126.773, 14.3076, -1718.88, 641.186, 0, 0, 0, 0, -1879.19, 625.267, 0, 0, 0, 0, -1879.19, 569.55, 25.7616, 176.605, -25.7616, -176.605, -2265.8, -55.7168, -20.8953, 29.963, 20.8953, -29.963, -2192.39, -888.816, 0, 0, 0, 0, -2072.5, -1040.93, 0, 0, 0, 0, -2072.5, -1006.44 )
-}
-
-[sub_resource type="Curve2D" id=8]
-_data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 0, 2749, 0, 0, 0, 0, -1, 1332 )
 }
 
 [node name="BossFight" type="Node"]
@@ -278,60 +211,20 @@ position = Vector2( -18.6114, -9.5177 )
 rotation = -1.39084
 scale = Vector2( 0.673544, 0.884395 )
 
-[node name="Path2D" type="Path2D" parent="."]
-curve = SubResource( 8 )
-
-[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
-position = Vector2( 0, 2749 )
-rotation = -1.56934
-rotate = false
-loop = false
-
-[node name="Smilebot" parent="Path2D/PathFollow2D" instance=ExtResource( 11 )]
-position = Vector2( -1, 0.0014534 )
-rotation = 1.56934
+[node name="Smilebot2" parent="." instance=ExtResource( 11 )]
+position = Vector2( 0, 2700 )
 WALK_SPEED = 200
-RIGHT_BOUND = 1500
+RIGHT_BOUND = 800
+LEFT_BOUND = 1500
+IS_IDLE = true
+CAN_SHOOT = false
+CONTROLLER = NodePath("../ControllerEntrance/PathFollow2D/BossController")
+
+[node name="Smilebot" parent="." instance=ExtResource( 11 )]
+position = Vector2( -3500, 2700 )
+WALK_SPEED = 200
+RIGHT_BOUND = 1800
 LEFT_BOUND = 500
 IS_IDLE = true
 CAN_SHOOT = false
-CONTROLLER = NodePath("../../../ControllerEntrance/PathFollow2D/BossController")
-
-[node name="Path2D2" type="Path2D" parent="."]
-position = Vector2( -1500, 0 )
-curve = SubResource( 8 )
-
-[node name="PathFollow2D" type="PathFollow2D" parent="Path2D2"]
-position = Vector2( 0, 2749 )
-rotation = -1.56934
-rotate = false
-loop = false
-
-[node name="Smilebot" parent="Path2D2/PathFollow2D" instance=ExtResource( 11 )]
-position = Vector2( -1, 0.0014534 )
-rotation = 1.56934
-WALK_SPEED = 200
-RIGHT_BOUND = 800
-LEFT_BOUND = 1000
-IS_IDLE = true
-CAN_SHOOT = false
-CONTROLLER = NodePath("../../../ControllerEntrance/PathFollow2D/BossController")
-
-[node name="Path2D3" type="Path2D" parent="."]
-position = Vector2( -4000, 0 )
-curve = SubResource( 8 )
-
-[node name="PathFollow2D" type="PathFollow2D" parent="Path2D3"]
-position = Vector2( 0, 2749 )
-rotation = -1.56934
-rotate = false
-loop = false
-
-[node name="Smilebot" parent="Path2D3/PathFollow2D" instance=ExtResource( 11 )]
-position = Vector2( -1, 0.0014534 )
-rotation = 1.56934
-WALK_SPEED = 200
-RIGHT_BOUND = 1600
-IS_IDLE = true
-CAN_SHOOT = false
-CONTROLLER = NodePath("../../../ControllerEntrance/PathFollow2D/BossController")
+CONTROLLER = NodePath("../ControllerEntrance/PathFollow2D/BossController")
