@@ -33,12 +33,15 @@ func shoot_laser() -> void:
 		#animations.play("Shoot_Laser")
 		#yield(animations,"animation_finished")
 	var laser = LASER_SCENE.instance()
-	add_child(laser)
-	laser.position = $Body/Head.offset + Vector2(-200,-100)
-	laser.shoot((player.global_position - global_position - laser.position).normalized())
+	get_parent().add_child(laser)
+	laser.position = global_position + $Body/Head.offset + Vector2(-200,-100)
+	laser.shoot((player.global_position - laser.position).normalized())
 		#can_shoot = false
 		#LASER_DETECTION.disabled = true
 	#laser_timer.start(LASER_RECHARGE_TIME)
+
+func _physics_process(delta):
+	states.physics_process(delta)
 
 func _on_laser_timer_timeout():
 	if can_shoot:
@@ -73,4 +76,7 @@ func walk_left_and_sit() -> void:
 	animations.play("Paw_attack")
 	yield(animations,"animation_finished")
 	emit_signal("sat_down")
+
+func start_walking() -> void:
+	states.start_walking()
 

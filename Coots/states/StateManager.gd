@@ -33,3 +33,6 @@ func physics_process(delta: float) -> void:
 	var new_state = current_state.physics_process(delta)
 	if new_state != CootsState.State.Null:
 		change_state(new_state)
+
+func start_walking() -> void:
+	change_state(CootsState.State.WalkLeft)

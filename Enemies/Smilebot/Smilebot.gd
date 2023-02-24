@@ -75,6 +75,9 @@ func right_punch(player) -> void:
 	if CAN_PUNCH:
 		states.right_punch()
 
+func start_walking() -> void:
+	states.walk_right()
+
 func shoot_laser(player) -> void:
 	if CAN_SHOOT:
 		animations.play("Shoot_Laser")
@@ -106,7 +109,6 @@ func start_shake() -> void:
 	shake_timer.start(HALF_TIME_DOWN)
 
 func start_up() -> void:
-	print("hello")
 	up_timer.start(HALF_TIME_DOWN)
 
 func shake() -> void:
@@ -114,7 +116,6 @@ func shake() -> void:
 	
 func reanimate() -> void:
 	var animation = "Reanimate_forward" if $Sprite.flip_h else "Reanimate_backwards"
-	print(animation)
 	animations.play(animation)
 
 func destruct() -> void:

@@ -12,7 +12,7 @@ onready var camera = get_parent()
 #duration: the total time of the shake
 #frequency: the number of times the screen will shake
 #amplitude: strenght of the shake in pixels
-func start(duration = 0.2, frequency = 15, amplitude = 16, prority = 0):
+func start(duration : float = 0.2, frequency : int = 15, amplitude : int = 16, prority : int = 0):
 	if priority >= self.priority:
 		self.amplitude = amplitude
 		self.priority = priority

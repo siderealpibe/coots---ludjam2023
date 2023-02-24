@@ -34,6 +34,7 @@ animation_name = "Idle_forward"
 
 [node name="smile_idle_left" type="Node" parent="."]
 script = ExtResource( 5 )
+animation_name = "Idle_backwards"
 
 [node name="smile_knocked_down_right" type="Node" parent="."]
 script = ExtResource( 7 )

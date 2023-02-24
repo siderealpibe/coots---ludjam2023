@@ -12,7 +12,6 @@ func _ready():
 	controller.connect("update_stage", self, "_update_stage")
 
 func _start_cutscene(hitbox):
-	print("hello")
 	if fight_started:
 		return
 	$PlayerDetectionBox/CollisionShape2D.disabled = true
@@ -33,7 +32,24 @@ func _start_cutscene(hitbox):
 	coots._on_paw_timer_timeout()
 	yield($Player, "progress")
 	player.states.idle_right()
+	controller.fight_stage = 1
+	_update_stage(1)
 
 func _update_stage(stage: int) -> void:
 	match stage:
-		1: coots.can_paw = false
+		1: 
+			coots.can_paw = false
+			coots.can_shoot = true
+			$Cutscenes.play("stage2")
+			yield($Cutscenes, "animation_finished")
+			$Cutscenes.play("ControllerFloat2")
+			$Cutscenes.play("smilebot_entry")
+			yield($Cutscenes, "animation_finished")
+			coots.animations.play_backwards("Sitting_down")
+			yield(coots.animations, "animation_finished")
+			coots.start_walking()
+			coots._on_laser_timer_timeout()
+		2:
+			return 
+			
+		
