@@ -165,7 +165,6 @@ PLAYER_PATH = NodePath("../Player")
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( -4406, 1495 )
 WALK_SPEED = 600
-SPAWN = Vector2( 500, 500 )
 UI_PATH = NodePath("../UI")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]

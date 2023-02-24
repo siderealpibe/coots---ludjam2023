@@ -22,6 +22,7 @@ onready var animations = $AnimationPlayer
 onready var velocity : Vector2 = Vector2.ZERO
 onready var shake_timer : Timer = $shake_timer
 onready var up_timer : Timer = $up_timer
+onready var is_down : bool = false
 
 var ORIGIN_X : int
 var laser_detection : PlayerDetectionBox
@@ -52,7 +53,7 @@ func _physics_process(delta: float) -> void:
 	states.physics_process(delta)
 
 func take_damage(hitbox) -> void:
-	print("hello")
+	is_down = true
 	var direction = global_position.x - hitbox.global_position.x
 	if direction > 0:
 		states.knock_down_left()
@@ -84,6 +85,9 @@ func shoot_laser(player) -> void:
 	if CAN_SHOOT:
 		animations.play("Shoot_Laser")
 		yield(animations,"animation_finished")
+		if is_down:
+			$EyeLaser.set_deferred("visible", false)
+			return
 		var laser = LASER_SCENE.instance()
 		add_child(laser)
 		laser.position = Vector2(0,-175)
@@ -103,10 +107,10 @@ func recharge() -> void:
 		enable_laser()
 
 func enable_laser() -> void:
-	laser_detection.get_node("CollisionShape2D").disabled = false
+	laser_detection.get_node("CollisionShape2D").set_deferred("disabled",false) 
 
 func disable_laser() -> void:
-	laser_detection.get_node("CollisionShape2D").disabled = true
+	laser_detection.get_node("CollisionShape2D").set_deferred("disabled",true) 
 
 func start_shake() -> void:
 	shake_timer.start(HALF_TIME_DOWN)
@@ -120,6 +124,7 @@ func shake() -> void:
 func reanimate() -> void:
 	var animation = "Reanimate_forward" if $Sprite.flip_h else "Reanimate_backwards"
 	animations.play(animation)
+	is_down = false
 
 func destruct() -> void:
 	states.shutdown()

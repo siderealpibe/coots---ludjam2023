@@ -17,7 +17,7 @@ export var SLAP_MOVEMENT : int = 700
 export var SLAP_FRICTION : int = 50
 export var KNOCK_FORCE_Y : int = 700
 export var KNOCK_FORCE_X : int = 500
-export(Vector2) var SPAWN
+#export(Vector2) var SPAWN
 export(NodePath) var UI_PATH
 var velocity : Vector2 = Vector2.ZERO
 
@@ -37,6 +37,8 @@ func _ready() -> void:
 	emit_signal("life_changed", MAX_HEALTH)
 
 func _unhandled_input(event: InputEvent) -> void:
+	if Input.is_action_just_pressed("restart"):
+		get_tree().reload_current_scene()
 	states.input(event)
 
 func _physics_process(delta: float) -> void:
@@ -46,10 +48,11 @@ func take_damage(hitbox) -> void:
 	current_health -= 1
 	emit_signal("life_changed", current_health)
 	if current_health <= 0:
-		global_position = SPAWN
-		current_health = MAX_HEALTH
-		emit_signal("life_changed", current_health)
-		emit_signal("death")
+		#global_position = SPAWN
+		#current_health = MAX_HEALTH
+		#emit_signal("life_changed", current_health)
+		#emit_signal("death")
+		get_tree().reload_current_scene()
 		return
 	var direction = global_position.x - hitbox.global_position.x
 	if direction > 0:
@@ -59,6 +62,16 @@ func take_damage(hitbox) -> void:
 	damage_animation.play("Hurt")
 	yield(damage_animation, "animation_finished")
 	emit_signal("hit")
+
+func reset_hitboxes() -> void:
+	$SlapLeftHitBox/CollisionShape2D.set_deferred("disabled",true) 
+	$SlapRightHitBox/CollisionShape2D.set_deferred("disabled",true) 
+	$DeflectLeftBox/CollisionShape2D.set_deferred("disabled",true) 
+	$DeflectRightBox/CollisionShape2D.set_deferred("disabled",true) 
+
+func end_stage() -> void:
+	states.force_idle()
+	$HurtBox/HurtCapsule.set_deferred("disabled",true) 
 
 func progress() -> void:
 	emit_signal("progress")

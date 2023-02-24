@@ -15,7 +15,7 @@
 
 [sub_resource type="CapsuleShape2D" id=17]
 radius = 84.0
-height = 154.0
+height = 128.0
 
 [sub_resource type="Animation" id=22]
 resource_name = "Deflect_backwards"
@@ -1335,7 +1335,7 @@ height = 300.0
 
 [sub_resource type="CapsuleShape2D" id=21]
 radius = 84.0
-height = 150.0
+height = 128.0
 
 [sub_resource type="CapsuleShape2D" id=23]
 radius = 95.0
@@ -1393,7 +1393,7 @@ texture = ExtResource( 12 )
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 150, -160 )
 current = true
-zoom = Vector2( 2, 2 )
+zoom = Vector2( 3, 3 )
 drag_margin_h_enabled = true
 drag_margin_v_enabled = true
 smoothing_enabled = true

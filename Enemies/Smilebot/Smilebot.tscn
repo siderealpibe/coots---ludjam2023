@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=2]
+[gd_scene load_steps=40 format=2]
 
 [ext_resource path="res://Assets/Enemies/Smilebot/smilebot.png" type="Texture" id=1]
 [ext_resource path="res://EnemyHurtBox.gd" type="Script" id=2]
@@ -34,7 +34,7 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.6, 0.8 ),
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.6, 0.8, 1 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
 "update": 1,
 "values": [ 8, 9, 10, 11, 12, 13, 14 ]
@@ -46,7 +46,7 @@ tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0, 0.4, 0.6 ),
+"times": PoolRealArray( 0, 0.6, 0.8 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 1,
 "values": [ Vector2( 0, 0 ), Vector2( -80, 0 ), Vector2( 0, 0 ) ]
@@ -82,7 +82,7 @@ tracks/5/loop_wrap = true
 tracks/5/imported = false
 tracks/5/enabled = true
 tracks/5/keys = {
-"times": PoolRealArray( 0.3 ),
+"times": PoolRealArray( 0.5 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ true ]
@@ -106,7 +106,7 @@ tracks/7/loop_wrap = true
 tracks/7/imported = false
 tracks/7/enabled = true
 tracks/7/keys = {
-"times": PoolRealArray( 0, 0.4, 0.8 ),
+"times": PoolRealArray( 0, 0.6, 1 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 1,
 "values": [ true, false, true ]
@@ -132,7 +132,7 @@ tracks/9/loop_wrap = true
 tracks/9/imported = false
 tracks/9/enabled = true
 tracks/9/keys = {
-"times": PoolRealArray( 0.4, 0.8 ),
+"times": PoolRealArray( 0.6, 1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
 "values": [ true, false ]
@@ -177,7 +177,7 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.6, 0.8 ),
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.6, 0.8, 1 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
 "update": 1,
 "values": [ 8, 9, 10, 11, 12, 13, 14 ]
@@ -189,7 +189,7 @@ tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0, 0.4, 0.6 ),
+"times": PoolRealArray( 0, 0.6, 0.8 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 1,
 "values": [ Vector2( 0, 0 ), Vector2( 80, 0 ), Vector2( 0, 0 ) ]
@@ -225,7 +225,7 @@ tracks/5/loop_wrap = true
 tracks/5/imported = false
 tracks/5/enabled = true
 tracks/5/keys = {
-"times": PoolRealArray( 0.3 ),
+"times": PoolRealArray( 0.5 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ true ]
@@ -249,7 +249,7 @@ tracks/7/loop_wrap = true
 tracks/7/imported = false
 tracks/7/enabled = true
 tracks/7/keys = {
-"times": PoolRealArray( 0, 0.4, 0.8 ),
+"times": PoolRealArray( 0, 0.6, 1 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 1,
 "values": [ true, false, true ]
@@ -275,7 +275,7 @@ tracks/9/loop_wrap = true
 tracks/9/imported = false
 tracks/9/enabled = true
 tracks/9/keys = {
-"times": PoolRealArray( 0.4, 0.8 ),
+"times": PoolRealArray( 0.6, 1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
 "values": [ true, false ]
@@ -1231,6 +1231,18 @@ tracks/20/keys = {
 "update": 1,
 "values": [ true ]
 }
+tracks/21/type = "value"
+tracks/21/path = NodePath("EnemyHurtBox/CollisionShape2D4:disabled")
+tracks/21/interp = 1
+tracks/21/loop_wrap = true
+tracks/21/imported = false
+tracks/21/enabled = true
+tracks/21/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
 
 [sub_resource type="Animation" id=28]
 resource_name = "Reanimate_backwards"
@@ -1832,6 +1844,18 @@ tracks/11/keys = {
 "update": 1,
 "values": [ true, false ]
 }
+tracks/12/type = "value"
+tracks/12/path = NodePath("EyeLaser:visible")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/keys = {
+"times": PoolRealArray( 0, 1.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
 
 [sub_resource type="Animation" id=12]
 resource_name = "Shut_Down"
@@ -2217,13 +2241,17 @@ tracks/2/keys = {
 } ]
 }
 
-[sub_resource type="CapsuleShape2D" id=19]
-radius = 194.0
-height = 192.0
+[sub_resource type="RectangleShape2D" id=29]
+extents = Vector2( 184.5, 237.5 )
 
-[sub_resource type="CapsuleShape2D" id=20]
-radius = 124.0
-height = 364.0
+[sub_resource type="RectangleShape2D" id=30]
+extents = Vector2( 129, 200 )
+
+[sub_resource type="RectangleShape2D" id=31]
+extents = Vector2( 184.5, 237.5 )
+
+[sub_resource type="RectangleShape2D" id=32]
+extents = Vector2( 129, 200 )
 
 [sub_resource type="CapsuleShape2D" id=4]
 radius = 349.0
@@ -2236,6 +2264,10 @@ height = 458.0
 [sub_resource type="CapsuleShape2D" id=18]
 radius = 248.0
 height = 398.0
+
+[sub_resource type="CapsuleShape2D" id=33]
+radius = 187.0
+height = 512.0
 
 [sub_resource type="CapsuleShape2D" id=27]
 radius = 459.0
@@ -2280,27 +2312,29 @@ anims/Walk_forward = SubResource( 14 )
 anims/shake = SubResource( 24 )
 
 [node name="KnockedDownForwardBox1" type="CollisionShape2D" parent="."]
-position = Vector2( -192, 171 )
+visible = false
+position = Vector2( -208.5, 199.5 )
 rotation = 1.5708
-shape = SubResource( 19 )
+shape = SubResource( 29 )
 disabled = true
 
 [node name="KnockedDownForwardBox2" type="CollisionShape2D" parent="."]
-position = Vector2( 158, 242 )
+visible = false
+position = Vector2( 228, 255 )
 rotation = 1.5708
-shape = SubResource( 20 )
+shape = SubResource( 30 )
 disabled = true
 
 [node name="KnockedDownBackwardsBox1" type="CollisionShape2D" parent="."]
-position = Vector2( 266, 181 )
+position = Vector2( 286, 198 )
 rotation = 1.5708
-shape = SubResource( 19 )
+shape = SubResource( 31 )
 disabled = true
 
 [node name="KnockedDownBackwardsBox2" type="CollisionShape2D" parent="."]
-position = Vector2( -67, 251 )
+position = Vector2( -152, 252 )
 rotation = 1.5708
-shape = SubResource( 20 )
+shape = SubResource( 32 )
 disabled = true
 
 [node name="EnemyHurtBox" type="Area2D" parent="."]
@@ -2310,7 +2344,6 @@ script = ExtResource( 2 )
 position = Vector2( -10, 31 )
 rotation = 1.5708
 shape = SubResource( 4 )
-disabled = true
 
 [node name="EnemyHitBox" type="Area2D" parent="."]
 script = ExtResource( 9 )
@@ -2356,8 +2389,8 @@ shape = SubResource( 18 )
 script = ExtResource( 10 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RightDetection"]
-position = Vector2( 392, -39 )
-shape = SubResource( 18 )
+position = Vector2( 385, -40 )
+shape = SubResource( 33 )
 
 [node name="LaserDetection" type="Area2D" parent="."]
 script = ExtResource( 10 )

@@ -12,9 +12,12 @@ func _init() -> void:
 
 func _ready() -> void:
 	connect("area_entered", self, "_on_area_entered")
+	animations.play("Idle")
 
 func _on_area_entered(hitbox) -> void:
 	if hitbox == null:
 		return
+	animations.play("Falling")
+	yield(animations, "animation_finished")
 	emit_signal("destroyed")
 	queue_free()

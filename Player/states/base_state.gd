@@ -29,6 +29,7 @@ export (String) var animation_name
 var player: Player
 
 func enter() -> void:
+	player.reset_hitboxes()
 	player.animations.play(animation_name)
 
 func exit() -> void:
