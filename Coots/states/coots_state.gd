@@ -1,35 +1,24 @@
 
-class_name BaseState
+class_name CootsState
 extends Node
 
 # Don't get confused, this is not the same as on the switch example
 # This enum is used so that each child state can reference each other for its return value
 enum State {
 	Null,
-	IdleRight,
-	IdleLeft,
 	WalkRight,
 	WalkLeft,
-	SlapLeft,
-	SlapRight,
-	JumpRight,
-	JumpLeft,
-	FallRight,
-	FallLeft,
-	KnockRight,
-	KnockLeft,
-	DeflectRight,
-	DeflectLeft,
-	ForcedIdle
+	IdleLeft
 }
 
 export (String) var animation_name
 
 # Pass in a reference to the player's kinematic body so that it can be used by the state
-var player: Player
+var coots: Coots
 
 func enter() -> void:
-	player.animations.play(animation_name)
+	coots.animations.play(animation_name)
+	pass
 
 func exit() -> void:
 	pass

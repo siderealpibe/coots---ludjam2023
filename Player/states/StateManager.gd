@@ -15,6 +15,7 @@ onready var states = {
 	BaseState.State.KnockLeft: $knock_left,
 	BaseState.State.DeflectRight: $deflect_right,
 	BaseState.State.DeflectLeft: $deflect_left,
+	BaseState.State.ForcedIdle: $forced_idle,
 	#BaseState.State.Fall: $fall,
 	#BaseState.State.Jump: $jump,
 }
@@ -61,4 +62,7 @@ func knock_right() -> void:
 	
 func knock_left() -> void:
 	change_state(BaseState.State.KnockLeft)
+	
+func force_idle() -> void:
+	change_state(BaseState.State.ForcedIdle)
 
