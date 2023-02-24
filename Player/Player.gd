@@ -9,7 +9,7 @@ signal death
 export var GRAVITY : int = 40
 export var JUMP_GRAVITY : int = 40
 export var SLAP_GRAVITY : int = 10
-export var JUMP_FORCE : int= 1500
+export var JUMP_FORCE : int= 2000
 export var MIN_JUMP : int = 500
 export var WALK_SPEED : int = 100
 export var MAX_HEALTH : int = 5
