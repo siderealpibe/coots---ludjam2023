@@ -181,6 +181,11 @@ mouse_right={
  ]
 }
 
+[layer_names]
+
+2d_render/layer_1="dontmask"
+2d_render/layer_2="mask"
+
 [physics]
 
 common/enable_pause_aware_picking=true

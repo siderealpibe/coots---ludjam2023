@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Assets/Music/Coots Boss Battle.wav" type="AudioStream" id=1]
 [ext_resource path="res://Stages/tileset_fallthrough.tres" type="TileSet" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://Assets/background3.png" type="Texture" id=8]
 [ext_resource path="res://Assets/background1.png" type="Texture" id=9]
 [ext_resource path="res://Assets/background2.png" type="Texture" id=10]
+[ext_resource path="res://Stages/Door.tscn" type="PackedScene" id=11]
 
 [node name="Node" type="Node"]
 
@@ -68,3 +69,6 @@ position = Vector2( 1315, 676 )
 stream = ExtResource( 1 )
 
 [node name="UI" parent="." instance=ExtResource( 6 )]
+
+[node name="Door" parent="." instance=ExtResource( 11 )]
+position = Vector2( 4586, 1208 )
