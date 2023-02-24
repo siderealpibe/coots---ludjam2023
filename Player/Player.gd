@@ -43,6 +43,7 @@ func _unhandled_input(event: InputEvent) -> void:
 
 func _physics_process(delta: float) -> void:
 	states.physics_process(delta)
+	deflect_indicator()
 	
 func take_damage(hitbox) -> void:
 	current_health -= 1
@@ -78,3 +79,7 @@ func progress() -> void:
 
 func get_camera() -> Node:
 	return $Camera2D
+
+func deflect_indicator():
+	$Body/DeflectIndicator.look_at(get_global_mouse_position())
+	$Body/DeflectIndicator.rotation_degrees += 127

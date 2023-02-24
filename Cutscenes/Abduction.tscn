@@ -586,6 +586,18 @@ tracks/23/keys = {
 "update": 0,
 "values": [ Vector2( 503, 264 ) ]
 }
+tracks/24/type = "value"
+tracks/24/path = NodePath("AudioStreamPlayer:volume_db")
+tracks/24/interp = 1
+tracks/24/loop_wrap = true
+tracks/24/imported = false
+tracks/24/enabled = true
+tracks/24/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
 
 [node name="Abduction" instance=ExtResource( 5 )]
 exit_scene_path = "res://Stages/Start.tscn"
@@ -595,7 +607,7 @@ anims/Animation = SubResource( 1 )
 anims/RESET = SubResource( 2 )
 
 [node name="TextureRect" parent="." index="1"]
-texture = ExtResource( 19 )
+texture = ExtResource( 18 )
 
 [node name="Earth Invasion" type="Node2D" parent="." index="2"]
 position = Vector2( -401, -232 )

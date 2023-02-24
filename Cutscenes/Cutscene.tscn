@@ -20,5 +20,18 @@ expand = true
 one_shot = true
 autostart = true
 
+[node name="LabelDisplay" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+autostart = true
+
+[node name="SkipMessage" type="Label" parent="."]
+margin_left = 785.0
+margin_top = 542.0
+margin_right = 1002.0
+margin_bottom = 578.0
+text = "Press Space to Skip"
+
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
 [connection signal="timeout" from="StartDelay" to="." method="_on_StartDelay_timeout"]
+[connection signal="timeout" from="LabelDisplay" to="." method="_on_LabelDisplay_timeout"]
