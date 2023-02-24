@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=30 format=2]
 
 [ext_resource path="res://Assets/Cutscenes/abduction_cutscene/invasion_earth/space.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Cutscenes/abduction_cutscene/invasion_earth/ship.png" type="Texture" id=2]
@@ -21,6 +21,12 @@
 [ext_resource path="res://Assets/Cutscenes/abduction_cutscene/final_suit_up/background.png" type="Texture" id=19]
 [ext_resource path="res://Assets/Cutscenes/abduction_cutscene/flying_to_ship/background.png" type="Texture" id=20]
 [ext_resource path="res://Assets/Cutscenes/abduction_cutscene/crashing_into_ship/background.png" type="Texture" id=21]
+[ext_resource path="res://Assets/Cutscenes/abduction_cutscene/lud_opens_wardrobe/lud.png" type="Texture" id=22]
+[ext_resource path="res://Assets/Cutscenes/abduction_cutscene/lud_opens_wardrobe/leftDoor.png" type="Texture" id=23]
+[ext_resource path="res://Assets/Cutscenes/abduction_cutscene/lud_opens_wardrobe/clothes.png" type="Texture" id=24]
+[ext_resource path="res://Assets/Cutscenes/abduction_cutscene/lud_opens_wardrobe/rightDoor.png" type="Texture" id=25]
+[ext_resource path="res://Assets/Cutscenes/abduction_cutscene/car_starting/car.png" type="Texture" id=26]
+[ext_resource path="res://Assets/Cutscenes/abduction_cutscene/about_to_crash_into_ship/background.png" type="Texture" id=27]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Animation"
@@ -32,10 +38,10 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 4, 6, 10, 11.9, 14, 18, 20.1, 23.1, 26.1, 30.1, 33.4 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 4, 6, 10, 11.9, 14, 18, 20.1, 23.1, 26.1, 30.1, 33.4, 35.2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ ExtResource( 1 ), ExtResource( 6 ), ExtResource( 9 ), ExtResource( 13 ), ExtResource( 15 ), ExtResource( 14 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 19 ), ExtResource( 18 ), ExtResource( 20 ), ExtResource( 21 ) ]
+"values": [ ExtResource( 1 ), ExtResource( 6 ), ExtResource( 9 ), null, ExtResource( 15 ), ExtResource( 14 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 19 ), ExtResource( 18 ), ExtResource( 20 ), ExtResource( 27 ), ExtResource( 21 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("Earth Invasion:position")
@@ -168,6 +174,126 @@ tracks/11/keys = {
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Vector2( 240, 246 ), Vector2( 225, 238 ) ]
+}
+tracks/12/type = "value"
+tracks/12/path = NodePath("Lud At Windows:visible")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/keys = {
+"times": PoolRealArray( 0, 10, 11.9 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false ]
+}
+tracks/13/type = "value"
+tracks/13/path = NodePath("Lud At Windows/Sprite:scale")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/keys = {
+"times": PoolRealArray( 10, 11.9 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0.8, 0.8 ), Vector2( 0.5, 0.5 ) ]
+}
+tracks/14/type = "value"
+tracks/14/path = NodePath("Lud At Windows/Sprite:position")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/keys = {
+"times": PoolRealArray( 10, 11.9 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 434, 182 ), Vector2( 520, 296 ) ]
+}
+tracks/15/type = "value"
+tracks/15/path = NodePath("Lud Opens Wardrobe:visible")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/keys = {
+"times": PoolRealArray( 0, 11.9, 14 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false ]
+}
+tracks/16/type = "value"
+tracks/16/path = NodePath("Lud Opens Wardrobe:position")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/keys = {
+"times": PoolRealArray( 11.9, 14 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 572, 303 ), Vector2( 514, 290 ) ]
+}
+tracks/17/type = "value"
+tracks/17/path = NodePath("Lud Opens Wardrobe:scale")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/keys = {
+"times": PoolRealArray( 11.9, 14 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0.732056, 0.732056 ), Vector2( 0.517517, 0.517517 ) ]
+}
+tracks/18/type = "value"
+tracks/18/path = NodePath("Lud Opens Wardrobe/Door left:position")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/keys = {
+"times": PoolRealArray( 11.9, 14 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -79.2289, 0 ), Vector2( 0, 0 ) ]
+}
+tracks/19/type = "value"
+tracks/19/path = NodePath("Lud Opens Wardrobe/Door right:position")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/keys = {
+"times": PoolRealArray( 11.9, 14 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 31.4183, 0 ), Vector2( 0, 0 ) ]
+}
+tracks/20/type = "value"
+tracks/20/path = NodePath("Car starting:visible")
+tracks/20/interp = 1
+tracks/20/loop_wrap = true
+tracks/20/imported = false
+tracks/20/enabled = true
+tracks/20/keys = {
+"times": PoolRealArray( 0, 26.1, 30.1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false ]
+}
+tracks/21/type = "value"
+tracks/21/path = NodePath("Car starting/Sprite:position")
+tracks/21/interp = 1
+tracks/21/loop_wrap = true
+tracks/21/imported = false
+tracks/21/enabled = true
+tracks/21/keys = {
+"times": PoolRealArray( 26.1, 30.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 503, 325 ), Vector2( 503, 264 ) ]
 }
 
 [sub_resource type="Animation" id=2]
@@ -340,6 +466,126 @@ tracks/13/keys = {
 "update": 0,
 "values": [ Vector2( 240, 246 ) ]
 }
+tracks/14/type = "value"
+tracks/14/path = NodePath("Lud At Windows:visible")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
+tracks/15/type = "value"
+tracks/15/path = NodePath("Lud At Windows/Sprite:scale")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0.5, 0.5 ) ]
+}
+tracks/16/type = "value"
+tracks/16/path = NodePath("Lud At Windows/Sprite:position")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 520, 296 ) ]
+}
+tracks/17/type = "value"
+tracks/17/path = NodePath("Lud Opens Wardrobe:visible")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
+tracks/18/type = "value"
+tracks/18/path = NodePath("Lud Opens Wardrobe:position")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 514, 290 ) ]
+}
+tracks/19/type = "value"
+tracks/19/path = NodePath("Lud Opens Wardrobe:scale")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0.517517, 0.517517 ) ]
+}
+tracks/20/type = "value"
+tracks/20/path = NodePath("Lud Opens Wardrobe/Door left:position")
+tracks/20/interp = 1
+tracks/20/loop_wrap = true
+tracks/20/imported = false
+tracks/20/enabled = true
+tracks/20/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+tracks/21/type = "value"
+tracks/21/path = NodePath("Lud Opens Wardrobe/Door right:position")
+tracks/21/interp = 1
+tracks/21/loop_wrap = true
+tracks/21/imported = false
+tracks/21/enabled = true
+tracks/21/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+tracks/22/type = "value"
+tracks/22/path = NodePath("Car starting:visible")
+tracks/22/interp = 1
+tracks/22/loop_wrap = true
+tracks/22/imported = false
+tracks/22/enabled = true
+tracks/22/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/23/type = "value"
+tracks/23/path = NodePath("Car starting/Sprite:position")
+tracks/23/interp = 1
+tracks/23/loop_wrap = true
+tracks/23/imported = false
+tracks/23/enabled = true
+tracks/23/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 503, 264 ) ]
+}
 
 [node name="Abduction" instance=ExtResource( 5 )]
 exit_scene_path = "res://Stages/Start.tscn"
@@ -349,7 +595,7 @@ anims/Animation = SubResource( 1 )
 anims/RESET = SubResource( 2 )
 
 [node name="TextureRect" parent="." index="1"]
-texture = ExtResource( 1 )
+texture = ExtResource( 19 )
 
 [node name="Earth Invasion" type="Node2D" parent="." index="2"]
 position = Vector2( -401, -232 )
@@ -393,11 +639,42 @@ position = Vector2( 832, 626 )
 scale = Vector2( 0.442882, 0.442882 )
 texture = ExtResource( 12 )
 
-[node name="BlackScreen" type="ColorRect" parent="." index="5"]
+[node name="Lud At Windows" type="Node2D" parent="." index="5"]
+
+[node name="Sprite" type="Sprite" parent="Lud At Windows" index="0"]
+position = Vector2( 520, 296 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 13 )
+
+[node name="Lud Opens Wardrobe" type="Node2D" parent="." index="6"]
+position = Vector2( 514, 290 )
+scale = Vector2( 0.517517, 0.517517 )
+
+[node name="lud" type="Sprite" parent="Lud Opens Wardrobe" index="0"]
+texture = ExtResource( 22 )
+
+[node name="Door left" type="Sprite" parent="Lud Opens Wardrobe" index="1"]
+texture = ExtResource( 23 )
+
+[node name="Door right" type="Sprite" parent="Lud Opens Wardrobe" index="2"]
+texture = ExtResource( 25 )
+
+[node name="Clothes" type="Sprite" parent="Lud Opens Wardrobe" index="3"]
+texture = ExtResource( 24 )
+
+[node name="Car starting" type="Node2D" parent="." index="7"]
+visible = false
+
+[node name="Sprite" type="Sprite" parent="Car starting" index="0"]
+position = Vector2( 503, 264 )
+scale = Vector2( 0.528556, 0.528556 )
+texture = ExtResource( 26 )
+
+[node name="BlackScreen" type="ColorRect" parent="." index="8"]
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 color = Color( 0, 0, 0, 1 )
 
-[node name="AudioStreamPlayer" parent="." index="6"]
+[node name="AudioStreamPlayer" parent="." index="9"]
 stream = ExtResource( 3 )
