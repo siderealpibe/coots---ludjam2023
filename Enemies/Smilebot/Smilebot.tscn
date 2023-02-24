@@ -2269,9 +2269,9 @@ height = 398.0
 radius = 187.0
 height = 512.0
 
-[sub_resource type="CapsuleShape2D" id=27]
-radius = 459.0
-height = 1736.0
+[sub_resource type="CapsuleShape2D" id=34]
+radius = 320.0
+height = 306.0
 
 [node name="Smilebot" type="KinematicBody2D"]
 script = ExtResource( 3 )
@@ -2395,13 +2395,18 @@ shape = SubResource( 33 )
 [node name="LaserDetection" type="Area2D" parent="."]
 script = ExtResource( 10 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="LaserDetection"]
-position = Vector2( -3, -25 )
-rotation = 1.5708
-shape = SubResource( 27 )
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="LaserDetection"]
+position = Vector2( -979, -25 )
+shape = SubResource( 34 )
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="LaserDetection"]
+position = Vector2( 899, -42 )
+shape = SubResource( 34 )
 
 [node name="shake_timer" type="Timer" parent="."]
 
 [node name="up_timer" type="Timer" parent="."]
 
 [node name="laser_timer" type="Timer" parent="."]
+
+[node name="pause_timer" type="Timer" parent="."]

@@ -22,6 +22,9 @@ onready var animations = $AnimationPlayer
 onready var velocity : Vector2 = Vector2.ZERO
 onready var shake_timer : Timer = $shake_timer
 onready var up_timer : Timer = $up_timer
+onready var pause_timer : Timer = $pause_timer
+onready var pause_action : bool = false
+onready var pause_time : int = 1
 onready var is_down : bool = false
 
 var ORIGIN_X : int
@@ -45,6 +48,8 @@ func _ready() -> void:
 	up_timer.connect("timeout", self, "reanimate")
 	laser_timer.one_shot = true
 	laser_timer.connect("timeout", self, "recharge")
+	pause_timer.one_shot = true
+	pause_timer.connect("timeout", self, "unpause")
 
 #func _unhandled_input(event: InputEvent) -> void:
 #	states.input(event)
@@ -69,23 +74,33 @@ func walk_backwards() -> void:
 	#velocity = move_and_slide_with_snap(velocity, 10*Vector2.DOWN, Vector2.UP)
 	
 func left_punch(player) -> void:
-	if CAN_PUNCH:
+	if CAN_PUNCH and not pause_action:
 		states.left_punch()
+		pause_action = true
+		yield(animations,"animation_finished")
+		pause_timer.start(pause_time)
 
 func right_punch(player) -> void:
-	if CAN_PUNCH:
+	if CAN_PUNCH and not pause_action:
 		states.right_punch()
+		pause_action = true
+		yield(animations,"animation_finished")
+		pause_timer.start(pause_time)
 
 func start_walking() -> void:
 	IS_IDLE = false
 	states.is_idle = false
 	states.walk_right()
 
+func unpause() -> void:
+	pause_action = false
+
 func shoot_laser(player) -> void:
-	if CAN_SHOOT and not is_down:
+	if CAN_SHOOT and not is_down and not pause_action:
 		animations.play("Shoot_Laser")
 		yield(animations,"animation_finished")
-		if is_down:
+		print("hello")
+		if is_down or pause_action:
 			$EyeLaser.set_deferred("visible", false)
 			return
 		var laser = LASER_SCENE.instance()
@@ -93,6 +108,8 @@ func shoot_laser(player) -> void:
 		laser.position = Vector2(0,-175)
 		laser.shoot((player.global_position - global_position - Vector2(0,-175)).normalized())
 		CAN_SHOOT = false
+		pause_action = true
+		pause_timer.start(pause_time)
 		#LASER_DETECTION.disabled = true
 		laser_timer.start(LASER_RECHARGE_TIME)
 		if $Sprite.flip_h:
@@ -102,15 +119,17 @@ func shoot_laser(player) -> void:
 			
 func recharge() -> void:
 	CAN_SHOOT = true
-	if not laser_detection.get_node("CollisionShape2D").disabled:
+	if not laser_detection.get_node("CollisionShape2D2").disabled:
 		disable_laser()
 		enable_laser()
 
 func enable_laser() -> void:
-	laser_detection.get_node("CollisionShape2D").set_deferred("disabled",false) 
+	laser_detection.get_node("CollisionShape2D2").set_deferred("disabled",false)
+	laser_detection.get_node("CollisionShape2D3").set_deferred("disabled",false) 
 
 func disable_laser() -> void:
-	laser_detection.get_node("CollisionShape2D").set_deferred("disabled",true) 
+	laser_detection.get_node("CollisionShape2D2").set_deferred("disabled",true) 
+	laser_detection.get_node("CollisionShape2D3").set_deferred("disabled",true) 
 
 func start_shake() -> void:
 	shake_timer.start(HALF_TIME_DOWN)
