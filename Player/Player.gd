@@ -2,6 +2,9 @@ class_name Player
 extends KinematicBody2D
 
 signal life_changed(health)
+signal progress
+signal hit
+signal death
 
 export var GRAVITY : int = 40
 export var JUMP_GRAVITY : int = 40
@@ -46,6 +49,7 @@ func take_damage(hitbox) -> void:
 		global_position = SPAWN
 		current_health = MAX_HEALTH
 		emit_signal("life_changed", current_health)
+		emit_signal("death")
 		return
 	var direction = global_position.x - hitbox.global_position.x
 	if direction > 0:
@@ -53,3 +57,11 @@ func take_damage(hitbox) -> void:
 	else:
 		states.knock_left()
 	damage_animation.play("Hurt")
+	yield(damage_animation, "animation_finished")
+	emit_signal("hit")
+
+func progress() -> void:
+	emit_signal("progress")
+
+func get_camera() -> Node:
+	return $Camera2D

@@ -14,10 +14,25 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Player/states/base_state.gd"
 }, {
+"base": "ControllerHitBox",
+"class": "ControllerBoss",
+"language": "GDScript",
+"path": "res://Enemies/Controller/BossController.gd"
+}, {
 "base": "Area2D",
 "class": "ControllerHitBox",
 "language": "GDScript",
 "path": "res://ControllerHitBox.gd"
+}, {
+"base": "Node2D",
+"class": "Coots",
+"language": "GDScript",
+"path": "res://Coots/Coots.gd"
+}, {
+"base": "Node",
+"class": "CootsState",
+"language": "GDScript",
+"path": "res://Coots/states/coots_state.gd"
 }, {
 "base": "Area2D",
 "class": "DeflectBox",
@@ -86,7 +101,10 @@ _global_script_classes=[ {
 } ]
 _global_script_class_icons={
 "BaseState": "",
+"ControllerBoss": "",
 "ControllerHitBox": "",
+"Coots": "",
+"CootsState": "",
 "DeflectBox": "",
 "Enemy": "",
 "EnemyBox": "",

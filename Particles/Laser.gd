@@ -21,14 +21,17 @@ func _on_area_entered(hitbox) -> void:
 		yield(animations,"animation_finished")
 		queue_free()
 	else:
+		var old_angle = direction.angle()
 		direction = (get_global_mouse_position() - global_position).normalized()
 		collision_layer = 2
 		$Sprite.rotation = direction.angle()
+		$CollisionShape2D.rotate(direction.angle()-old_angle)
 	
 func shoot(direction_vector: Vector2) -> void:
 	direction = direction_vector
 	travelling = true
 	$Sprite.rotation = direction.angle()
+	$CollisionShape2D.rotate(direction.angle())
 	animations.play("Traveling")
 	
 func _process(delta) -> void:
