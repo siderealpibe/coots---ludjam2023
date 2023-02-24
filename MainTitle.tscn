@@ -1,0 +1,66 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://Assets/Music/Waiting.wav" type="AudioStream" id=1]
+[ext_resource path="res://MainTitle.gd" type="Script" id=2]
+[ext_resource path="res://Assets/MainTitle/background.png" type="Texture" id=3]
+[ext_resource path="res://Assets/MainTitle/beam.png" type="Texture" id=4]
+[ext_resource path="res://Assets/MainTitle/coots.png" type="Texture" id=5]
+[ext_resource path="res://Assets/MainTitle/hand.png" type="Texture" id=6]
+[ext_resource path="res://Assets/MainTitle/particles_front.png" type="Texture" id=7]
+[ext_resource path="res://Assets/MainTitle/particles_back.png" type="Texture" id=8]
+[ext_resource path="res://Assets/SpaceGrotesk.ttf" type="DynamicFontData" id=9]
+
+[sub_resource type="DynamicFont" id=3]
+size = 32
+font_data = ExtResource( 9 )
+
+[sub_resource type="Theme" id=2]
+default_font = SubResource( 3 )
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 1 )
+autoplay = true
+
+[node name="Background" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 3 )
+expand = true
+
+[node name="AlienBeam" type="Sprite" parent="."]
+position = Vector2( 539, 292 )
+scale = Vector2( 0.537808, 0.537809 )
+texture = ExtResource( 4 )
+
+[node name="ParticlesBack" type="Sprite" parent="."]
+position = Vector2( 559, 320 )
+scale = Vector2( 0.546296, 0.546296 )
+texture = ExtResource( 8 )
+
+[node name="Coots" type="Sprite" parent="."]
+position = Vector2( 559, 320 )
+scale = Vector2( 0.546296, 0.546296 )
+texture = ExtResource( 5 )
+
+[node name="ParticlesFront" type="Sprite" parent="."]
+position = Vector2( 559, 320 )
+scale = Vector2( 0.546296, 0.546296 )
+texture = ExtResource( 7 )
+
+[node name="Hand" type="Sprite" parent="."]
+position = Vector2( 559, 320 )
+scale = Vector2( 0.546296, 0.546296 )
+texture = ExtResource( 6 )
+
+[node name="Label" type="Label" parent="."]
+anchor_top = 0.043
+anchor_right = 0.976
+anchor_bottom = 1.0
+theme = SubResource( 2 )
+text = "Click to Start"
+align = 2

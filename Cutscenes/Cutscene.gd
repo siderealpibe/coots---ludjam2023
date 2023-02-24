@@ -5,7 +5,6 @@ export(String) var exit_scene_path
 
 func _ready():
 	get_tree().set_screen_stretch(SceneTree.STRETCH_MODE_2D,  SceneTree.STRETCH_ASPECT_KEEP, Vector2(1024,600),1)
-	OS.set_window_maximized(true)
 	$BlackScreen.show()
 	$SkipMessage.show()
 

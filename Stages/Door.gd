@@ -13,4 +13,5 @@ func _exit_cutscene(hitbox):
 	get_parent().add_child_below_node(player,self)
 	$AnimationPlayer.play_backwards("Opening")
 	yield($AnimationPlayer, "animation_finished")
+	$AudioStreamPlayer.play()
 	get_tree().change_scene_to(NEXT_SCENE)

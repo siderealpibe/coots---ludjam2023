@@ -123,7 +123,7 @@ _global_script_class_icons={
 [application]
 
 config/name="coots - ludjam2023"
-run/main_scene="res://Stages/Start.tscn"
+run/main_scene="res://MainTitle.tscn"
 config/icon="res://icon.png"
 
 [display]
