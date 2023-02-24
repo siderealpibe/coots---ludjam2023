@@ -26,6 +26,13 @@ func _on_area_entered(hitbox) -> void:
 		collision_layer = 2
 		$Sprite.rotation = direction.angle()
 		$CollisionShape2D.rotate(direction.angle()-old_angle)
+		match randi()%3:
+			0:
+				$DeflectSound1.play()
+			1:
+				$DeflectSound2.play()
+			2:
+				$DeflectSound3.play()
 	
 func shoot(direction_vector: Vector2) -> void:
 	direction = direction_vector

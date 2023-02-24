@@ -99,7 +99,6 @@ func shoot_laser(player) -> void:
 	if CAN_SHOOT and not is_down and not pause_action:
 		animations.play("Shoot_Laser")
 		yield(animations,"animation_finished")
-		print("hello")
 		if is_down or pause_action:
 			$EyeLaser.set_deferred("visible", false)
 			return
