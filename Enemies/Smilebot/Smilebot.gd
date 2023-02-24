@@ -82,7 +82,7 @@ func start_walking() -> void:
 	states.walk_right()
 
 func shoot_laser(player) -> void:
-	if CAN_SHOOT:
+	if CAN_SHOOT and not is_down:
 		animations.play("Shoot_Laser")
 		yield(animations,"animation_finished")
 		if is_down:

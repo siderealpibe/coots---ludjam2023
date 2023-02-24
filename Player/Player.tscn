@@ -1343,10 +1343,10 @@ height = 210.0
 
 [node name="Player" type="KinematicBody2D"]
 script = ExtResource( 1 )
-GRAVITY = 60
-JUMP_GRAVITY = 60
-JUMP_FORCE = 2100
-WALK_SPEED = 750
+GRAVITY = 80
+JUMP_GRAVITY = 70
+JUMP_FORCE = 2300
+WALK_SPEED = 800
 SLAP_FRICTION = 20
 
 [node name="Collision" type="CollisionShape2D" parent="."]

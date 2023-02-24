@@ -32,8 +32,8 @@ func _start_cutscene(hitbox):
 	coots._on_paw_timer_timeout()
 	yield($Player, "progress")
 	player.states.idle_right()
-	controller.fight_stage = 1
-	_update_stage(1)
+	#controller.fight_stage = 1
+	#_update_stage(1)
 
 func _update_stage(stage: int) -> void:
 	match stage:
