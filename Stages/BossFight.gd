@@ -1,6 +1,7 @@
 extends Node
 
 export(PackedScene) var dialogBoxScene : PackedScene
+export(PackedScene) var startingScene : PackedScene
 
 onready var controller = $ControllerEntrance/PathFollow2D/Path2D/PathFollow2D/BossController
 onready var player = $Player
@@ -31,6 +32,10 @@ func _start_cutscene(hitbox):
 	yield($camera_transition, "finished_transition")
 	yield(play_dialog("res://UI/Dialog/bossFight1.json"), "dialog_finished")
 	
+	var start = startingScene.instance()
+	$UI.add_child(start)
+	yield(start,"scene_over")
+	
 	#Coots Shoots Ludwig
 	coots.turn_and_shoot()
 	yield(player,"hit")
@@ -45,10 +50,11 @@ func _start_cutscene(hitbox):
 	yield(coots, "sat_down")
 	coots.can_paw = true
 	coots._on_paw_timer_timeout()
-	
-	#TESTING CODE
 	yield($Player, "progress")
 	player.states.idle_right()
+	
+	#TESTING CODE
+	"""
 	controller.fight_stage = 1
 	_update_stage(1)
 	player.states.force_idle()
@@ -58,7 +64,7 @@ func _start_cutscene(hitbox):
 	_update_stage(2)
 	yield(get_tree().create_timer(1),"timeout")
 	controller.emit_signal("destroyed")
-	player.states.idle_right()
+	player.states.idle_right()"""
 
 func _update_stage(stage: int) -> void:
 	match stage:
@@ -69,6 +75,7 @@ func _update_stage(stage: int) -> void:
 			yield($Cutscenes, "animation_finished")
 			$ControllerFloat.play("ControllerFloat")
 			$Cutscenes.play("smilebot_entry")
+			$AudioStreamPlayer.play()
 			yield($Cutscenes, "animation_finished")
 			$Platform1/LULW.CAN_SHOOT = true 
 			$Platform2/LULW.CAN_SHOOT = true

@@ -1,10 +1,12 @@
 extends Control
 
+signal scene_over
+
 onready var animation_plaer = $AnimationPlayer
 export(String) var exit_scene_path
 
 func _ready():
-	get_tree().set_screen_stretch(SceneTree.STRETCH_MODE_2D,  SceneTree.STRETCH_ASPECT_KEEP, Vector2(1024,600),1)
+	#get_tree().set_screen_stretch(SceneTree.STRETCH_MODE_2D,  SceneTree.STRETCH_ASPECT_KEEP, Vector2(1024,600),1)
 	$BlackScreen.show()
 	$SkipMessage.show()
 
@@ -22,8 +24,9 @@ func _on_StartDelay_timeout():
 
 func _exit():
 	$BlackScreen.show()
-	get_tree().set_screen_stretch(SceneTree.STRETCH_MODE_2D,  SceneTree.STRETCH_ASPECT_IGNORE, Vector2(1024,600),1)
-	get_tree().change_scene(exit_scene_path)
+	#get_tree().set_screen_stretch(SceneTree.STRETCH_MODE_2D,  SceneTree.STRETCH_ASPECT_IGNORE, Vector2(1024,600),1)
+	emit_signal("scene_over")
+	queue_free()
 
 
 func _on_LabelDisplay_timeout():

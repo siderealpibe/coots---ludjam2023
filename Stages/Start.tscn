@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Assets/Music/Exploration.wav" type="AudioStream" id=1]
 [ext_resource path="res://Stages/tileset_fallthrough.tres" type="TileSet" id=2]
@@ -8,8 +8,9 @@
 [ext_resource path="res://UI/UI.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Enemies/Smilebot/Smilebot.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Environment/Background.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Enemies/LULW/LULW.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Stages/Level2.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Stages/Door.tscn" type="PackedScene" id=11]
-[ext_resource path="res://Stages/BossFight.tscn" type="PackedScene" id=12]
 
 [node name="Node" type="Node"]
 
@@ -31,8 +32,8 @@ format = 1
 tile_data = PoolIntArray( -1703893, 0, 196608, -1507293, 0, 196609, -1507292, 0, 196611, -1310693, 0, 196609, -1310692, 0, 196611, -655301, 0, 196609, -655300, 0, 196610, -655299, 0, 196610, -655298, 0, 196610, -655297, 0, 196611, -524220, 0, 196608, -393141, 0, 196608, -130989, 0, 196608, 262154, 0, 196608, 262217, 0, 8, 262218, 0, 6, 262219, 0, 196610, 262220, 0, 196610, 262221, 0, 196610, 262222, 0, 196610, 262223, 0, 196611, 327752, 0, 196609, 327753, 0, 196613, 327754, 0, 196619, 524353, 0, 196609, 524354, 0, 196610, 524355, 0, 196611, 720958, 0, 196608 )
 
 [node name="Door" parent="." instance=ExtResource( 11 )]
-position = Vector2( 4570, 1226 )
-NEXT_SCENE = ExtResource( 12 )
+position = Vector2( 9694, 309 )
+NEXT_SCENE = ExtResource( 10 )
 PLAYER_PATH = NodePath("../Player")
 
 [node name="Player" parent="." instance=ExtResource( 4 )]
@@ -41,7 +42,7 @@ WALK_SPEED = 600
 UI_PATH = NodePath("../UI")
 
 [node name="Smilebot" parent="." instance=ExtResource( 7 )]
-position = Vector2( 6140, 1201 )
+position = Vector2( 2712, 656 )
 CONTROLLER = NodePath("../Controller")
 
 [node name="Smilebot2" parent="." instance=ExtResource( 7 )]
@@ -56,3 +57,6 @@ stream = ExtResource( 1 )
 volume_db = -5.0
 
 [node name="UI" parent="." instance=ExtResource( 6 )]
+
+[node name="LULW" parent="." instance=ExtResource( 9 )]
+position = Vector2( 7689, 1378 )
