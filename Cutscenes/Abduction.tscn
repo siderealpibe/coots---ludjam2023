@@ -233,7 +233,7 @@ tracks/16/keys = {
 "times": PoolRealArray( 11.9, 14 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 0.732056, 0.732056 ), Vector2( 0.517517, 0.517517 ) ]
+"values": [ Vector2( 0.732056, 0.732056 ), Vector2( 0.58, 0.58 ) ]
 }
 tracks/17/type = "value"
 tracks/17/path = NodePath("Lud Opens Wardrobe/Door left:position")
