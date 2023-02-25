@@ -318,12 +318,6 @@ position = Vector2( -4000, 0 )
 position = Vector2( -2621, 600 )
 scale = Vector2( 3, 1 )
 
-[node name="LULW" parent="Platform1" instance=ExtResource( 12 )]
-position = Vector2( -3152, 311 )
-FACING_RIGHT = true
-CONTROLLER = NodePath("../../ControllerEntrance/PathFollow2D/Path2D/PathFollow2D/BossController")
-CAN_SHOOT = false
-
 [node name="Platform2" type="Node2D" parent="."]
 position = Vector2( 3500, 600 )
 scale = Vector2( 3, 1 )
@@ -361,12 +355,6 @@ position = Vector2( 3884, -310 )
 scale = Vector2( 3, 1 )
 
 [node name="Platform" parent="Platform5" instance=ExtResource( 13 )]
-
-[node name="LULW" parent="Platform5" instance=ExtResource( 12 )]
-position = Vector2( 145.333, -296 )
-scale = Vector2( 0.333333, 1 )
-CONTROLLER = NodePath("../../ControllerEntrance/PathFollow2D/Path2D/PathFollow2D/BossController")
-CAN_SHOOT = false
 
 [node name="ControllerEntrance" type="Path2D" parent="."]
 position = Vector2( 886, -173 )

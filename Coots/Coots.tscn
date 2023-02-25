@@ -9,7 +9,7 @@
 [ext_resource path="res://Coots/Coots.gd" type="Script" id=7]
 [ext_resource path="res://EnemyHitBox.gd" type="Script" id=8]
 [ext_resource path="res://Coots/states/StateManager.tscn" type="PackedScene" id=9]
-[ext_resource path="res://Particles/Laser.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Particles/SuperLaser.tscn" type="PackedScene" id=10]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Idle"

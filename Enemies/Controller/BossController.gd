@@ -14,7 +14,7 @@ func _init() -> void:
 	#connect("area_entered", self, "_on_area_entered")
 
 func _on_area_entered(hitbox) -> void:
-	if hitbox == null or (fight_stage == 2 and hitbox is Laser):
+	if hitbox == null or (hitbox is Laser and not hitbox is SuperLaser):
 		return
 	$Damage.play("damage")
 	hits += 1

@@ -40,6 +40,8 @@ func _start_cutscene(hitbox):
 	#Coots Shoots Ludwig
 	coots.turn_and_shoot()
 	yield(player,"hit")
+	player.current_health += 1
+	player.emit_signal("life_changed", player.current_health)
 	player.states.force_idle()
 	
 	#Controller Enters
@@ -84,10 +86,10 @@ func _update_stage(stage: int) -> void:
 			player.states.idle_right()
 			$AudioStreamPlayer.play()
 			yield($Cutscenes, "animation_finished")
-			$Platform1/LULW.CAN_SHOOT = true 
+			#$Platform1/LULW.CAN_SHOOT = true 
 			$Platform2/LULW.CAN_SHOOT = true
 			$Platform4/LULW.CAN_SHOOT = true
-			$Platform5/LULW.CAN_SHOOT = true
+			#$Platform5/LULW.CAN_SHOOT = true
 			coots.animations.play_backwards("Sitting_down")
 			yield(coots.animations, "animation_finished")
 			coots.start_walking_turned()
