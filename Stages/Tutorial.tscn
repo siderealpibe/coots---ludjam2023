@@ -74,7 +74,16 @@ margin_top = -669.0
 margin_right = 9820.0
 margin_bottom = -655.0
 rect_scale = Vector2( 5, 5 )
-text = "Destroy the webcams to destroy the Smiler Bots"
+text = "Destroy the webcams to destroy the Bots
+          (Not all bots will be destroyed)"
 
 [node name="Controller" parent="." instance=ExtResource( 5 )]
 position = Vector2( 10763, -363 )
+
+[node name="Label3" type="Label" parent="."]
+margin_left = 12485.0
+margin_top = -643.0
+margin_right = 12796.0
+margin_bottom = -629.0
+rect_scale = Vector2( 5, 5 )
+text = "Press K to restart a stage"

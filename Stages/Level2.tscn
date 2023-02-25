@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Stages/tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://Stages/tileset_fallthrough.tres" type="TileSet" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://Background.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Stages/Door.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Stages/Level3.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Assets/Music/Exploration.wav" type="AudioStream" id=11]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 705, 299 )
@@ -103,3 +104,7 @@ LEFT_BOUND = 500
 position = Vector2( 19139, 162 )
 RIGHT_BOUND = 500
 LEFT_BOUND = 500
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 11 )
+autoplay = true
