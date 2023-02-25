@@ -160,7 +160,6 @@ tracks/6/keys = {
 
 [node name="MidSceneCutscene" instance=ExtResource( 1 )]
 script = ExtResource( 6 )
-exit_scene_path = null
 
 [node name="AnimationPlayer" parent="." index="0"]
 anims/Animation = SubResource( 1 )
