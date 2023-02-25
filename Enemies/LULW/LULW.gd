@@ -5,7 +5,7 @@ export var LASER_COOLDOWN : float = 3
 export(PackedScene) var LASER_SCENE
 export(NodePath) var CONTROLLER
 
-onready var  can_shoot : bool = true
+export var  CAN_SHOOT : bool = true
 onready var laser_timer : Timer = $LaserTimer
 onready var controller : ControllerHitBox = get_node(CONTROLLER) if CONTROLLER != "" else null
 
@@ -17,24 +17,24 @@ func _ready():
 		controller.connect("destroyed", self, "destruct")
 
 func _process(delta):
-	if can_shoot:
+	if CAN_SHOOT:
 		$AnimationPlayer.play("Shoot")
-		can_shoot = false
+		CAN_SHOOT = false
 	
 func _on_laser_timer_timeout():
-	can_shoot = true
+	CAN_SHOOT = true
 	
 func shoot():
 	var laser = LASER_SCENE.instance()
 	add_child(laser)
-	laser.position = Vector2(-250,0)
+	laser.position = Vector2(-250,75)
 	var direction : Vector2 = Vector2.RIGHT if FACING_RIGHT else Vector2.LEFT
 	laser.shoot(direction)
 	laser_timer.start(LASER_COOLDOWN)
 	
 func destruct() -> void:
 	laser_timer.disconnect("timeout",self,"_on_laser_timer_timeout")
-	can_shoot = false
+	CAN_SHOOT = false
 	$AnimationPlayer.play("Falling")
 	yield($AnimationPlayer, "animation_finished")
 	queue_free()

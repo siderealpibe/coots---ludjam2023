@@ -80,3 +80,5 @@ func walk_left_and_sit() -> void:
 func start_walking() -> void:
 	states.start_walking()
 
+func start_walking_turned() -> void:
+	states.start_walking_turned()

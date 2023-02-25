@@ -19,9 +19,14 @@ func _on_area_entered(hitbox) -> void:
 	$Damage.play("damage")
 	hits += 1
 	if hits >= 3:
+		if fight_stage == 1:
+			emit_signal("destroyed")
 		fight_stage += 1
 		emit_signal("update_stage", fight_stage)
 		hits = 0
+
+func falling():
+	$Propulsion.set_deferred("visible", false)
 
 func idle():
 	animations.play("Idle")

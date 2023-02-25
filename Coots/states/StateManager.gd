@@ -5,7 +5,9 @@ onready var states = {
 	#BaseState.State.IdleLeft: $idle_left,
 	CootsState.State.WalkRight: $walk_right,
 	CootsState.State.WalkLeft: $walk_left,
-	CootsState.State.IdleLeft: $idle_left
+	CootsState.State.IdleLeft: $idle_left,
+	CootsState.State.WalkTurnedRight: $walk_turned_right,
+	CootsState.State.WalkTurnedLeft: $walk_turned_left
 }
 
 var current_state: CootsState
@@ -36,3 +38,6 @@ func physics_process(delta: float) -> void:
 
 func start_walking() -> void:
 	change_state(CootsState.State.WalkLeft)
+	
+func start_walking_turned() -> void:
+	change_state(CootsState.State.WalkTurnedLeft)

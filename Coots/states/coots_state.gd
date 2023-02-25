@@ -8,7 +8,9 @@ enum State {
 	Null,
 	WalkRight,
 	WalkLeft,
-	IdleLeft
+	IdleLeft,
+	WalkTurnedRight,
+	WalkTurnedLeft,
 }
 
 export (String) var animation_name

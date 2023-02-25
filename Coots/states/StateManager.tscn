@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Coots/states/StateManager.gd" type="Script" id=1]
 [ext_resource path="res://Coots/states/walk_right.gd" type="Script" id=2]
 [ext_resource path="res://Coots/states/walk_left.gd" type="Script" id=3]
 [ext_resource path="res://Coots/states/idle_left.gd" type="Script" id=4]
+[ext_resource path="res://Coots/states/walk_turned_right.gd" type="Script" id=5]
 
 [node name="StateManager" type="Node"]
 script = ExtResource( 1 )
@@ -16,5 +17,13 @@ animation_name = "Walk_right"
 script = ExtResource( 3 )
 animation_name = "Walk_left"
 
+[node name="walk_turned_left" type="Node" parent="."]
+script = ExtResource( 3 )
+animation_name = "Walk_turned_left"
+
 [node name="idle_left" type="Node" parent="."]
 script = ExtResource( 4 )
+
+[node name="walk_turned_right" type="Node" parent="."]
+script = ExtResource( 5 )
+animation_name = "Walk_turned_right"

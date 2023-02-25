@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://PlayerDetectionBox.gd" type="Script" id=2]
@@ -11,9 +11,9 @@
 [ext_resource path="res://UI/UI.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Enemies/Controller/BossController.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Enemies/Smilebot/Smilebot.tscn" type="PackedScene" id=11]
-[ext_resource path="res://Coots/ScreenShake.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Enemies/LULW/LULW.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Stages/Platform.tscn" type="PackedScene" id=13]
-[ext_resource path="res://Environment/Background.tscn" type="PackedScene" id=14]
+[ext_resource path="res://UI/DialogBox.tscn" type="PackedScene" id=15]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 190, 694.5 )
@@ -51,17 +51,19 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id=6]
 resource_name = "ControllerFloat2"
-length = 1.2
+length = 16.0
 loop = true
-tracks/0/type = "bezier"
+tracks/0/type = "value"
 tracks/0/path = NodePath("ControllerEntrance/PathFollow2D:offset")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"points": PoolRealArray( 5130, -0.1, 10.6887, 0.1, -10.6887, 5110, -0.1, 1.48193, 0.1, -1.48193, 5130, -0.1, -12.3462, 0.1, 12.3462, 5150, -0.1, 1.86694, 0.1, -1.86694, 5130, -0.0999999, 9.72412, 0.0999999, -9.72412 ),
-"times": PoolRealArray( 0.1, 0.3, 0.6, 0.9, 1.2 )
+"times": PoolRealArray( 0, 8, 16 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ 6042.83, 9863.62, 6042.83 ]
 }
 
 [sub_resource type="Animation" id=7]
@@ -119,6 +121,66 @@ tracks/3/keys = {
 "update": 0,
 "values": [ Vector2( -3500, 2700 ), Vector2( -3500, 1330 ) ]
 }
+tracks/4/type = "value"
+tracks/4/path = NodePath("Platform3:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -1569, 2200 ), Vector2( -1569, 120 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Platform1:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -4000, 0 ), Vector2( 0, 0 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Platform2:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 3500, 600 ), Vector2( -500, 600 ) ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("Platform4:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -5569, 120 ), Vector2( -1569, 120 ) ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("Platform5:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 3884, -310 ), Vector2( -116, -310 ) ]
+}
 
 [sub_resource type="Animation" id=5]
 resource_name = "stage2"
@@ -133,16 +195,54 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 2 ),
 "transitions": PoolRealArray( 1, 0.258816 ),
 "update": 0,
-"values": [ 3340.0, 5120.0 ]
+"values": [ 3340.0, 6042.83 ]
+}
+
+[sub_resource type="Animation" id=9]
+resource_name = "ControllerFall"
+tracks/0/type = "value"
+tracks/0/path = NodePath("ControllerEntrance/PathFollow2D/Path2D/PathFollow2D:offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 2629.79 ]
+}
+
+[sub_resource type="Animation" id=8]
+resource_name = "ControllerFloat"
+length = 16.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("ControllerEntrance/PathFollow2D:offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 8, 16 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ 6042.83, 9863.62, 6042.83 ]
 }
 
 [sub_resource type="Curve2D" id=3]
 _data = {
-"points": PoolVector2Array( -55.5589, -271.903, 55.5589, 271.903, 1056.79, -546.556, 250.788, -81.745, -250.788, 81.745, -282.215, 307.769, 126.773, -14.3076, -126.773, 14.3076, -1718.88, 641.186, 0, 0, 0, 0, -1879.19, 625.267, 0, 0, 0, 0, -1879.19, 569.55, 25.7616, 176.605, -25.7616, -176.605, -2265.8, -55.7168, -20.8953, 29.963, 20.8953, -29.963, -2192.39, -888.816, 0, 0, 0, 0, -2072.5, -1040.93, 0, 0, 0, 0, -2072.5, -1006.44 )
+"points": PoolVector2Array( -55.5589, -271.903, 55.5589, 271.903, 1056.79, -546.556, 250.788, -81.745, -250.788, 81.745, -282.215, 307.769, 126.773, -14.3076, -126.773, 14.3076, -1718.88, 641.186, 0, 0, 0, 0, -1879.19, 625.267, 0, 0, 0, 0, -1879.19, 569.55, 213.151, 187.976, -213.151, -187.976, -3167.69, 72.5202, -1.84455, 95.0004, 1.84455, -95.0004, -3609.53, -923.306, 0, 0, 0, 0, -3478.86, -1072.77, 0, 0, 0, 0, 296.36, -1078.07 )
+}
+
+[sub_resource type="Curve2D" id=10]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, -0.898682, 2.41394, 0, 0, 0, 0, 2579.99, 451.402 )
 }
 
 [node name="BossFight" type="Node"]
 script = ExtResource( 3 )
+dialogBoxScene = ExtResource( 15 )
 
 [node name="Ground" type="TileMap" parent="."]
 tile_set = ExtResource( 6 )
@@ -165,8 +265,6 @@ UI_PATH = NodePath("../UI")
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 5 )
 
-[node name="UI" parent="." instance=ExtResource( 9 )]
-
 [node name="PlayerDetectionBox" type="Area2D" parent="."]
 script = ExtResource( 2 )
 
@@ -176,10 +274,7 @@ shape = SubResource( 1 )
 
 [node name="BossFightCamera" type="Camera2D" parent="."]
 offset = Vector2( -1475, 0 )
-current = true
 zoom = Vector2( 5.8, 5.8 )
-
-[node name="ScreenShake" parent="BossFightCamera" instance=ExtResource( 12 )]
 
 [node name="camera_transition" parent="." instance=ExtResource( 8 )]
 
@@ -190,21 +285,9 @@ anims/ControllerFloat2 = SubResource( 6 )
 anims/smilebot_entry = SubResource( 7 )
 anims/stage2 = SubResource( 5 )
 
-[node name="ControllerEntrance" type="Path2D" parent="."]
-position = Vector2( 886, -173 )
-scale = Vector2( 1.48468, 1.13072 )
-curve = SubResource( 3 )
-
-[node name="PathFollow2D" type="PathFollow2D" parent="ControllerEntrance"]
-position = Vector2( 1056.79, -546.556 )
-rotation = 1.39084
-rotate = false
-loop = false
-
-[node name="BossController" parent="ControllerEntrance/PathFollow2D" instance=ExtResource( 10 )]
-position = Vector2( -18.6114, -9.5177 )
-rotation = -1.39084
-scale = Vector2( 0.673544, 0.884395 )
+[node name="ControllerFloat" type="AnimationPlayer" parent="."]
+anims/ControllerFall = SubResource( 9 )
+anims/ControllerFloat = SubResource( 8 )
 
 [node name="Smilebot2" parent="." instance=ExtResource( 11 )]
 position = Vector2( 0, 2700 )
@@ -213,7 +296,7 @@ RIGHT_BOUND = 800
 LEFT_BOUND = 1500
 IS_IDLE = true
 CAN_SHOOT = false
-CONTROLLER = NodePath("../ControllerEntrance/PathFollow2D/BossController")
+CONTROLLER = NodePath("../ControllerEntrance/PathFollow2D/Path2D/PathFollow2D/BossController")
 
 [node name="Smilebot" parent="." instance=ExtResource( 11 )]
 position = Vector2( -3500, 2700 )
@@ -222,31 +305,90 @@ RIGHT_BOUND = 1800
 LEFT_BOUND = 500
 IS_IDLE = true
 CAN_SHOOT = false
-CONTROLLER = NodePath("../ControllerEntrance/PathFollow2D/BossController")
+CONTROLLER = NodePath("../ControllerEntrance/PathFollow2D/Path2D/PathFollow2D/BossController")
 
-[node name="Platform" parent="." instance=ExtResource( 13 )]
+[node name="Platform1" type="Node2D" parent="."]
+position = Vector2( -4000, 0 )
+
+[node name="Platform" parent="Platform1" instance=ExtResource( 13 )]
 position = Vector2( -2621, 600 )
 scale = Vector2( 3, 1 )
 
-[node name="Platform2" parent="." instance=ExtResource( 13 )]
-position = Vector2( -500, 600 )
+[node name="LULW" parent="Platform1" instance=ExtResource( 12 )]
+position = Vector2( -3152, 311 )
+FACING_RIGHT = true
+CONTROLLER = NodePath("../../ControllerEntrance/PathFollow2D/Path2D/PathFollow2D/BossController")
+CAN_SHOOT = false
+
+[node name="Platform2" type="Node2D" parent="."]
+position = Vector2( 3500, 600 )
 scale = Vector2( 3, 1 )
 
-[node name="Platform3" parent="." instance=ExtResource( 13 )]
-position = Vector2( -1569, 120 )
+[node name="Platform" parent="Platform2" instance=ExtResource( 13 )]
+
+[node name="LULW" parent="Platform2" instance=ExtResource( 12 )]
+position = Vector2( 151.667, -296 )
+scale = Vector2( 0.333333, 1 )
+CONTROLLER = NodePath("../../ControllerEntrance/PathFollow2D/Path2D/PathFollow2D/BossController")
+CAN_SHOOT = false
+
+[node name="Platform3" type="Node2D" parent="."]
+position = Vector2( -1569, 2200 )
 scale = Vector2( 3, 1 )
 
-[node name="Platform4" parent="." instance=ExtResource( 13 )]
-position = Vector2( -2881, -310 )
+[node name="Platform" parent="Platform3" instance=ExtResource( 13 )]
+
+[node name="Platform4" type="Node2D" parent="."]
+position = Vector2( -5569, 120 )
 scale = Vector2( 3, 1 )
 
-[node name="Platform5" parent="." instance=ExtResource( 13 )]
-position = Vector2( -116, -310 )
+[node name="Platform" parent="Platform4" instance=ExtResource( 13 )]
+position = Vector2( -437.333, -430 )
+
+[node name="LULW" parent="Platform4" instance=ExtResource( 12 )]
+position = Vector2( -610.667, -740 )
+scale = Vector2( 0.333333, 1 )
+FACING_RIGHT = true
+CONTROLLER = NodePath("../../ControllerEntrance/PathFollow2D/Path2D/PathFollow2D/BossController")
+CAN_SHOOT = false
+
+[node name="Platform5" type="Node2D" parent="."]
+position = Vector2( 3884, -310 )
 scale = Vector2( 3, 1 )
 
-[node name="Platform6" parent="." instance=ExtResource( 13 )]
-position = Vector2( -365, -626 )
-scale = Vector2( 3, 1 )
+[node name="Platform" parent="Platform5" instance=ExtResource( 13 )]
+
+[node name="LULW" parent="Platform5" instance=ExtResource( 12 )]
+position = Vector2( 145.333, -296 )
+scale = Vector2( 0.333333, 1 )
+CONTROLLER = NodePath("../../ControllerEntrance/PathFollow2D/Path2D/PathFollow2D/BossController")
+CAN_SHOOT = false
+
+[node name="ControllerEntrance" type="Path2D" parent="."]
+position = Vector2( 886, -173 )
+scale = Vector2( 1.48468, 1.13072 )
+curve = SubResource( 3 )
+
+[node name="PathFollow2D" type="PathFollow2D" parent="ControllerEntrance"]
+position = Vector2( -2006.3, -1074.84 )
+rotation = 1.39084
+offset = 7523.39
+rotate = false
+loop = false
+
+[node name="Path2D" type="Path2D" parent="ControllerEntrance/PathFollow2D"]
+curve = SubResource( 10 )
+
+[node name="PathFollow2D" type="PathFollow2D" parent="ControllerEntrance/PathFollow2D/Path2D"]
+position = Vector2( -0.898682, 2.41394 )
+rotation = 0.172243
+rotate = false
+loop = false
+
+[node name="BossController" parent="ControllerEntrance/PathFollow2D/Path2D/PathFollow2D" instance=ExtResource( 10 )]
+position = Vector2( -19.4957, -8.71924 )
+rotation = -1.56308
+scale = Vector2( 0.673544, 0.884395 )
 
 [node name="Coots" parent="." instance=ExtResource( 7 )]
 position = Vector2( 640, 947 )
@@ -254,4 +396,4 @@ LEFT_BOUND = -3500
 RIGHT_BOUND = 600
 PLAYER_PATH = NodePath("../Player")
 
-[node name="Background" parent="." instance=ExtResource( 14 )]
+[node name="UI" parent="." instance=ExtResource( 9 )]
