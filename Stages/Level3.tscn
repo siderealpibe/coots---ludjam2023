@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Stages/tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://Enemies/LULW/LULW.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Stages/Door.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Assets/Music/Exploration.wav" type="AudioStream" id=11]
+[ext_resource path="res://Stages/Level4.tscn" type="PackedScene" id=12]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 1057, 289.5 )
@@ -46,6 +47,7 @@ IS_FLIPPED = true
 
 [node name="Door" parent="." instance=ExtResource( 10 )]
 position = Vector2( 10047, 1036 )
+NEXT_SCENE = ExtResource( 12 )
 PLAYER_PATH = NodePath("../Player")
 
 [node name="Player" parent="." instance=ExtResource( 2 )]

@@ -27,7 +27,7 @@ func _on_laser_timer_timeout():
 func shoot():
 	var laser = LASER_SCENE.instance()
 	add_child(laser)
-	laser.position = Vector2(-250,75)
+	laser.position = Vector2(250,75) if FACING_RIGHT else Vector2(-250,75)
 	var direction : Vector2 = Vector2.RIGHT if FACING_RIGHT else Vector2.LEFT
 	laser.shoot(direction)
 	laser_timer.start(LASER_COOLDOWN)
