@@ -8,7 +8,7 @@ resource_name = "Animation"
 length = 4.0
 
 [node name="Cutscene" instance=ExtResource( 1 )]
-exit_scene_path = "res://Stages/Start.tscn"
+exit_scene_path = "res://MainTitle.tscn"
 
 [node name="AnimationPlayer" parent="." index="0"]
 anims/Animation = SubResource( 1 )

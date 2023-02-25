@@ -5,7 +5,7 @@
 [ext_resource path="res://UI/UI.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Enemies/Smilebot/Smilebot.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Enemies/Controller/Controller.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Stages/Start.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Cutscenes/TutorialCompleted.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Stages/Door.tscn" type="PackedScene" id=7]
 
 [node name="Tutorial" type="Node"]
