@@ -20,7 +20,9 @@ enum State {
 	KnockLeft,
 	DeflectRight,
 	DeflectLeft,
-	ForcedIdle
+	ForcedIdle,
+	KnockedDownRight,
+	KnockedDownLeft,
 }
 
 export (String) var animation_name

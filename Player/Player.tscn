@@ -832,6 +832,18 @@ tracks/5/keys = {
 "update": 1,
 "values": [ false ]
 }
+tracks/6/type = "value"
+tracks/6/path = NodePath("../HurtBox/HurtCapsule:disabled")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
 
 [sub_resource type="Animation" id=28]
 resource_name = "InGround_Forward"
@@ -906,6 +918,18 @@ tracks/5/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ false ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("../HurtBox/HurtCapsule:disabled")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
 }
 
 [sub_resource type="Animation" id=13]
@@ -1649,6 +1673,7 @@ JUMP_GRAVITY = 70
 JUMP_FORCE = 2300
 WALK_SPEED = 800
 SLAP_FRICTION = 20
+KNOCK_FORCE_Y = 1000
 
 [node name="Collision" type="CollisionShape2D" parent="."]
 position = Vector2( 27, 3 )

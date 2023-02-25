@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Player/states/StateManager.gd" type="Script" id=1]
 [ext_resource path="res://Player/states/idle_right.gd" type="Script" id=2]
@@ -16,6 +16,7 @@
 [ext_resource path="res://Player/states/deflect_right.gd" type="Script" id=14]
 [ext_resource path="res://Player/states/deflect_left.gd" type="Script" id=15]
 [ext_resource path="res://Player/states/forced_idle.gd" type="Script" id=16]
+[ext_resource path="res://Player/states/base_state.gd" type="Script" id=17]
 
 [node name="StateManager" type="Node"]
 script = ExtResource( 1 )
@@ -79,3 +80,11 @@ animation_name = "Deflect_forward"
 [node name="forced_idle" type="Node" parent="."]
 script = ExtResource( 16 )
 animation_name = "Idle_forward"
+
+[node name="knocked_down_right" type="Node" parent="."]
+script = ExtResource( 17 )
+animation_name = "InGround_Backwards"
+
+[node name="knocked_down_left" type="Node" parent="."]
+script = ExtResource( 17 )
+animation_name = "InGround_Forward"

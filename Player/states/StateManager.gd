@@ -16,6 +16,8 @@ onready var states = {
 	BaseState.State.DeflectRight: $deflect_right,
 	BaseState.State.DeflectLeft: $deflect_left,
 	BaseState.State.ForcedIdle: $forced_idle,
+	BaseState.State.KnockedDownRight: $knocked_down_right,
+	BaseState.State.KnockedDownLeft: $knocked_down_left
 	#BaseState.State.Fall: $fall,
 	#BaseState.State.Jump: $jump,
 }

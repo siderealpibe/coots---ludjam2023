@@ -38,7 +38,7 @@ func _ready() -> void:
 
 func _unhandled_input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed("restart"):
-		get_tree().reload_current_scene()
+		TransitionScreen.reload_current_scene()
 	states.input(event)
 
 func _physics_process(delta: float) -> void:
@@ -48,13 +48,6 @@ func _physics_process(delta: float) -> void:
 func take_damage(hitbox) -> void:
 	current_health -= 1
 	emit_signal("life_changed", current_health)
-	if current_health <= 0:
-		#global_position = SPAWN
-		#current_health = MAX_HEALTH
-		#emit_signal("life_changed", current_health)
-		#emit_signal("death")
-		get_tree().reload_current_scene()
-		return
 	var direction = global_position.x - hitbox.global_position.x
 	if direction > 0:
 		states.knock_right()
@@ -62,6 +55,8 @@ func take_damage(hitbox) -> void:
 		states.knock_left()
 	damage_animation.play("Hurt")
 	yield(damage_animation, "animation_finished")
+	if current_health <= 0:
+		TransitionScreen.reload_current_scene()
 	emit_signal("hit")
 
 func reset_hitboxes() -> void:
