@@ -14,4 +14,4 @@ func _exit_cutscene(hitbox):
 	$AnimationPlayer.play_backwards("Opening")
 	yield($AnimationPlayer, "animation_finished")
 	$AudioStreamPlayer.play()
-	get_tree().change_scene_to(NEXT_SCENE)
+	TransitionScreen.change_scene_to(NEXT_SCENE)

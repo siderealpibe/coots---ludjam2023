@@ -31,7 +31,10 @@ func init(enemy: Enemy) -> void:
 
 	# Initialize with a default state of idle
 	if enemy.IS_IDLE:
-		change_state(EnemyState.State.SmileIdleRight)
+		if enemy.IS_FLIPPED:
+			change_state(EnemyState.State.SmileIdleRight)
+		else:
+			change_state(EnemyState.State.SmileIdleLeft)
 	else:
 		change_state(EnemyState.State.SmileWalkRight)
 	

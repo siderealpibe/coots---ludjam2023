@@ -7,6 +7,7 @@ export var WALK_SPEED : int = 100
 export var RIGHT_BOUND : int = 200
 export var LEFT_BOUND : int = 200
 export var IS_IDLE : bool = false
+export var IS_FLIPPED : bool = false
 export var CAN_PUNCH : bool = true
 export var CAN_SHOOT : bool = true
 export(float, .9, 5, 0.1) var HALF_TIME_DOWN : float = 3
@@ -16,7 +17,7 @@ export(NodePath) var LASER_DETECTION
 export(PackedScene) var LASER_SCENE
 
 
-onready var controller : ControllerHitBox = get_node(CONTROLLER)
+onready var controller : ControllerHitBox = get_node(CONTROLLER) if CONTROLLER != "" else null
 onready var states = $StateManager
 onready var animations = $AnimationPlayer
 onready var velocity : Vector2 = Vector2.ZERO
@@ -103,9 +104,9 @@ func shoot_laser(player) -> void:
 			$EyeLaser.set_deferred("visible", false)
 			return
 		var laser = LASER_SCENE.instance()
-		add_child(laser)
-		laser.position = Vector2(0,-175)
-		laser.shoot((player.global_position - global_position - Vector2(0,-175)).normalized())
+		get_parent().add_child(laser)
+		laser.position = global_position + Vector2(0,-175)
+		laser.shoot((player.global_position - laser.position).normalized())
 		CAN_SHOOT = false
 		pause_action = true
 		pause_timer.start(pause_time)
@@ -118,17 +119,19 @@ func shoot_laser(player) -> void:
 			
 func recharge() -> void:
 	CAN_SHOOT = true
-	if not laser_detection.get_node("CollisionShape2D2").disabled:
+	if not laser_detection.get_node("CollisionShape2D").disabled:
 		disable_laser()
 		enable_laser()
 
 func enable_laser() -> void:
-	laser_detection.get_node("CollisionShape2D2").set_deferred("disabled",false)
-	laser_detection.get_node("CollisionShape2D3").set_deferred("disabled",false) 
+	laser_detection.get_node("CollisionShape2D").set_deferred("disabled",false)
+	if laser_detection.get_node("CollisionShape2D3") != null:
+		laser_detection.get_node("CollisionShape2D3").set_deferred("disabled",false) 
 
 func disable_laser() -> void:
-	laser_detection.get_node("CollisionShape2D2").set_deferred("disabled",true) 
-	laser_detection.get_node("CollisionShape2D3").set_deferred("disabled",true) 
+	laser_detection.get_node("CollisionShape2D").set_deferred("disabled",true) 
+	if laser_detection.get_node("CollisionShape2D3") != null:
+		laser_detection.get_node("CollisionShape2D3").set_deferred("disabled",true) 
 
 func start_shake() -> void:
 	shake_timer.start(HALF_TIME_DOWN)

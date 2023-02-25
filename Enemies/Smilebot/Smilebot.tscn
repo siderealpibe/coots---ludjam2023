@@ -2254,8 +2254,8 @@ extents = Vector2( 184.5, 237.5 )
 extents = Vector2( 129, 200 )
 
 [sub_resource type="CapsuleShape2D" id=4]
-radius = 349.0
-height = 46.001
+radius = 291.0
+height = 166.0
 
 [sub_resource type="CapsuleShape2D" id=17]
 radius = 215.0
@@ -2341,16 +2341,14 @@ disabled = true
 script = ExtResource( 2 )
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="EnemyHurtBox"]
-position = Vector2( -10, 31 )
-rotation = 1.5708
+position = Vector2( -17, 2 )
 shape = SubResource( 4 )
 
 [node name="EnemyHitBox" type="Area2D" parent="."]
 script = ExtResource( 9 )
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="EnemyHitBox"]
-position = Vector2( -10, 31 )
-rotation = 1.5708
+position = Vector2( -18, -1 )
 shape = SubResource( 4 )
 
 [node name="StateManager" parent="." instance=ExtResource( 4 )]
@@ -2395,7 +2393,7 @@ shape = SubResource( 33 )
 [node name="LaserDetection" type="Area2D" parent="."]
 script = ExtResource( 10 )
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="LaserDetection"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LaserDetection"]
 position = Vector2( -979, -25 )
 shape = SubResource( 34 )
 

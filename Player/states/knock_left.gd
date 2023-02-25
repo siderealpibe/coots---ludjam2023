@@ -15,6 +15,9 @@ func physics_process(delta: float) -> int:
 	player.velocity = player.move_and_slide(player.velocity, Vector2.UP)
 
 	if player.is_on_floor():
-		return State.IdleRight
+		if player.current_health > 0:
+			return State.IdleRight
+		else:
+			return State.KnockedDownLeft
 		
 	return State.Null

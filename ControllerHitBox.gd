@@ -2,6 +2,7 @@ signal destroyed
 
 class_name ControllerHitBox
 extends Area2D
+export var IS_FLIPPED : bool = false
 
 onready var animations : AnimationPlayer = $AnimationPlayer
 
@@ -12,6 +13,7 @@ func _init() -> void:
 
 func _ready() -> void:
 	connect("area_entered", self, "_on_area_entered")
+	$Sprite.flip_h = IS_FLIPPED
 	animations.play("Idle")
 
 func _on_area_entered(hitbox) -> void:
