@@ -93,6 +93,7 @@ func _update_stage(stage: int) -> void:
 			coots.animations.play("Sitting_down")
 		3:
 			controller.animations.play("Falling")
+			$AudioStreamPlayer.stop()
 			yield(controller.animations, "animation_finished")
 			
 			
