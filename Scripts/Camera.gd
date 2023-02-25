@@ -1,5 +1,5 @@
 extends Camera2D
-
+""""
 const LOOK_AHEAD_FACTOR = 0.2
 const SHIFT_TRANS = Tween.TRANS_SINE
 const SHIFT_EASE = Tween.EASE_OUT
@@ -22,8 +22,4 @@ func _check_facing():
 		position.x = target_offset
 		
 		tween.interpolate_property(self,"position:x",position.x,target_offset,SHIFT_DURATION,SHIFT_TRANS,SHIFT_EASE)
-		tween.start()
-
-func _on_GodGamer_gorunded_updated(touching_ground):
-	print("AAA")
-	drag_margin_v_enabled = touching_ground
+		tween.start()"""

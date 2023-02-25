@@ -17,28 +17,33 @@
 [node name="Node" type="Node"]
 
 [node name="Background" type="ParallaxBackground" parent="."]
+scroll_limit_begin = Vector2( 0, -500 )
+scroll_limit_end = Vector2( 0, 400 )
 scroll_ignore_camera_zoom = true
 
 [node name="Layer1" type="ParallaxLayer" parent="Background"]
+motion_scale = Vector2( 0.2, 1 )
 motion_mirroring = Vector2( 1024, 0 )
 
 [node name="Sprite" type="Sprite" parent="Background/Layer1"]
-position = Vector2( 270, 512 )
 texture = ExtResource( 9 )
+centered = false
 
 [node name="Layer2" type="ParallaxLayer" parent="Background"]
+motion_scale = Vector2( 0.3, 1 )
 motion_mirroring = Vector2( 1024, 0 )
 
 [node name="Sprite" type="Sprite" parent="Background/Layer2"]
-position = Vector2( 270, 512 )
 texture = ExtResource( 10 )
+centered = false
 
 [node name="Layer3" type="ParallaxLayer" parent="Background"]
+motion_scale = Vector2( 0.4, 1 )
 motion_mirroring = Vector2( 1024, 0 )
 
 [node name="Sprite" type="Sprite" parent="Background/Layer3"]
-position = Vector2( 270, 512 )
 texture = ExtResource( 8 )
+centered = false
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 566, -313 )
@@ -65,7 +70,7 @@ NEXT_SCENE = ExtResource( 12 )
 PLAYER_PATH = NodePath("../Player")
 
 [node name="Player" parent="." instance=ExtResource( 4 )]
-position = Vector2( 628, 578 )
+position = Vector2( 806, 426 )
 WALK_SPEED = 600
 UI_PATH = NodePath("../UI")
 
