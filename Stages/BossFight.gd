@@ -2,6 +2,7 @@ extends Node
 
 export(PackedScene) var dialogBoxScene : PackedScene
 export(PackedScene) var startingScene : PackedScene
+export(PackedScene) var endingScene : PackedScene
 
 onready var controller = $ControllerEntrance/PathFollow2D/Path2D/PathFollow2D/BossController
 onready var player = $Player
@@ -41,21 +42,25 @@ func _start_cutscene(hitbox):
 	yield(player,"hit")
 	player.states.force_idle()
 	
-	
+	#Controller Enters
 	controller.idle()
 	$Cutscenes.play("ControllerEntry")
 	yield($Cutscenes, "animation_finished")
 	$Cutscenes.play("ControllerFloat")
+	yield(play_dialog("res://UI/Dialog/bossFight2.json"), "dialog_finished")
+	
+	#Coots Paws at controller
 	coots.walk_left_and_sit()
 	yield(coots, "sat_down")
+	yield(play_dialog("res://UI/Dialog/bossFight3.json"), "dialog_finished")
 	coots.can_paw = true
 	coots._on_paw_timer_timeout()
 	yield($Player, "progress")
 	player.states.idle_right()
+
 	
 	#TESTING CODE
-	"""
-	controller.fight_stage = 1
+	"""controller.fight_stage = 1
 	_update_stage(1)
 	player.states.force_idle()
 	yield($Cutscenes,"animation_finished")
@@ -70,6 +75,7 @@ func _update_stage(stage: int) -> void:
 	match stage:
 		1: 
 			coots.can_paw = false
+			yield(play_dialog("res://UI/Dialog/bossFight4.json"), "dialog_finished")
 			coots.can_shoot = true
 			$Cutscenes.play("stage2")
 			yield($Cutscenes, "animation_finished")
@@ -91,10 +97,13 @@ func _update_stage(stage: int) -> void:
 			$ControllerFloat.play("ControllerFall")
 			yield($ControllerFloat,"animation_finished")
 			coots.animations.play("Sitting_down")
+			player.states.force_idle()
+			yield(play_dialog("res://UI/Dialog/bossFight5.json"), "dialog_finished")
+			player.states.idle_right()
 		3:
 			controller.animations.play("Falling")
 			$AudioStreamPlayer.stop()
 			yield(controller.animations, "animation_finished")
-			
+			TransitionScreen.fade_white_to(endingScene)
 			
 		

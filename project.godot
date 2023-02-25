@@ -34,6 +34,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Coots/states/coots_state.gd"
 }, {
+"base": "Control",
+"class": "Cutscene",
+"language": "GDScript",
+"path": "res://Cutscenes/Cutscene.gd"
+}, {
 "base": "Area2D",
 "class": "DeflectBox",
 "language": "GDScript",
@@ -105,6 +110,7 @@ _global_script_class_icons={
 "ControllerHitBox": "",
 "Coots": "",
 "CootsState": "",
+"Cutscene": "",
 "DeflectBox": "",
 "Enemy": "",
 "EnemyBox": "",
@@ -123,7 +129,7 @@ _global_script_class_icons={
 [application]
 
 config/name="coots - ludjam2023"
-run/main_scene="res://MainTitle.tscn"
+run/main_scene="res://Stages/Level5.tscn"
 config/icon="res://icon.png"
 
 [autoload]

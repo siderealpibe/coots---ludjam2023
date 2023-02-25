@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Scripts/TransitionScreen.gd" type="Script" id=1]
 
@@ -32,6 +32,21 @@ tracks/0/keys = {
 "values": [ Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 0 ) ]
 }
 
+[sub_resource type="Animation" id=3]
+resource_name = "fade_to_white"
+tracks/0/type = "value"
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+
 [node name="TransitionScreen" type="CanvasLayer"]
 script = ExtResource( 1 )
 
@@ -41,10 +56,10 @@ margin_left = -200.0
 margin_top = -116.0
 margin_right = 1220.0
 margin_bottom = 716.0
-color = Color( 0, 0, 0, 0 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/fade_to_black = SubResource( 1 )
 anims/fade_to_normal = SubResource( 2 )
+anims/fade_to_white = SubResource( 3 )
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]

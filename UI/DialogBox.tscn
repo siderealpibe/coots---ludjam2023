@@ -52,7 +52,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-color = Color( 0, 0, 0, 1 )
+color = Color( 0.611765, 0.631373, 0.682353, 1 )
 
 [node name="GridContainer" type="GridContainer" parent="GridContainer"]
 margin_left = 104.0

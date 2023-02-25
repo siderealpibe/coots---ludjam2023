@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Stages/tileset_fallthrough.tres" type="TileSet" id=1]
 [ext_resource path="res://Stages/tileset.tres" type="TileSet" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://UI/UI.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Enemies/Smilebot/Smilebot.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Stages/Door.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Stages/Level5.tscn" type="PackedScene" id=10]
 
 [node name="Level4" type="Node"]
 
@@ -62,4 +63,5 @@ IS_FLIPPED = true
 
 [node name="Door" parent="Smilebot" instance=ExtResource( 9 )]
 position = Vector2( 1479, 861 )
+NEXT_SCENE = ExtResource( 10 )
 PLAYER_PATH = NodePath("../../Player")
