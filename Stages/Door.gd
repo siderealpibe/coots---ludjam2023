@@ -10,6 +10,7 @@ func _ready():
 
 func _exit_cutscene(hitbox):
 	player.end_stage()
+	#get_parent().remove_child(self)
 	get_parent().add_child_below_node(player,self)
 	$AnimationPlayer.play_backwards("Opening")
 	yield($AnimationPlayer, "animation_finished")

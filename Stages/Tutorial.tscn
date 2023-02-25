@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Stages/tileset.tres" type="TileSet" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://Enemies/Controller/Controller.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Cutscenes/TutorialCompleted.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Stages/Door.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Enemies/LULW/LULW.tscn" type="PackedScene" id=8]
 
 [node name="Tutorial" type="Node"]
 
@@ -78,7 +79,7 @@ text = "Destroy the webcams to destroy the Bots
           (Not all bots will be destroyed)"
 
 [node name="Controller" parent="." instance=ExtResource( 5 )]
-position = Vector2( 10763, -363 )
+position = Vector2( 10538, -342 )
 
 [node name="Label3" type="Label" parent="."]
 margin_left = 12485.0
@@ -87,3 +88,8 @@ margin_right = 12796.0
 margin_bottom = -629.0
 rect_scale = Vector2( 5, 5 )
 text = "Press K to restart a stage"
+
+[node name="LULW" parent="." instance=ExtResource( 8 )]
+position = Vector2( 11112, -328 )
+CONTROLLER = NodePath("../Controller")
+CAN_SHOOT = false
