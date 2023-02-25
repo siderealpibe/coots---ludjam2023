@@ -62,7 +62,6 @@ func _start_cutscene(hitbox):
 	#TESTING CODE
 	"""controller.fight_stage = 1
 	_update_stage(1)
-	player.states.force_idle()
 	yield($Cutscenes,"animation_finished")
 	yield($Cutscenes,"animation_finished")
 	controller.fight_stage = 2
@@ -74,6 +73,7 @@ func _start_cutscene(hitbox):
 func _update_stage(stage: int) -> void:
 	match stage:
 		1: 
+			player.states.force_idle()
 			coots.can_paw = false
 			yield(play_dialog("res://UI/Dialog/bossFight4.json"), "dialog_finished")
 			coots.can_shoot = true
@@ -81,6 +81,7 @@ func _update_stage(stage: int) -> void:
 			yield($Cutscenes, "animation_finished")
 			$ControllerFloat.play("ControllerFloat")
 			$Cutscenes.play("smilebot_entry")
+			player.states.idle_right()
 			$AudioStreamPlayer.play()
 			yield($Cutscenes, "animation_finished")
 			$Platform1/LULW.CAN_SHOOT = true 
