@@ -133,7 +133,7 @@ tracks/4/keys = {
 "times": PoolRealArray( 0, 2 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( -1569, 2200 ), Vector2( -1569, 120 ) ]
+"values": [ Vector2( -1569, 2700 ), Vector2( -1569, 120 ) ]
 }
 tracks/5/type = "value"
 tracks/5/path = NodePath("Platform1:position")
@@ -182,6 +182,30 @@ tracks/8/keys = {
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Vector2( 3884, -310 ), Vector2( -116, -310 ) ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("Smilebot3:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -1626, 2337 ), Vector2( -1626, -243 ) ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("Smilebot3:CAN_PUNCH")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
 }
 
 [sub_resource type="Animation" id=5]
@@ -302,6 +326,16 @@ IS_IDLE = true
 CAN_SHOOT = false
 CONTROLLER = NodePath("../ControllerEntrance/PathFollow2D/Path2D/PathFollow2D/BossController")
 
+[node name="Smilebot3" parent="." instance=ExtResource( 11 )]
+position = Vector2( -1626, 2337 )
+WALK_SPEED = 200
+RIGHT_BOUND = 800
+LEFT_BOUND = 1500
+IS_IDLE = true
+CAN_PUNCH = false
+CAN_SHOOT = false
+CONTROLLER = NodePath("../ControllerEntrance/PathFollow2D/Path2D/PathFollow2D/BossController")
+
 [node name="Smilebot" parent="." instance=ExtResource( 11 )]
 position = Vector2( -3500, 2700 )
 WALK_SPEED = 200
@@ -331,7 +365,7 @@ CONTROLLER = NodePath("../../ControllerEntrance/PathFollow2D/Path2D/PathFollow2D
 CAN_SHOOT = false
 
 [node name="Platform3" type="Node2D" parent="."]
-position = Vector2( -1569, 2200 )
+position = Vector2( -1569, 2700 )
 scale = Vector2( 3, 1 )
 
 [node name="Platform" parent="Platform3" instance=ExtResource( 13 )]
