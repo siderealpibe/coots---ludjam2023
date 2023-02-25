@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/gamerwords.mp3-e278170bbed2479a086509069307a0d4.mp3str"
+
+[deps]
+
+source_file="res://Assets/Sfx/gamerwords.mp3"
+dest_files=[ "res://.import/gamerwords.mp3-e278170bbed2479a086509069307a0d4.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0
