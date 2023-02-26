@@ -392,9 +392,8 @@ scale = Vector2( 1.48468, 1.13072 )
 curve = SubResource( 3 )
 
 [node name="PathFollow2D" type="PathFollow2D" parent="ControllerEntrance"]
-position = Vector2( -1879.38, 622.198 )
+position = Vector2( 1056.79, -546.556 )
 rotation = 1.39084
-offset = 3286.08
 rotate = false
 loop = false
 
@@ -402,9 +401,8 @@ loop = false
 curve = SubResource( 10 )
 
 [node name="PathFollow2D" type="PathFollow2D" parent="ControllerEntrance/PathFollow2D/Path2D"]
-position = Vector2( 2574.16, 450.388 )
+position = Vector2( -0.898682, 2.41394 )
 rotation = 0.172243
-offset = 2629.79
 rotate = false
 loop = false
 
