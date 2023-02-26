@@ -46,10 +46,6 @@ FACING_RIGHT = true
 position = Vector2( -52, 4158 )
 FACING_RIGHT = true
 
-[node name="Player" parent="." instance=ExtResource( 5 )]
-position = Vector2( 422, 463 )
-UI_PATH = NodePath("../UI")
-
 [node name="UI" parent="." instance=ExtResource( 7 )]
 
 [node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
@@ -61,7 +57,11 @@ position = Vector2( 7279, 5939 )
 IS_IDLE = true
 IS_FLIPPED = true
 
-[node name="Door" parent="Smilebot" instance=ExtResource( 9 )]
-position = Vector2( 1479, 861 )
+[node name="Door" parent="." instance=ExtResource( 9 )]
+position = Vector2( 8758, 6800 )
 NEXT_SCENE = ExtResource( 10 )
-PLAYER_PATH = NodePath("../../Player")
+PLAYER_PATH = NodePath("../Player")
+
+[node name="Player" parent="." instance=ExtResource( 5 )]
+position = Vector2( 422, 463 )
+UI_PATH = NodePath("../UI")
