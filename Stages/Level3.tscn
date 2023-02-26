@@ -50,10 +50,6 @@ position = Vector2( 10047, 1036 )
 NEXT_SCENE = ExtResource( 12 )
 PLAYER_PATH = NodePath("../Player")
 
-[node name="Player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 404, 348 )
-UI_PATH = NodePath("../UI")
-
 [node name="UI" parent="." instance=ExtResource( 4 )]
 
 [node name="Smilebot" parent="." instance=ExtResource( 5 )]
@@ -116,6 +112,10 @@ LEFT_BOUND = 800
 [node name="LULW" parent="." instance=ExtResource( 9 )]
 position = Vector2( 9228, 948 )
 CONTROLLER = NodePath("../Controller")
+
+[node name="Player" parent="." instance=ExtResource( 2 )]
+position = Vector2( 404, 348 )
+UI_PATH = NodePath("../UI")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 11 )

@@ -286,10 +286,6 @@ show_collision = true
 format = 1
 tile_data = PoolIntArray( 655345, 0, 196609, 655346, 0, 196610, 655347, 0, 196610, 655348, 0, 196610, 655349, 0, 196610, 655350, 0, 196610, 655351, 0, 196611, 786408, 0, 196609, 786409, 0, 196610, 786410, 0, 196610, 786411, 0, 196610, 786412, 0, 196610, 786413, 0, 196610, 786414, 0, 196611, 786426, 0, 196609, 786427, 0, 196610, 786428, 0, 196610, 786429, 0, 196610, 786430, 0, 196610, 786431, 0, 196610, 720896, 0, 196611 )
 
-[node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( -4406, 1495 )
-UI_PATH = NodePath("../UI")
-
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 5 )
 
@@ -420,5 +416,9 @@ position = Vector2( 640, 947 )
 LEFT_BOUND = -3500
 RIGHT_BOUND = 600
 PLAYER_PATH = NodePath("../Player")
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( -4406, 1495 )
+UI_PATH = NodePath("../UI")
 
 [node name="UI" parent="." instance=ExtResource( 9 )]

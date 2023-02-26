@@ -41,11 +41,6 @@ position = Vector2( 9694, 309 )
 NEXT_SCENE = ExtResource( 10 )
 PLAYER_PATH = NodePath("../Player")
 
-[node name="Player" parent="." instance=ExtResource( 4 )]
-position = Vector2( 806, 426 )
-WALK_SPEED = 600
-UI_PATH = NodePath("../UI")
-
 [node name="Smilebot" parent="." instance=ExtResource( 7 )]
 position = Vector2( 2712, 656 )
 CONTROLLER = NodePath("../Controller")
@@ -65,3 +60,8 @@ autoplay = true
 
 [node name="LULW" parent="." instance=ExtResource( 9 )]
 position = Vector2( 7689, 1378 )
+
+[node name="Player" parent="." instance=ExtResource( 4 )]
+position = Vector2( 806, 426 )
+WALK_SPEED = 600
+UI_PATH = NodePath("../UI")
