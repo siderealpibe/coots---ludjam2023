@@ -7,7 +7,7 @@ export var LEFT_BOUND : int = -1000
 export var RIGHT_BOUND : int = 1000
 export var STEP : int = 175
 export(float, 0, 10, 1) var LASER_RECHARGE_TIME : float = 5
-export(float, 0, 10, 1) var PAW_RECHARGE_TIME : float = .75
+export(float, 0, 10, 1) var PAW_RECHARGE_TIME : float = 2
 export(PackedScene) var LASER_SCENE
 export(NodePath) var PLAYER_PATH
 #export(NodePath) var CONTROLLER_PATH

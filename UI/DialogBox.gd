@@ -2,14 +2,12 @@ extends NinePatchRect
 
 signal dialog_finished
 
-export var dialogPath = ""
+export var dialog = ""
 export(float) var TEXT_SPEED = 0.05
 
 onready var nameLabel : Label = $GridContainer/GridContainer/Name
 onready var textContent : RichTextLabel = $GridContainer/GridContainer/Dialogue
 onready var portrait : TextureRect = $GridContainer/Picture
-
-var dialog
 
 var phraseNum = 0
 var finished = false
@@ -17,8 +15,9 @@ var finished = false
 
 func _ready():
 	$Timer.wait_time = TEXT_SPEED
-	print(dialogPath)
-	dialog = getDialog()
+	#print(dialogPath)
+	#dialog = getDialog()
+	dialog = parse_json(dialog)
 	assert(dialog, "Dialog not found")
 	nextPhrase()
 	
@@ -31,9 +30,9 @@ func _process(_delta):
  
 func getDialog():
 	var f = File.new()
-	assert(f.file_exists(dialogPath), "File path does not exist")
+	#assert(f.file_exists(dialogPath), "File path does not exist")
 	
-	f.open(dialogPath, File.READ)
+	#f.open(dialogPath, File.READ)
 	var json = f.get_as_text()
 	print(json)
 	var output = parse_json(json)
