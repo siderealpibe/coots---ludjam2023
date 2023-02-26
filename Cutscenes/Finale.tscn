@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Assets/Music/Return Home.wav" type="AudioStream" id=1]
 [ext_resource path="res://Cutscenes/Cutscene.tscn" type="PackedScene" id=2]
@@ -6,10 +6,18 @@
 [ext_resource path="res://Assets/Cutscenes/finale/backtoearth.png" type="Texture" id=4]
 [ext_resource path="res://UI/Theme.tres" type="Theme" id=5]
 [ext_resource path="res://Assets/SpaceGrotesk.ttf" type="DynamicFontData" id=6]
+[ext_resource path="res://Assets/Misc/bk.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Misc/test3.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Ludwig/fboy lud.png" type="Texture" id=9]
+[ext_resource path="res://Assets/Misc/smilers.png" type="Texture" id=10]
+[ext_resource path="res://Assets/Misc/test2.png" type="Texture" id=11]
+[ext_resource path="res://Assets/Misc/test1.png" type="Texture" id=12]
+[ext_resource path="res://Assets/Misc/test5.png" type="Texture" id=13]
+[ext_resource path="res://Assets/Misc/orignal.png" type="Texture" id=14]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Animation"
-length = 20.0
+length = 70.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("TextureRect:texture")
 tracks/0/interp = 1
@@ -17,34 +25,34 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 8 ),
+"times": PoolRealArray( 0, 6 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
 "values": [ ExtResource( 3 ), ExtResource( 4 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Node2D:visible")
+tracks/1/path = NodePath("BlackScreen:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 8 ),
+"times": PoolRealArray( 0.4, 10.8 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
 "values": [ false, true ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("BlackScreen:visible")
+tracks/2/path = NodePath("Node2D:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0.4 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ false ]
+"times": PoolRealArray( 10.8, 63 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 291, 944 ), Vector2( 291, -5478 ) ]
 }
 
 [sub_resource type="Animation" id=2]
@@ -97,6 +105,18 @@ tracks/3/keys = {
 "update": 0,
 "values": [ false ]
 }
+tracks/4/type = "value"
+tracks/4/path = NodePath("Node2D:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 291, 944 ) ]
+}
 
 [sub_resource type="DynamicFont" id=3]
 size = 24
@@ -126,52 +146,121 @@ visible = false
 margin_left = 1558.0
 margin_right = 1775.0
 
-[node name="Node2D" type="Node2D" parent="." index="6"]
-position = Vector2( 25, 13 )
+[node name="Node2D" type="Node2D" parent="." index="7"]
+position = Vector2( 291, 944 )
+scale = Vector2( 2, 2 )
 
-[node name="Label2" type="Label" parent="Node2D" index="0"]
+[node name="Test5" type="Sprite" parent="Node2D" index="0"]
+position = Vector2( 111.5, 1756.5 )
+scale = Vector2( 0.515488, 0.515488 )
+texture = ExtResource( 13 )
+
+[node name="Test3" type="Sprite" parent="Node2D" index="1"]
+position = Vector2( 174.12, -8.30859 )
+scale = Vector2( 0.0950847, 0.0950847 )
+texture = ExtResource( 8 )
+
+[node name="Smilers" type="Sprite" parent="Node2D" index="2"]
+position = Vector2( 12.6199, -9.80859 )
+scale = Vector2( 0.10082, 0.10082 )
+texture = ExtResource( 10 )
+
+[node name="Test1" type="Sprite" parent="Node2D" index="3"]
+position = Vector2( 124.5, 218 )
+scale = Vector2( 0.17586, 0.17586 )
+texture = ExtResource( 12 )
+
+[node name="Orignal" type="Sprite" parent="Node2D" index="4"]
+position = Vector2( 93, 699.747 )
+scale = Vector2( 0.305473, 0.305473 )
+texture = ExtResource( 14 )
+
+[node name="ETG" type="Node2D" parent="Node2D" index="5"]
+position = Vector2( -145.5, 58.5 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="Label2" type="Label" parent="Node2D/ETG" index="0"]
 modulate = Color( 1, 1, 1, 0.360784 )
-margin_left = 375.0
-margin_top = 56.0
-margin_right = 511.0
-margin_bottom = 88.0
+margin_left = 245.0
+margin_top = 671.0
+margin_right = 491.0
+margin_bottom = 703.0
 rect_pivot_offset = Vector2( 88, 61 )
 theme = ExtResource( 5 )
-text = "Created by:"
+text = "Music, sound design:"
 
-[node name="Label3" type="Label" parent="Node2D" index="1"]
-margin_left = 402.0
-margin_top = 135.0
-margin_right = 538.0
-margin_bottom = 167.0
-rect_pivot_offset = Vector2( 88, 61 )
-theme = SubResource( 4 )
-text = "tzarii"
-
-[node name="Label4" type="Label" parent="Node2D" index="2"]
-margin_left = 376.0
-margin_top = 103.0
-margin_right = 512.0
-margin_bottom = 135.0
+[node name="Label4" type="Label" parent="Node2D/ETG" index="1"]
+margin_left = 370.0
+margin_top = 889.0
+margin_right = 506.0
+margin_bottom = 921.0
 rect_pivot_offset = Vector2( 88, 61 )
 theme = SubResource( 4 )
 text = "ETG_Music"
 
-[node name="Label5" type="Label" parent="Node2D" index="3"]
-margin_left = 408.0
-margin_top = 168.0
-margin_right = 544.0
-margin_bottom = 200.0
+[node name="tzarii" type="Node2D" parent="Node2D" index="6"]
+position = Vector2( 0, 975 )
+
+[node name="Label6" type="Label" parent="Node2D/tzarii" index="0"]
+modulate = Color( 1, 1, 1, 0.360784 )
+margin_left = -40.5
+margin_top = 193.5
+margin_right = 325.5
+margin_bottom = 225.5
+rect_pivot_offset = Vector2( 88, 61 )
+theme = ExtResource( 5 )
+text = "Level design, developer:"
+
+[node name="Label3" type="Label" parent="Node2D/tzarii" index="1"]
+margin_left = 57.0
+margin_top = 287.0
+margin_right = 193.0
+margin_bottom = 319.0
+rect_pivot_offset = Vector2( 88, 61 )
+theme = SubResource( 4 )
+text = "tzarii"
+
+[node name="pibe" type="Node2D" parent="Node2D" index="7"]
+position = Vector2( -43, 1927.5 )
+
+[node name="Label7" type="Label" parent="Node2D/pibe" index="0"]
+modulate = Color( 1, 1, 1, 0.360784 )
+margin_right = 366.0
+margin_bottom = 32.0
+rect_pivot_offset = Vector2( 88, 61 )
+theme = ExtResource( 5 )
+text = "Art, story:"
+
+[node name="Label5" type="Label" parent="Node2D/pibe" index="1"]
+margin_left = 100.5
+margin_top = 89.0
+margin_right = 236.5
+margin_bottom = 121.0
 rect_pivot_offset = Vector2( 88, 61 )
 theme = SubResource( 4 )
 text = "pibe"
 
-[node name="Label6" type="Label" parent="Node2D" index="4"]
+[node name="Test2" type="Sprite" parent="Node2D" index="8"]
+position = Vector2( 117.5, 957.5 )
+scale = Vector2( 0.229607, 0.229607 )
+texture = ExtResource( 11 )
+
+[node name="Bk" type="Sprite" parent="Node2D" index="9"]
+position = Vector2( 112, 1509.5 )
+scale = Vector2( 0.218943, 0.218943 )
+texture = ExtResource( 7 )
+
+[node name="Sprite" type="Sprite" parent="Node2D" index="10"]
+position = Vector2( 97.5, 2368.49 )
+scale = Vector2( 0.396497, 0.396497 )
+texture = ExtResource( 9 )
+
+[node name="Thanks" type="Label" parent="Node2D" index="11"]
 modulate = Color( 1, 1, 1, 0.360784 )
-margin_left = 1.0
-margin_top = 537.0
-margin_right = 225.0
-margin_bottom = 569.0
+margin_left = -1.0
+margin_top = 2879.5
+margin_right = 223.0
+margin_bottom = 2911.5
 rect_pivot_offset = Vector2( 88, 61 )
 theme = ExtResource( 5 )
 text = "Thanks for playing!"
