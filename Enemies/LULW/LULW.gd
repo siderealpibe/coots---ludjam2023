@@ -5,15 +5,24 @@ export var LASER_COOLDOWN : float = 3
 export(PackedScene) var LASER_SCENE
 export(NodePath) var CONTROLLER
 
+export var SHOW_CONTROL_WAVES : bool = false
 export var  CAN_SHOOT : bool = true
 onready var laser_timer : Timer = $LaserTimer
 onready var controller : ControllerHitBox = get_node(CONTROLLER) if CONTROLLER != "" else null
 
 func _ready():
+	if SHOW_CONTROL_WAVES:
+		$"Sprite/Control Waves/Control Waves".show()
+	else:
+		$"Sprite/Control Waves/Control Waves".hide()
 	$Sprite.flip_h = FACING_RIGHT
+	if FACING_RIGHT:
+		$"Sprite/Control Waves".scale = Vector2(-1,1)
+		$"Sprite/Laser Telegraph".scale = Vector2(-1,1)
 	laser_timer.one_shot = true
 	laser_timer.connect("timeout", self, "_on_laser_timer_timeout")
 	if controller != null:
+		$"Sprite/Control Waves/Control Waves".CONTROLLER = controller;
 		controller.connect("destroyed", self, "destruct")
 
 func _process(delta):

@@ -15,6 +15,7 @@ export(float, 0, 10, 1) var LASER_RECHARGE_TIME : float = 5
 export(NodePath) var CONTROLLER
 export(NodePath) var LASER_DETECTION
 export(PackedScene) var LASER_SCENE
+export var SHOW_CONTROL_WAVES : bool = false
 
 
 onready var controller : ControllerHitBox = get_node(CONTROLLER) if CONTROLLER != "" else null
@@ -36,6 +37,10 @@ func _ready() -> void:
 	# Initialize the state machine, passing a reference of the player to the states,
 	# that way they can move and react accordingly
 	states.init(self)
+	if SHOW_CONTROL_WAVES:
+		$"Sprite/Control Waves".show()
+	else:
+		$"Sprite/Control Waves".hide()
 	$LeftDetection.connect("area_entered", self, "left_punch")
 	$RightDetection.connect("area_entered", self, "right_punch")
 	ORIGIN_X = global_position.x
@@ -43,6 +48,7 @@ func _ready() -> void:
 	laser_detection.connect("area_entered",self,"shoot_laser")
 	if controller != null:
 		controller.connect("destroyed", self, "destruct")
+		$"Sprite/Control Waves".CONTROLLER = controller;
 	shake_timer.one_shot = true
 	shake_timer.connect("timeout", self, "shake")
 	up_timer.one_shot = true

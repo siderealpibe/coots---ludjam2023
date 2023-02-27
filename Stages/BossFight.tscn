@@ -288,6 +288,7 @@ tile_data = PoolIntArray( 655345, 0, 196609, 655346, 0, 196610, 655347, 0, 19661
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 5 )
+volume_db = -10.0
 
 [node name="PlayerDetectionBox" type="Area2D" parent="."]
 script = ExtResource( 2 )
@@ -416,6 +417,7 @@ position = Vector2( 640, 947 )
 LEFT_BOUND = -3500
 RIGHT_BOUND = 600
 PLAYER_PATH = NodePath("../Player")
+CONTROLLER = NodePath("../ControllerEntrance/PathFollow2D/Path2D/PathFollow2D/BossController")
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( -4406, 1495 )

@@ -10,9 +10,11 @@ export(float, 0, 10, 1) var LASER_RECHARGE_TIME : float = 5
 export(float, 0, 10, 1) var PAW_RECHARGE_TIME : float = .75
 export(PackedScene) var LASER_SCENE
 export(NodePath) var PLAYER_PATH
+export(NodePath) var CONTROLLER
 #export(NodePath) var CONTROLLER_PATH
 
 onready var player : Player = get_node(PLAYER_PATH)
+onready var controller : ControllerHitBox = get_node(CONTROLLER) if CONTROLLER != "" else null
 #onready var controller : ControllerBoss = get_node(CONTROLLER_PATH)
 onready var animations : AnimationPlayer = $AnimationPlayer
 onready var states = $StateManager
@@ -28,7 +30,8 @@ func _ready():
 	animations.play("Idle")
 	laser_timer.connect("timeout", self, "_on_laser_timer_timeout")
 	paw_timer.connect("timeout", self, "_on_paw_timer_timeout")
-
+	if controller != null:
+		$"Body/Head/Control Waves".CONTROLLER = controller
 func shoot_laser() -> void:
 		#animations.play("Shoot_Laser")
 		#yield(animations,"animation_finished")

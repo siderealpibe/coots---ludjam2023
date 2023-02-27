@@ -42,6 +42,7 @@ position = Vector2( 1668, 503 )
 IS_IDLE = true
 CAN_SHOOT = false
 CONTROLLER = NodePath("../Controller2")
+SHOW_CONTROL_WAVES = true
 
 [node name="UI" parent="." instance=ExtResource( 5 )]
 
@@ -52,6 +53,7 @@ position = Vector2( 4327, -982 )
 position = Vector2( 6397, -83 )
 IS_IDLE = true
 CONTROLLER = NodePath("../Controller2")
+SHOW_CONTROL_WAVES = true
 
 [node name="Smilebot3" parent="." instance=ExtResource( 3 )]
 position = Vector2( 8589, -594 )
@@ -59,6 +61,7 @@ IS_IDLE = true
 CAN_PUNCH = false
 CONTROLLER = NodePath("../Controller")
 LASER_DETECTION = NodePath("PlayerDetectionBox")
+SHOW_CONTROL_WAVES = true
 
 [node name="PlayerDetectionBox" type="Area2D" parent="Smilebot3"]
 position = Vector2( -8589, 594 )
@@ -107,4 +110,5 @@ UI_PATH = NodePath("../UI")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 11 )
+volume_db = -15.0
 autoplay = true

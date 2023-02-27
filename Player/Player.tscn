@@ -1964,6 +1964,7 @@ anims/RESET = SubResource( 20 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 15 )
+volume_db = -5.0
 
 [node name="Body" type="Node2D" parent="."]
 
@@ -1971,7 +1972,7 @@ stream = ExtResource( 15 )
 texture = ExtResource( 2 )
 hframes = 5
 vframes = 4
-frame = 4
+frame = 1
 
 [node name="DeflectIndicator" type="Sprite" parent="Body"]
 visible = false

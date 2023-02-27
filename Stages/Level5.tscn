@@ -18,6 +18,7 @@
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 1 )
+volume_db = -15.0
 autoplay = true
 
 [node name="Ground" type="TileMap" parent="."]
@@ -49,27 +50,32 @@ position = Vector2( 1793, -2070 )
 [node name="LULW5" parent="." instance=ExtResource( 7 )]
 position = Vector2( 5367, -2708 )
 CONTROLLER = NodePath("../Controller")
+SHOW_CONTROL_WAVES = true
 
 [node name="LULW6" parent="." instance=ExtResource( 7 )]
 position = Vector2( 6055, -5795 )
 FACING_RIGHT = true
 CONTROLLER = NodePath("../Controller")
+SHOW_CONTROL_WAVES = true
 
 [node name="LULW7" parent="." instance=ExtResource( 7 )]
 position = Vector2( 3767, -6107 )
 CONTROLLER = NodePath("../Controller")
+SHOW_CONTROL_WAVES = true
 
 [node name="Smilebot" parent="." instance=ExtResource( 8 )]
 position = Vector2( 5856, -3498 )
 IS_IDLE = true
 CAN_SHOOT = false
 CONTROLLER = NodePath("../Controller")
+SHOW_CONTROL_WAVES = true
 
 [node name="Smilebot2" parent="." instance=ExtResource( 8 )]
 position = Vector2( 2331, -6158 )
 RIGHT_BOUND = 600
 LEFT_BOUND = 0
 CONTROLLER = NodePath("../Controller")
+SHOW_CONTROL_WAVES = true
 
 [node name="Smilebot6" parent="." instance=ExtResource( 8 )]
 position = Vector2( 4515, -7885 )
@@ -78,6 +84,7 @@ LEFT_BOUND = 0
 IS_IDLE = true
 CAN_PUNCH = false
 CONTROLLER = NodePath("../Controller")
+SHOW_CONTROL_WAVES = true
 
 [node name="Smilebot7" parent="." instance=ExtResource( 8 )]
 position = Vector2( 5626, -8321 )
@@ -86,6 +93,7 @@ LEFT_BOUND = 0
 IS_IDLE = true
 CAN_PUNCH = false
 CONTROLLER = NodePath("../Controller")
+SHOW_CONTROL_WAVES = true
 
 [node name="Smilebot8" parent="." instance=ExtResource( 8 )]
 position = Vector2( 6680, -8594 )
@@ -94,6 +102,7 @@ LEFT_BOUND = 0
 IS_IDLE = true
 CAN_PUNCH = false
 CONTROLLER = NodePath("../Controller")
+SHOW_CONTROL_WAVES = true
 
 [node name="Smilebot9" parent="." instance=ExtResource( 8 )]
 position = Vector2( 7646, -8783 )
@@ -102,6 +111,7 @@ LEFT_BOUND = 0
 IS_IDLE = true
 CAN_PUNCH = false
 CONTROLLER = NodePath("../Controller")
+SHOW_CONTROL_WAVES = true
 
 [node name="Smilebot10" parent="." instance=ExtResource( 8 )]
 position = Vector2( 8601, -9097 )
@@ -110,16 +120,13 @@ LEFT_BOUND = 0
 IS_IDLE = true
 CAN_PUNCH = false
 CONTROLLER = NodePath("../Controller")
+SHOW_CONTROL_WAVES = true
 
 [node name="Smilebot3" parent="." instance=ExtResource( 8 )]
 position = Vector2( 8183, -4746 )
 RIGHT_BOUND = 300
 LEFT_BOUND = 400
-
-[node name="Smilebot5" parent="." instance=ExtResource( 8 )]
-position = Vector2( 8183, -4746 )
-RIGHT_BOUND = 300
-LEFT_BOUND = 400
+SHOW_CONTROL_WAVES = true
 
 [node name="Smilebot4" parent="." instance=ExtResource( 8 )]
 position = Vector2( 10395, -5906 )
@@ -127,6 +134,7 @@ RIGHT_BOUND = 300
 LEFT_BOUND = 400
 IS_IDLE = true
 CONTROLLER = NodePath("../Controller")
+SHOW_CONTROL_WAVES = true
 
 [node name="Controller" parent="." instance=ExtResource( 10 )]
 position = Vector2( 10252, -9028 )

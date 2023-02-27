@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Enemies/Controller/Controller.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Enemies/Smilebot/Smilebot.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Enemies/LULW/LULW.tscn" type="PackedScene" id=3]
+
+[node name="Node2D" type="Node2D"]
+position = Vector2( 432, 354 )
+scale = Vector2( 0.228945, 0.228945 )
+
+[node name="Smilebot" parent="." instance=ExtResource( 2 )]
+position = Vector2( 280, 270 )
+CONTROLLER = NodePath("../Controller")
+SHOW_CONTROL_WAVES = true
+
+[node name="Controller" parent="." instance=ExtResource( 1 )]
+position = Vector2( 1961.17, -1445.76 )
+
+[node name="LULW" parent="." instance=ExtResource( 3 )]
+position = Vector2( 2066, 275.175 )

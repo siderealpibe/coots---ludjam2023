@@ -11,7 +11,7 @@ func input(event: InputEvent) -> int:
 		return State.SlapLeft      
 	elif Input.is_action_just_pressed("mouse_right"):
 		return State.DeflectLeft
-	if event.is_action_released("ui_select") && player.velocity.y < -player.MIN_JUMP: 
+	if event.is_action_released("jump") && player.velocity.y < -player.MIN_JUMP: 
 		player.velocity.y = -player.MIN_JUMP
 	return .input(event)
 

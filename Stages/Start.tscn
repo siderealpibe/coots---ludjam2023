@@ -7,7 +7,7 @@
 [ext_resource path="res://Enemies/Controller/Controller.tscn" type="PackedScene" id=5]
 [ext_resource path="res://UI/UI.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Enemies/Smilebot/Smilebot.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Environment/Background.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Background.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Enemies/LULW/LULW.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Stages/Level2.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Stages/Door.tscn" type="PackedScene" id=11]
@@ -18,6 +18,7 @@
 [node name="Background" parent="." instance=ExtResource( 8 )]
 
 [node name="Sprite" type="Sprite" parent="."]
+light_mask = 0
 position = Vector2( 587, -307 )
 texture = ExtResource( 12 )
 
@@ -54,6 +55,7 @@ position = Vector2( 6170, -4035 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 1 )
+volume_db = -15.0
 autoplay = true
 
 [node name="UI" parent="." instance=ExtResource( 6 )]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=2]
+[gd_scene load_steps=30 format=2]
 
 [ext_resource path="res://Assets/Coots/idle_walk.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Coots/head.png" type="Texture" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://EnemyHitBox.gd" type="Script" id=8]
 [ext_resource path="res://Coots/states/StateManager.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Particles/SuperLaser.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Particles/Control Waves.tscn" type="PackedScene" id=11]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Idle"
@@ -1303,6 +1304,11 @@ texture = ExtResource( 2 )
 offset = Vector2( -540, -220 )
 hframes = 5
 vframes = 4
+
+[node name="Control Waves" parent="Body/Head" instance=ExtResource( 11 )]
+show_behind_parent = true
+position = Vector2( -565.333, -242 )
+emiting = false
 
 [node name="Paw" type="Sprite" parent="Body"]
 visible = false

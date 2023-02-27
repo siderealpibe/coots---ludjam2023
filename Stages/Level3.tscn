@@ -112,6 +112,7 @@ LEFT_BOUND = 800
 [node name="LULW" parent="." instance=ExtResource( 9 )]
 position = Vector2( 9228, 948 )
 CONTROLLER = NodePath("../Controller")
+SHOW_CONTROL_WAVES = true
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 404, 348 )
@@ -119,4 +120,5 @@ UI_PATH = NodePath("../UI")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 11 )
+volume_db = -15.0
 autoplay = true

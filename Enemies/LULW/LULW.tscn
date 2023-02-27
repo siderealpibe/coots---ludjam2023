@@ -1,15 +1,19 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Assets/Enemies/LULW/LULW.png" type="Texture" id=1]
 [ext_resource path="res://Enemies/LULW/LULW.gd" type="Script" id=2]
 [ext_resource path="res://Particles/Laser.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Particles/Control Waves.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Assets/Sfx/laser.wav" type="AudioStream" id=5]
+[ext_resource path="res://Assets/Particles/laser_telegraph.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Sfx/chargeup.wav" type="AudioStream" id=7]
 
 [sub_resource type="RectangleShape2D" id=7]
 extents = Vector2( 137, 266 )
 
 [sub_resource type="Animation" id=5]
 resource_name = "Falling"
+length = 2.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
@@ -17,10 +21,34 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.4, 0.6, 0.7, 0.8 ),
+"times": PoolRealArray( 0.8, 0.9, 1, 1.2, 1.4, 1.5, 1.6 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
 "update": 1,
 "values": [ 7, 8, 9, 10, 11, 12, 13 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite/Control Waves/Control Waves:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.3, 0.4, 0.7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Sprite/Laser Telegraph/Telegraph:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
 }
 
 [sub_resource type="Animation" id=2]
@@ -38,6 +66,18 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 1,
 "values": [ 2, 3, 0, 1 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite/Control Waves/Control Waves:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 84, -158 ) ]
 }
 
 [sub_resource type="Animation" id=6]
@@ -93,10 +133,58 @@ tracks/2/keys = {
 "update": 0,
 "values": [ ExtResource( 5 ) ]
 }
+tracks/3/type = "value"
+tracks/3/path = NodePath("Sprite/Control Waves/Control Waves:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Sprite/Control Waves/Control Waves:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 84, -158 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Sprite/Laser Telegraph/Telegraph:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Sprite/Laser Telegraph/Telegraph:scale")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 23.6535, 5.74751 ) ]
+}
 
 [sub_resource type="Animation" id=4]
 resource_name = "Shoot"
-length = 2.0
+length = 3.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
@@ -104,10 +192,10 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.2, 0.3, 0.5, 1.7, 1.9 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.4, 0.9, 1.3, 1.5, 1.6, 1.8, 2.5, 2.7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ 2, 4, 5, 6, 4, 2 ]
+"values": [ 0, 1, 2, 3, 4, 5, 6, 4, 2 ]
 }
 tracks/1/type = "method"
 tracks/1/path = NodePath(".")
@@ -116,7 +204,7 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0.2 ),
+"times": PoolRealArray( 1.5 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
 "args": [  ],
@@ -130,10 +218,58 @@ tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0.2 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0, 0.2, 1.5, 1.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 1,
-"values": [ true ]
+"values": [ false, true, false, true ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Sprite/Control Waves/Control Waves:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 1.4, 1.5, 2.6, 2.7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Vector2( 84, -158 ), Vector2( 84, -158 ), Vector2( -266, -121 ), Vector2( -266, -121 ), Vector2( 84, -158 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Sprite/Laser Telegraph/Telegraph:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 0.9, 1.5, 1.7, 1.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Sprite/Laser Telegraph/Telegraph:scale")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 0.9, 1.7, 1.8, 3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 80, 5.748 ), Vector2( 80, 5.748 ), Vector2( 80, 0.2 ), Vector2( 80, 0.1 ), Vector2( 80, 0.1 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("AudioStreamPlayer:stream")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0, 1.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 7 ), ExtResource( 5 ) ]
 }
 
 [node name="LULW" type="KinematicBody2D"]
@@ -144,6 +280,22 @@ LASER_SCENE = ExtResource( 3 )
 texture = ExtResource( 1 )
 hframes = 7
 vframes = 2
+
+[node name="Laser Telegraph" type="Node2D" parent="Sprite"]
+
+[node name="Telegraph" type="Sprite" parent="Sprite/Laser Telegraph"]
+show_behind_parent = true
+position = Vector2( -38236, 64 )
+scale = Vector2( 23.6535, 5.74751 )
+texture = ExtResource( 6 )
+
+[node name="Control Waves" type="Node2D" parent="Sprite"]
+
+[node name="Control Waves" parent="Sprite/Control Waves" instance=ExtResource( 4 )]
+visible = false
+show_behind_parent = true
+position = Vector2( 84, -158 )
+emiting = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 36, 28 )
@@ -161,3 +313,4 @@ anims/Shoot = SubResource( 4 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 5 )
+volume_db = -10.0
