@@ -62,12 +62,14 @@ Deflected projectiles will move towards your mouse pointer"
 position = Vector2( 8127, -417 )
 CAN_PUNCH = false
 CONTROLLER = NodePath("../Controller")
+SHOW_CONTROL_WAVES = true
 
 [node name="Smilebot3" parent="." instance=ExtResource( 4 )]
 position = Vector2( 11864, -404 )
 IS_IDLE = true
 CAN_SHOOT = false
 CONTROLLER = NodePath("../Controller")
+SHOW_CONTROL_WAVES = true
 
 [node name="Label2" type="Label" parent="."]
 margin_left = 9509.0
@@ -92,4 +94,5 @@ text = "Press K to restart a stage"
 [node name="LULW" parent="." instance=ExtResource( 8 )]
 position = Vector2( 11112, -328 )
 CONTROLLER = NodePath("../Controller")
+SHOW_CONTROL_WAVES = true
 CAN_SHOOT = false
