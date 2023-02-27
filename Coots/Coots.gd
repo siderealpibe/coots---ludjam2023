@@ -31,7 +31,7 @@ func _ready():
 	laser_timer.connect("timeout", self, "_on_laser_timer_timeout")
 	paw_timer.connect("timeout", self, "_on_paw_timer_timeout")
 	if controller != null:
-		$"Body/Head/Control Waves".CONTROLLER = controller
+		$"Body/Head/Control Waves/Control Waves".CONTROLLER = controller
 func shoot_laser() -> void:
 		#animations.play("Shoot_Laser")
 		#yield(animations,"animation_finished")

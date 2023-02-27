@@ -133,7 +133,7 @@ tracks/4/keys = {
 "times": PoolRealArray( 0, 2 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( -1569, 3000 ), Vector2( -1569, 120 ) ]
+"values": [ Vector2( -1569, 2700 ), Vector2( -1569, 120 ) ]
 }
 tracks/5/type = "value"
 tracks/5/path = NodePath("Platform1:position")
@@ -193,7 +193,7 @@ tracks/9/keys = {
 "times": PoolRealArray( 0, 2 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( -1626, 2637 ), Vector2( -1626, -243 ) ]
+"values": [ Vector2( -1626, 2337 ), Vector2( -1626, -243 ) ]
 }
 tracks/10/type = "value"
 tracks/10/path = NodePath("Smilebot3:CAN_PUNCH")
