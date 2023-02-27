@@ -1,4 +1,5 @@
 signal update_stage(state_num)
+signal taunt
 
 class_name ControllerBoss
 extends ControllerHitBox
@@ -18,6 +19,8 @@ func _on_area_entered(hitbox) -> void:
 		return
 	$Damage.play("damage")
 	hits += 1
+	if hits == 1 and fight_stage == 0:
+		emit_signal("taunt")
 	if hits >= 3:
 		if fight_stage == 1:
 			emit_signal("destroyed")
@@ -30,3 +33,9 @@ func falling():
 
 func idle():
 	animations.play("Idle")
+	
+func enable_shield():
+	$Shield.set_deferred("visible", true)
+	
+func disable_shield():
+	$Shield.set_deferred("visible", false)

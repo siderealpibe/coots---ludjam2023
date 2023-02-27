@@ -133,7 +133,7 @@ tracks/4/keys = {
 "times": PoolRealArray( 0, 2 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( -1569, 2700 ), Vector2( -1569, 120 ) ]
+"values": [ Vector2( -1569, 3000 ), Vector2( -1569, 120 ) ]
 }
 tracks/5/type = "value"
 tracks/5/path = NodePath("Platform1:position")
@@ -193,7 +193,7 @@ tracks/9/keys = {
 "times": PoolRealArray( 0, 2 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( -1626, 2337 ), Vector2( -1626, -243 ) ]
+"values": [ Vector2( -1626, 2637 ), Vector2( -1626, -243 ) ]
 }
 tracks/10/type = "value"
 tracks/10/path = NodePath("Smilebot3:CAN_PUNCH")
@@ -284,7 +284,7 @@ tile_set = ExtResource( 4 )
 cell_size = Vector2( 128, 128 )
 show_collision = true
 format = 1
-tile_data = PoolIntArray( 655345, 0, 196609, 655346, 0, 196610, 655347, 0, 196610, 655348, 0, 196610, 655349, 0, 196610, 655350, 0, 196610, 655351, 0, 196611, 786408, 0, 196609, 786409, 0, 196610, 786410, 0, 196610, 786411, 0, 196610, 786412, 0, 196610, 786413, 0, 196610, 786414, 0, 196611, 786426, 0, 196609, 786427, 0, 196610, 786428, 0, 196610, 786429, 0, 196610, 786430, 0, 196610, 786431, 0, 196610, 720896, 0, 196611 )
+tile_data = PoolIntArray( 655346, 0, 196609, 655347, 0, 196610, 655348, 0, 196610, 655349, 0, 196610, 655350, 0, 196610, 655351, 0, 196610, 655352, 0, 196611, 720874, 0, 196609, 720875, 0, 196610, 720876, 0, 196610, 720877, 0, 196610, 720878, 0, 196610, 720879, 0, 196611, 720891, 0, 196609, 720892, 0, 196610, 720893, 0, 196610, 720894, 0, 196610, 720895, 0, 196610, 655360, 0, 196611 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 5 )
@@ -324,7 +324,7 @@ CAN_SHOOT = false
 CONTROLLER = NodePath("../ControllerEntrance/PathFollow2D/Path2D/PathFollow2D/BossController")
 
 [node name="Smilebot3" parent="." instance=ExtResource( 11 )]
-position = Vector2( -1626, 2337 )
+position = Vector2( -1626, 2637 )
 WALK_SPEED = 200
 RIGHT_BOUND = 800
 LEFT_BOUND = 1500
@@ -362,7 +362,7 @@ CONTROLLER = NodePath("../../ControllerEntrance/PathFollow2D/Path2D/PathFollow2D
 CAN_SHOOT = false
 
 [node name="Platform3" type="Node2D" parent="."]
-position = Vector2( -1569, 2700 )
+position = Vector2( -1569, 3000 )
 scale = Vector2( 3, 1 )
 
 [node name="Platform" parent="Platform3" instance=ExtResource( 13 )]
