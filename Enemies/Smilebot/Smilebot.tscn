@@ -806,6 +806,18 @@ tracks/11/keys = {
 "update": 0,
 "values": [ Vector2( 400.787, -138.66 ), Vector2( 435, 175 ) ]
 }
+tracks/12/type = "value"
+tracks/12/path = NodePath("EyeLaser:visible")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
 
 [sub_resource type="Animation" id=10]
 resource_name = "Knocked_Down_forward"
@@ -1096,6 +1108,18 @@ tracks/11/keys = {
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Vector2( -272.346, -128.466 ), Vector2( -273.068, 98 ) ]
+}
+tracks/12/type = "value"
+tracks/12/path = NodePath("EyeLaser:visible")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
 }
 
 [sub_resource type="Animation" id=6]
@@ -2635,14 +2659,12 @@ anims/Walk_forward = SubResource( 14 )
 anims/shake = SubResource( 24 )
 
 [node name="KnockedDownForwardBox1" type="CollisionShape2D" parent="."]
-visible = false
 position = Vector2( -208.5, 199.5 )
 rotation = 1.5708
 shape = SubResource( 29 )
 disabled = true
 
 [node name="KnockedDownForwardBox2" type="CollisionShape2D" parent="."]
-visible = false
 position = Vector2( 228, 255 )
 rotation = 1.5708
 shape = SubResource( 30 )
@@ -2701,7 +2723,6 @@ shape = SubResource( 17 )
 disabled = true
 
 [node name="LeftDetection" type="Area2D" parent="."]
-visible = false
 script = ExtResource( 10 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LeftDetection"]
@@ -2709,7 +2730,6 @@ position = Vector2( -402, -33 )
 shape = SubResource( 18 )
 
 [node name="RightDetection" type="Area2D" parent="."]
-visible = false
 script = ExtResource( 10 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RightDetection"]

@@ -128,7 +128,7 @@ func _update_stage(stage: int) -> void:
 			coots.can_shoot = true
 			$Cutscenes.play("stage2")
 			yield($Cutscenes, "animation_finished")
-			controller.enable_shield()
+			#controller.enable_shield()
 			$ControllerFloat.play("ControllerFloat")
 			$Cutscenes.play("smilebot_entry")
 			player.states.idle_right()
@@ -146,7 +146,7 @@ func _update_stage(stage: int) -> void:
 			coots._on_laser_timer_timeout()
 		2:
 			coots.can_shoot = false
-			controller.disable_shield()
+			#controller.disable_shield()
 			controller.falling()
 			$ControllerFloat.play("ControllerFall")
 			yield($ControllerFloat,"animation_finished")

@@ -61,6 +61,8 @@ func take_damage(hitbox) -> void:
 
 func reset_hitboxes() -> void:
 	$DeflectBox/CollisionShape2D.set_deferred("disabled",true)
+	$SlapLeftHitBox/CollisionShape2D.set_deferred("disabled",true)
+	$SlapRightHitBox/CollisionShape2D.set_deferred("disabled",true)
 	
 func end_stage() -> void:
 	states.force_idle()
