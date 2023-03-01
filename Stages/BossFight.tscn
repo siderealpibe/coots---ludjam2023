@@ -395,6 +395,7 @@ scale = Vector2( 3, 1 )
 position = Vector2( 151.667, -296 )
 scale = Vector2( 0.333333, 1 )
 CONTROLLER = NodePath("../../ControllerEntrance/PathFollow2D/Path2D/PathFollow2D/BossController")
+volume_db = -15
 CAN_SHOOT = false
 
 [node name="Platform3" type="Node2D" parent="."]
@@ -415,6 +416,7 @@ position = Vector2( -610.667, -740 )
 scale = Vector2( 0.333333, 1 )
 FACING_RIGHT = true
 CONTROLLER = NodePath("../../ControllerEntrance/PathFollow2D/Path2D/PathFollow2D/BossController")
+volume_db = -15
 CAN_SHOOT = false
 
 [node name="Platform5" type="Node2D" parent="."]

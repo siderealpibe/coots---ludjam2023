@@ -1,27 +1,10 @@
 [gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Scripts/TransitionScreen.gd" type="Script" id=1]
-
-[sub_resource type="Shader" id=4]
-code = "
-shader_type canvas_item;
-
-uniform vec2 r_displacement = vec2(0.0, 0.0);
-uniform vec2 g_displacement = vec2(0.0, 0.0);
-uniform vec2 b_displacement = vec2(0.0, 0.0);
-
-
-void fragment()
-{
-	float r = texture(SCREEN_TEXTURE, SCREEN_UV + vec2(SCREEN_PIXEL_SIZE*r_displacement), 0.0).r;
-	float g = texture(SCREEN_TEXTURE, SCREEN_UV + vec2(SCREEN_PIXEL_SIZE*g_displacement), 0.0).g;
-	float b = texture(SCREEN_TEXTURE, SCREEN_UV + vec2(SCREEN_PIXEL_SIZE*b_displacement), 0.0).b;
-	
-	COLOR = vec4(r, g, b, 1.0);
-}"
+[ext_resource path="res://UI/Chromatic.gdshader" type="Shader" id=2]
 
 [sub_resource type="ShaderMaterial" id=5]
-shader = SubResource( 4 )
+shader = ExtResource( 2 )
 shader_param/r_displacement = Vector2( 0, 0 )
 shader_param/g_displacement = Vector2( 0, 0 )
 shader_param/b_displacement = Vector2( 0, 0 )

@@ -28,23 +28,28 @@ tile_data = PoolIntArray( 1310731, 0, 196609, 1310732, 0, 196610, 1310733, 0, 19
 
 [node name="LULW" parent="." instance=ExtResource( 4 )]
 position = Vector2( 1678, 2349 )
+volume_db = -20
 
 [node name="LULW3" parent="." instance=ExtResource( 4 )]
 position = Vector2( 2013, 3561 )
+volume_db = -20
 
 [node name="LULW5" parent="." instance=ExtResource( 4 )]
 position = Vector2( 5264, 5919 )
 
 [node name="LULW6" parent="." instance=ExtResource( 4 )]
 position = Vector2( 8883, 4717 )
+volume_db = -20
 
 [node name="LULW2" parent="." instance=ExtResource( 4 )]
 position = Vector2( 652, 2993 )
 FACING_RIGHT = true
+volume_db = -20
 
 [node name="LULW4" parent="." instance=ExtResource( 4 )]
 position = Vector2( -52, 4158 )
 FACING_RIGHT = true
+volume_db = -20
 
 [node name="UI" parent="." instance=ExtResource( 7 )]
 

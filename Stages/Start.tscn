@@ -43,7 +43,7 @@ NEXT_SCENE = ExtResource( 10 )
 PLAYER_PATH = NodePath("../Player")
 
 [node name="Smilebot" parent="." instance=ExtResource( 7 )]
-position = Vector2( 2712, 656 )
+position = Vector2( 2712, 689 )
 CONTROLLER = NodePath("../Controller")
 
 [node name="Smilebot2" parent="." instance=ExtResource( 7 )]

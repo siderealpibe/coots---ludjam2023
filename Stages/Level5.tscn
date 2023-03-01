@@ -36,31 +36,38 @@ tile_data = PoolIntArray( -8978302, 0, 196609, -8978301, 0, 196610, -8978300, 0,
 [node name="LULW" parent="." instance=ExtResource( 7 )]
 position = Vector2( 192, -337 )
 FACING_RIGHT = true
+volume_db = -20
 
 [node name="LULW4" parent="." instance=ExtResource( 7 )]
 position = Vector2( 198, -1480 )
 FACING_RIGHT = true
+volume_db = -20
 
 [node name="LULW2" parent="." instance=ExtResource( 7 )]
 position = Vector2( 1810, -908 )
+volume_db = -20
 
 [node name="LULW3" parent="." instance=ExtResource( 7 )]
 position = Vector2( 1793, -2070 )
+volume_db = -20
 
 [node name="LULW5" parent="." instance=ExtResource( 7 )]
 position = Vector2( 5367, -2708 )
 CONTROLLER = NodePath("../Controller")
+volume_db = -20
 SHOW_CONTROL_WAVES = true
 
 [node name="LULW6" parent="." instance=ExtResource( 7 )]
 position = Vector2( 6055, -5795 )
 FACING_RIGHT = true
 CONTROLLER = NodePath("../Controller")
+volume_db = -20
 SHOW_CONTROL_WAVES = true
 
 [node name="LULW7" parent="." instance=ExtResource( 7 )]
 position = Vector2( 3767, -6107 )
 CONTROLLER = NodePath("../Controller")
+volume_db = -20
 SHOW_CONTROL_WAVES = true
 
 [node name="Smilebot" parent="." instance=ExtResource( 8 )]
