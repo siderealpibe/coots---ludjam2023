@@ -1960,6 +1960,7 @@ volume_db = -5.0
 texture = ExtResource( 2 )
 hframes = 5
 vframes = 4
+frame = 4
 
 [node name="DeflectIndicator" type="Sprite" parent="Body"]
 visible = false

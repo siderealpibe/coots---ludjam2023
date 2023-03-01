@@ -75,3 +75,6 @@ func get_camera() -> Node:
 func deflect_indicator():
 	$Body/DeflectIndicator.look_at(get_global_mouse_position())
 	$Body/DeflectIndicator.rotation_degrees += 127
+
+func reset_camera():
+	pass

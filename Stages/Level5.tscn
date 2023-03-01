@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Assets/Music/Exploration.wav" type="AudioStream" id=1]
 [ext_resource path="res://Stages/tileset_fallthrough.tres" type="TileSet" id=2]
@@ -11,8 +11,16 @@
 [ext_resource path="res://Stages/BossFight.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Enemies/Controller/Controller.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Stages/Door.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Stages/Level5.gd" type="Script" id=12]
+[ext_resource path="res://UI/DialogBox.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Stages/nottherightway.gd" type="Script" id=14]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 617.5, 242.5 )
 
 [node name="Level5" type="Node"]
+script = ExtResource( 12 )
+dialogBoxScene = ExtResource( 13 )
 
 [node name="Background" parent="." instance=ExtResource( 5 )]
 
@@ -53,20 +61,20 @@ volume_db = -20
 
 [node name="LULW5" parent="." instance=ExtResource( 7 )]
 position = Vector2( 5367, -2708 )
-CONTROLLER = NodePath("../Controller")
+CONTROLLER = NodePath("../Controller/Controller")
 volume_db = -20
 SHOW_CONTROL_WAVES = true
 
 [node name="LULW6" parent="." instance=ExtResource( 7 )]
 position = Vector2( 6055, -5795 )
 FACING_RIGHT = true
-CONTROLLER = NodePath("../Controller")
+CONTROLLER = NodePath("../Controller/Controller")
 volume_db = -20
 SHOW_CONTROL_WAVES = true
 
 [node name="LULW7" parent="." instance=ExtResource( 7 )]
 position = Vector2( 3767, -6107 )
-CONTROLLER = NodePath("../Controller")
+CONTROLLER = NodePath("../Controller/Controller")
 volume_db = -20
 SHOW_CONTROL_WAVES = true
 
@@ -74,14 +82,14 @@ SHOW_CONTROL_WAVES = true
 position = Vector2( 5856, -3498 )
 IS_IDLE = true
 CAN_SHOOT = false
-CONTROLLER = NodePath("../Controller")
+CONTROLLER = NodePath("../Controller/Controller")
 SHOW_CONTROL_WAVES = true
 
 [node name="Smilebot2" parent="." instance=ExtResource( 8 )]
 position = Vector2( 2331, -6158 )
 RIGHT_BOUND = 600
 LEFT_BOUND = 0
-CONTROLLER = NodePath("../Controller")
+CONTROLLER = NodePath("../Controller/Controller")
 SHOW_CONTROL_WAVES = true
 
 [node name="Smilebot6" parent="." instance=ExtResource( 8 )]
@@ -90,7 +98,7 @@ RIGHT_BOUND = 600
 LEFT_BOUND = 0
 IS_IDLE = true
 CAN_PUNCH = false
-CONTROLLER = NodePath("../Controller")
+CONTROLLER = NodePath("../Controller/Controller")
 SHOW_CONTROL_WAVES = true
 
 [node name="Smilebot7" parent="." instance=ExtResource( 8 )]
@@ -99,7 +107,7 @@ RIGHT_BOUND = 600
 LEFT_BOUND = 0
 IS_IDLE = true
 CAN_PUNCH = false
-CONTROLLER = NodePath("../Controller")
+CONTROLLER = NodePath("../Controller/Controller")
 SHOW_CONTROL_WAVES = true
 
 [node name="Smilebot8" parent="." instance=ExtResource( 8 )]
@@ -108,7 +116,7 @@ RIGHT_BOUND = 600
 LEFT_BOUND = 0
 IS_IDLE = true
 CAN_PUNCH = false
-CONTROLLER = NodePath("../Controller")
+CONTROLLER = NodePath("../Controller/Controller")
 SHOW_CONTROL_WAVES = true
 
 [node name="Smilebot9" parent="." instance=ExtResource( 8 )]
@@ -117,7 +125,7 @@ RIGHT_BOUND = 600
 LEFT_BOUND = 0
 IS_IDLE = true
 CAN_PUNCH = false
-CONTROLLER = NodePath("../Controller")
+CONTROLLER = NodePath("../Controller/Controller")
 SHOW_CONTROL_WAVES = true
 
 [node name="Smilebot10" parent="." instance=ExtResource( 8 )]
@@ -126,7 +134,7 @@ RIGHT_BOUND = 600
 LEFT_BOUND = 0
 IS_IDLE = true
 CAN_PUNCH = false
-CONTROLLER = NodePath("../Controller")
+CONTROLLER = NodePath("../Controller/Controller")
 SHOW_CONTROL_WAVES = true
 
 [node name="Smilebot3" parent="." instance=ExtResource( 8 )]
@@ -140,11 +148,8 @@ position = Vector2( 10395, -5906 )
 RIGHT_BOUND = 300
 LEFT_BOUND = 400
 IS_IDLE = true
-CONTROLLER = NodePath("../Controller")
+CONTROLLER = NodePath("../Controller/Controller")
 SHOW_CONTROL_WAVES = true
-
-[node name="Controller" parent="." instance=ExtResource( 10 )]
-position = Vector2( 10252, -9028 )
 
 [node name="Door" parent="." instance=ExtResource( 11 )]
 position = Vector2( 11916, -5755 )
@@ -154,3 +159,18 @@ PLAYER_PATH = NodePath("../Player")
 [node name="Player" parent="." instance=ExtResource( 4 )]
 position = Vector2( 1073, 325 )
 UI_PATH = NodePath("../UI")
+
+[node name="nottherightway" type="Area2D" parent="."]
+position = Vector2( 10244, -5955 )
+script = ExtResource( 14 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="nottherightway"]
+position = Vector2( 136.5, 709.5 )
+shape = SubResource( 1 )
+
+[node name="Controller" type="Node2D" parent="."]
+
+[node name="Controller" parent="Controller" instance=ExtResource( 10 )]
+position = Vector2( 10252, -9028 )
+
+[connection signal="area_entered" from="nottherightway" to="." method="_on_nottherightway_area_entered"]
