@@ -442,3 +442,4 @@ vframes = 4
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 7 )
+volume_db = -10.0

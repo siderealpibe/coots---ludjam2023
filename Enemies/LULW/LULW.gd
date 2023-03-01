@@ -19,7 +19,6 @@ func _ready():
 	$Sprite.flip_h = FACING_RIGHT
 	if FACING_RIGHT:
 		$"Sprite/Control Waves".scale = Vector2(-1,1)
-		$"Sprite/Laser Telegraph".scale = Vector2(-1,1)
 	laser_timer.one_shot = true
 	laser_timer.connect("timeout", self, "_on_laser_timer_timeout")
 	if controller != null:

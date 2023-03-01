@@ -170,6 +170,7 @@ texture = ExtResource( 3 )
 
 [node name="AudioStreamPlayer" parent="." index="2"]
 stream = ExtResource( 1 )
+volume_db = -5.0
 
 [node name="LabelDisplay" parent="." index="4"]
 autostart = false
@@ -280,7 +281,6 @@ texture = ExtResource( 11 )
 [node name="Test4" type="Sprite" parent="Node2D/Test2" index="0"]
 show_behind_parent = true
 position = Vector2( -678.166, 92.6016 )
-scale = Vector2( 1, 1 )
 texture = ExtResource( 15 )
 hframes = 3
 

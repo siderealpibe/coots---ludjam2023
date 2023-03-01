@@ -508,7 +508,7 @@ tracks/15/keys = {
 "times": PoolRealArray( 0.5 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ 3.0 ]
+"values": [ 0.0 ]
 }
 
 [sub_resource type="Animation" id=11]
@@ -1915,6 +1915,7 @@ script = ExtResource( 8 )
 position = Vector2( -907, -375 )
 rotation = 1.5708
 shape = SubResource( 14 )
+disabled = true
 
 [node name="PawSwipe" type="CollisionShape2D" parent="PawAttackLeft"]
 position = Vector2( -1022, -110 )
