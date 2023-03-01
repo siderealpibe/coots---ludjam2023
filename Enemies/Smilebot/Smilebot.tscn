@@ -107,7 +107,7 @@ tracks/7/loop_wrap = true
 tracks/7/imported = false
 tracks/7/enabled = true
 tracks/7/keys = {
-"times": PoolRealArray( 0, 0.6, 1 ),
+"times": PoolRealArray( 0, 0.6, 0.9 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 1,
 "values": [ true, false, true ]
@@ -2574,8 +2574,8 @@ radius = 229.0
 height = 166.0
 
 [sub_resource type="CapsuleShape2D" id=17]
-radius = 215.0
-height = 458.0
+radius = 140.0
+height = 352.0
 
 [sub_resource type="CapsuleShape2D" id=18]
 radius = 248.0
@@ -2677,7 +2677,7 @@ shape = SubResource( 4 )
 [node name="StateManager" parent="." instance=ExtResource( 4 )]
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 8 )
+stream = ExtResource( 5 )
 volume_db = -5.0
 
 [node name="LeftHitBox" type="Area2D" parent="."]
@@ -2686,7 +2686,7 @@ collision_mask = 0
 script = ExtResource( 9 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LeftHitBox"]
-position = Vector2( -389, -32 )
+position = Vector2( -394, 36 )
 shape = SubResource( 17 )
 disabled = true
 
@@ -2696,11 +2696,12 @@ collision_mask = 0
 script = ExtResource( 9 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RightHitBox"]
-position = Vector2( 386, -39 )
+position = Vector2( 379, 32 )
 shape = SubResource( 17 )
 disabled = true
 
 [node name="LeftDetection" type="Area2D" parent="."]
+visible = false
 script = ExtResource( 10 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LeftDetection"]
@@ -2708,6 +2709,7 @@ position = Vector2( -402, -33 )
 shape = SubResource( 18 )
 
 [node name="RightDetection" type="Area2D" parent="."]
+visible = false
 script = ExtResource( 10 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RightDetection"]

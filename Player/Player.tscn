@@ -177,7 +177,7 @@ tracks/5/keys = {
 
 [sub_resource type="Animation" id=22]
 resource_name = "Deflect_backwards"
-length = 0.5
+length = 0.6
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:offset")
 tracks/0/interp = 1
@@ -197,7 +197,7 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0.5 ),
+"times": PoolRealArray( 0.6 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
 "args": [  ],
@@ -283,7 +283,7 @@ tracks/8/loop_wrap = true
 tracks/8/imported = false
 tracks/8/enabled = true
 tracks/8/keys = {
-"times": PoolRealArray( 0, 0.5 ),
+"times": PoolRealArray( 0, 0.6 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
 "values": [ false, true ]
@@ -291,7 +291,7 @@ tracks/8/keys = {
 
 [sub_resource type="Animation" id=24]
 resource_name = "Deflect_forward"
-length = 0.5
+length = 0.6
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:offset")
 tracks/0/interp = 1
@@ -311,7 +311,7 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0.5 ),
+"times": PoolRealArray( 0.6 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
 "args": [  ],
@@ -397,7 +397,7 @@ tracks/8/loop_wrap = true
 tracks/8/imported = false
 tracks/8/enabled = true
 tracks/8/keys = {
-"times": PoolRealArray( 0, 0.5 ),
+"times": PoolRealArray( 0, 0.6 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
 "values": [ false, true ]
@@ -1960,7 +1960,6 @@ volume_db = -5.0
 texture = ExtResource( 2 )
 hframes = 5
 vframes = 4
-frame = 4
 
 [node name="DeflectIndicator" type="Sprite" parent="Body"]
 visible = false
@@ -1969,7 +1968,7 @@ texture = ExtResource( 12 )
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 150, -160 )
 current = true
-zoom = Vector2( 3, 3 )
+zoom = Vector2( 3.5, 3.5 )
 drag_margin_h_enabled = true
 drag_margin_v_enabled = true
 smoothing_enabled = true

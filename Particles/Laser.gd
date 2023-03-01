@@ -1,7 +1,7 @@
 class_name Laser
 extends EnemyHitBox
 
-export var SPEED : int = 30
+export var SPEED : int = 25
 
 onready var direction : Vector2
 onready var travelling = false
@@ -42,7 +42,7 @@ func shoot(direction_vector: Vector2) -> void:
 	$CollisionShape2D.rotate(direction.angle())
 	animations.play("Traveling")
 	
-func _process(delta) -> void:
+func _physics_process(delta) -> void:
 	if direction == null or not travelling:
 		return
 	position += direction*SPEED

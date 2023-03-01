@@ -7,14 +7,14 @@
 [ext_resource path="res://Environment/Lightning.tscn" type="PackedScene" id=5]
 
 [node name="Background" type="ParallaxBackground"]
-scroll_limit_begin = Vector2( 0, -200 )
-scroll_limit_end = Vector2( 0, 400 )
+scroll_limit_begin = Vector2( 0, -225 )
+scroll_limit_end = Vector2( 0, 375 )
 scroll_ignore_camera_zoom = true
 script = ExtResource( 4 )
 LIGHTNING_SCENE = ExtResource( 5 )
 
 [node name="Layer1" type="ParallaxLayer" parent="."]
-motion_scale = Vector2( 0.2, 1 )
+motion_scale = Vector2( 0.3, 1 )
 motion_mirroring = Vector2( 1024, 0 )
 
 [node name="Sprite" type="Sprite" parent="Layer1"]
@@ -28,7 +28,7 @@ position = Vector2( 0, -90 )
 position = Vector2( 1022, 513 )
 
 [node name="Layer2" type="ParallaxLayer" parent="."]
-motion_scale = Vector2( 0.3, 1 )
+motion_scale = Vector2( 0.35, 1 )
 motion_mirroring = Vector2( 1024, 0 )
 
 [node name="Sprite" type="Sprite" parent="Layer2"]
