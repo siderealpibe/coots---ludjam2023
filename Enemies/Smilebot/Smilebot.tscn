@@ -177,7 +177,7 @@ tracks/12/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ -8.0 ]
+"values": [ -5.0 ]
 }
 
 [sub_resource type="Animation" id=9]
@@ -344,7 +344,7 @@ tracks/12/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ -8.0 ]
+"values": [ -5.0 ]
 }
 
 [sub_resource type="Animation" id=15]
@@ -1410,7 +1410,7 @@ tracks/25/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ -8.0 ]
+"values": [ -5.0 ]
 }
 
 [sub_resource type="Animation" id=28]
@@ -2083,7 +2083,7 @@ tracks/14/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ -10.0 ]
+"values": [ -5.0 ]
 }
 
 [sub_resource type="Animation" id=12]

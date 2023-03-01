@@ -1,10 +1,10 @@
-[gd_scene load_steps=27 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://PlayerDetectionBox.gd" type="Script" id=2]
 [ext_resource path="res://Stages/BossFight.gd" type="Script" id=3]
 [ext_resource path="res://Stages/tileset_fallthrough.tres" type="TileSet" id=4]
-[ext_resource path="res://Assets/Music/Coots Boss Battle.wav" type="AudioStream" id=5]
+[ext_resource path="res://Assets/Music/Exploration.wav" type="AudioStream" id=5]
 [ext_resource path="res://Stages/tileset.tres" type="TileSet" id=6]
 [ext_resource path="res://Coots/Coots.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Camera/camera_transition.tscn" type="PackedScene" id=8]
@@ -68,6 +68,33 @@ tracks/0/keys = {
 "values": [ 6042.83, 9863.62, 6042.83 ]
 }
 
+[sub_resource type="Animation" id=11]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("AudioStreamPlayer:stream")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ ExtResource( 5 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("AudioStreamPlayer:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+
 [sub_resource type="Animation" id=7]
 resource_name = "smilebot_entry"
 length = 2.0
@@ -106,10 +133,10 @@ tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0, 2 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PoolRealArray( 0, 1.7, 1.9, 2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 0, 2700 ), Vector2( 0, 1330 ) ]
+"values": [ Vector2( 0, 5000 ), Vector2( 0, 1130 ), Vector2( 0, 1350 ), Vector2( 0, 1330 ) ]
 }
 tracks/3/type = "value"
 tracks/3/path = NodePath("Smilebot:position")
@@ -118,10 +145,10 @@ tracks/3/loop_wrap = true
 tracks/3/imported = false
 tracks/3/enabled = true
 tracks/3/keys = {
-"times": PoolRealArray( 0, 2 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PoolRealArray( 0, 1.7, 1.9, 2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( -3500, 2700 ), Vector2( -3500, 1330 ) ]
+"values": [ Vector2( -3500, 5000 ), Vector2( -3500, 1130 ), Vector2( -3500, 1350 ), Vector2( -3500, 1330 ) ]
 }
 tracks/4/type = "value"
 tracks/4/path = NodePath("Platform3:position")
@@ -190,10 +217,10 @@ tracks/9/loop_wrap = true
 tracks/9/imported = false
 tracks/9/enabled = true
 tracks/9/keys = {
-"times": PoolRealArray( 0, 2 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PoolRealArray( 0, 1.7, 1.9, 2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( -1626, 2337 ), Vector2( -1626, -243 ) ]
+"values": [ Vector2( -1626, 5000 ), Vector2( -1626, -300 ), Vector2( -1626, -150 ), Vector2( -1626, -243 ) ]
 }
 tracks/10/type = "value"
 tracks/10/path = NodePath("Smilebot3:CAN_PUNCH")
@@ -272,6 +299,13 @@ dialogBoxScene = ExtResource( 15 )
 startingScene = ExtResource( 14 )
 endingScene = ExtResource( 16 )
 
+[node name="Coots" parent="." instance=ExtResource( 7 )]
+position = Vector2( 640, 947 )
+LEFT_BOUND = -3500
+RIGHT_BOUND = 600
+PLAYER_PATH = NodePath("../Player")
+CONTROLLER = NodePath("../ControllerEntrance/PathFollow2D/Path2D/PathFollow2D/BossController")
+
 [node name="Ground" type="TileMap" parent="."]
 tile_set = ExtResource( 6 )
 cell_size = Vector2( 128, 128 )
@@ -289,6 +323,7 @@ tile_data = PoolIntArray( 655346, 0, 196609, 655347, 0, 196610, 655348, 0, 19661
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 5 )
 volume_db = -10.0
+autoplay = true
 
 [node name="PlayerDetectionBox" type="Area2D" parent="."]
 script = ExtResource( 2 )
@@ -307,6 +342,7 @@ zoom = Vector2( 5.8, 5.8 )
 anims/ControllerEntry = SubResource( 2 )
 anims/ControllerFloat = SubResource( 4 )
 anims/ControllerFloat2 = SubResource( 6 )
+anims/RESET = SubResource( 11 )
 anims/smilebot_entry = SubResource( 7 )
 anims/stage2 = SubResource( 5 )
 
@@ -315,7 +351,7 @@ anims/ControllerFall = SubResource( 9 )
 anims/ControllerFloat = SubResource( 8 )
 
 [node name="Smilebot2" parent="." instance=ExtResource( 11 )]
-position = Vector2( 0, 2700 )
+position = Vector2( 0, 5000 )
 WALK_SPEED = 200
 RIGHT_BOUND = 800
 LEFT_BOUND = 1500
@@ -324,7 +360,7 @@ CAN_SHOOT = false
 CONTROLLER = NodePath("../ControllerEntrance/PathFollow2D/Path2D/PathFollow2D/BossController")
 
 [node name="Smilebot3" parent="." instance=ExtResource( 11 )]
-position = Vector2( -1626, 2637 )
+position = Vector2( -1626, 5000 )
 WALK_SPEED = 200
 RIGHT_BOUND = 800
 LEFT_BOUND = 1500
@@ -334,7 +370,7 @@ CAN_SHOOT = false
 CONTROLLER = NodePath("../ControllerEntrance/PathFollow2D/Path2D/PathFollow2D/BossController")
 
 [node name="Smilebot" parent="." instance=ExtResource( 11 )]
-position = Vector2( -3500, 2700 )
+position = Vector2( -3500, 5000 )
 WALK_SPEED = 200
 RIGHT_BOUND = 1800
 LEFT_BOUND = 500
@@ -362,7 +398,7 @@ CONTROLLER = NodePath("../../ControllerEntrance/PathFollow2D/Path2D/PathFollow2D
 CAN_SHOOT = false
 
 [node name="Platform3" type="Node2D" parent="."]
-position = Vector2( -1569, 3000 )
+position = Vector2( -1569, 2700 )
 scale = Vector2( 3, 1 )
 
 [node name="Platform" parent="Platform3" instance=ExtResource( 13 )]
@@ -411,13 +447,6 @@ loop = false
 position = Vector2( -19.4957, -8.71924 )
 rotation = -1.56308
 scale = Vector2( 0.673544, 0.884395 )
-
-[node name="Coots" parent="." instance=ExtResource( 7 )]
-position = Vector2( 640, 947 )
-LEFT_BOUND = -3500
-RIGHT_BOUND = 600
-PLAYER_PATH = NodePath("../Player")
-CONTROLLER = NodePath("../ControllerEntrance/PathFollow2D/Path2D/PathFollow2D/BossController")
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( -4406, 1495 )

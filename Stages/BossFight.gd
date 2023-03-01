@@ -6,15 +6,41 @@ export(PackedScene) var endingScene : PackedScene
 
 onready var controller = $ControllerEntrance/PathFollow2D/Path2D/PathFollow2D/BossController
 onready var player = $Player
-onready var coots = $Coots 
-
-var fight_started : bool = false 
+onready var coots = $Coots
+var coots_boss_battle_song = load("res://Assets/Music/Coots Boss Battle.wav") 
+var fight_started : bool = false
 
 func _ready():
-	OS.set_window_maximized(true)
-	$PlayerDetectionBox.connect("area_entered", self, "_start_cutscene")
+	var audio_file =  "res://Assets/Music/Coots Boss Battle.wav"
 	controller.connect("update_stage", self, "_update_stage")
-	controller.connect("taunt", self, "_taunt")
+	if Globals.final_fight_started:
+		$Player.position = Vector2(-1922,1495)
+		$AudioStreamPlayer.stop()
+		$AudioStreamPlayer.stream = coots_boss_battle_song
+		$AudioStreamPlayer.play()
+		controller.fight_stage = 1
+		coots.disable_paws_col()
+		coots.can_paw = false
+		coots.can_shoot = true
+		$BossFightCamera.current = true
+		$Cutscenes.play("stage2")
+		yield($Cutscenes, "animation_finished")
+		controller.enable_shield()
+		$ControllerFloat.play("ControllerFloat")
+		$Cutscenes.play("smilebot_entry")
+		player.states.idle_right()
+		yield($Cutscenes, "animation_finished")
+		#$Platform1/LULW.CAN_SHOOT = true 
+		$Platform2/LULW.CAN_SHOOT = true
+		$Platform4/LULW.CAN_SHOOT = true
+		#$Platform5/LULW.CAN_SHOOT = true
+		coots.animations.play_backwards("Sitting_down")
+		yield(coots.animations, "animation_finished")
+		coots.start_walking_turned()
+		coots._on_laser_timer_timeout()
+	else:
+		$PlayerDetectionBox.connect("area_entered", self, "_start_cutscene")
+		controller.connect("taunt", self, "_taunt")
 
 var d1 = '[  {"Name": "Ludwig", "Text":"COOTS! Is that you???"}]'
 var d2 = '[ {"Name": "???", "Text":"Hahaha, I\'ve taken control of your \'Coots\' and made her into MY cat."},{"Name": "???", "Text":"Now I\'ll be the one milking her for content!"}]'
@@ -35,58 +61,61 @@ func _taunt():
 	player.states.idle_right()
 
 func _start_cutscene(hitbox):
-	if fight_started:
-		return
-	$PlayerDetectionBox/CollisionShape2D.set_deferred("disabled", true)
-	fight_started = true
-	
-	#Ludwig finds coots
-	player.states.force_idle()
-	$camera_transition.transition_camera2D($Player.get_camera(), $BossFightCamera)
-	yield($camera_transition, "finished_transition")
-	#yield(play_dialog("res://UI/Dialog/bossFight1.json"), "dialog_finished")
-	yield(play_dialog(d1), "dialog_finished")
-	
-	var start = startingScene.instance()
-	$UI.add_child(start)
-	yield(start,"scene_over")
-	
-	#Coots Shoots Ludwig
-	coots.turn_and_shoot()
-	yield(player,"hit")
-	player.current_health += 1
-	player.emit_signal("life_changed", player.current_health)
-	player.states.force_idle()
-	
-	#Controller Enters
-	controller.idle()
-	$Cutscenes.play("ControllerEntry")
-	yield($Cutscenes, "animation_finished")
-	$Cutscenes.play("ControllerFloat")
-	#yield(play_dialog("res://UI/Dialog/bossFight2.json"), "dialog_finished")
-	yield(play_dialog(d2), "dialog_finished")
-	
-	#Coots Paws at controller
-	coots.walk_left_and_sit()
-	yield(coots, "sat_down")
-	#yield(play_dialog("res://UI/Dialog/bossFight3.json"), "dialog_finished")
-	yield(play_dialog(d3), "dialog_finished")
-	coots.can_paw = true
-	coots._on_paw_timer_timeout()
-	yield($Player, "progress")
-	player.states.idle_right()
+	if Globals.final_fight_started or fight_started:
+		pass
+	else:
+		fight_started = true
+		$PlayerDetectionBox/CollisionShape2D.set_deferred("disabled", true)
+		#Ludwig finds coots
+		player.states.force_idle()
+		$camera_transition.transition_camera2D($Player.get_camera(), $BossFightCamera)
+		yield($camera_transition, "finished_transition")
+		#yield(play_dialog("res://UI/Dialog/bossFight1.json"), "dialog_finished")
+		yield(play_dialog(d1), "dialog_finished")
+		
+		var start = startingScene.instance()
+		$UI.add_child(start)
+		$AudioStreamPlayer.stop()
+		yield(start,"scene_over")
+		$UI/Life.hide()
+		
+		#Coots Shoots Ludwig
+		coots.turn_and_shoot()
+		yield(player,"hit")
+		player.current_health += 1
+		$UI/Life.show()
+		player.emit_signal("life_changed", player.current_health)
+		player.states.force_idle()
+		
+		#Controller Enters
+		controller.idle()
+		$Cutscenes.play("ControllerEntry")
+		yield($Cutscenes, "animation_finished")
+		$Cutscenes.play("ControllerFloat")
+		#yield(play_dialog("res://UI/Dialog/bossFight2.json"), "dialog_finished")
+		yield(play_dialog(d2), "dialog_finished")
+		
+		#Coots Paws at controller
+		coots.walk_left_and_sit()
+		yield(coots, "sat_down")
+		#yield(play_dialog("res://UI/Dialog/bossFight3.json"), "dialog_finished")
+		yield(play_dialog(d3), "dialog_finished")
+		coots.can_paw = true
+		coots._on_paw_timer_timeout()
+		yield($Player, "progress")
+		player.states.idle_right()
 
-	
-	#TESTING CODE
-	"""controller.fight_stage = 1
-	_update_stage(1)
-	yield($Cutscenes,"animation_finished")
-	yield($Cutscenes,"animation_finished")
-	controller.fight_stage = 2
-	_update_stage(2)
-	yield(get_tree().create_timer(1),"timeout")
-	controller.emit_signal("destroyed")
-	player.states.idle_right()"""
+		
+		#TESTING CODE
+		"""controller.fight_stage = 1
+		_update_stage(1)
+		yield($Cutscenes,"animation_finished")
+		yield($Cutscenes,"animation_finished")
+		controller.fight_stage = 2
+		_update_stage(2)
+		yield(get_tree().create_timer(1),"timeout")
+		controller.emit_signal("destroyed")
+		player.states.idle_right()"""
 
 func _update_stage(stage: int) -> void:
 	match stage:
@@ -95,6 +124,7 @@ func _update_stage(stage: int) -> void:
 			coots.can_paw = false
 			#yield(play_dialog("res://UI/Dialog/bossFight4.json"), "dialog_finished")
 			yield(play_dialog(d4), "dialog_finished")
+			Globals.final_fight_started = true
 			coots.can_shoot = true
 			$Cutscenes.play("stage2")
 			yield($Cutscenes, "animation_finished")
@@ -102,8 +132,10 @@ func _update_stage(stage: int) -> void:
 			$ControllerFloat.play("ControllerFloat")
 			$Cutscenes.play("smilebot_entry")
 			player.states.idle_right()
-			$AudioStreamPlayer.play()
+			$AudioStreamPlayer.stop()
+			$AudioStreamPlayer.stream = coots_boss_battle_song
 			yield($Cutscenes, "animation_finished")
+			$AudioStreamPlayer.play()
 			#$Platform1/LULW.CAN_SHOOT = true 
 			$Platform2/LULW.CAN_SHOOT = true
 			$Platform4/LULW.CAN_SHOOT = true

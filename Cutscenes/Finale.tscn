@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://Assets/Music/Return Home.wav" type="AudioStream" id=1]
 [ext_resource path="res://Cutscenes/Cutscene.tscn" type="PackedScene" id=2]
@@ -10,10 +10,11 @@
 [ext_resource path="res://Assets/Misc/test3.png" type="Texture" id=8]
 [ext_resource path="res://Assets/Ludwig/fboy lud.png" type="Texture" id=9]
 [ext_resource path="res://Assets/Misc/smilers.png" type="Texture" id=10]
-[ext_resource path="res://Assets/Misc/test2.png" type="Texture" id=11]
+[ext_resource path="res://Assets/Ludwig/in_car.png" type="Texture" id=11]
 [ext_resource path="res://Assets/Misc/test1.png" type="Texture" id=12]
 [ext_resource path="res://Assets/Misc/test5.png" type="Texture" id=13]
 [ext_resource path="res://Assets/Misc/orignal.png" type="Texture" id=14]
+[ext_resource path="res://Assets/Ludwig/car_propulsion.png" type="Texture" id=15]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Animation"
@@ -125,6 +126,38 @@ font_data = ExtResource( 6 )
 [sub_resource type="Theme" id=4]
 default_font = SubResource( 3 )
 
+[sub_resource type="Animation" id=5]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Node2D/Test2/Test4:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "carIdle"
+length = 0.3
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Node2D/Test2/Test4:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2 ]
+}
+
 [node name="Cutscene" instance=ExtResource( 2 )]
 exit_scene_path = "res://MainTitle.tscn"
 
@@ -171,29 +204,28 @@ scale = Vector2( 0.17586, 0.17586 )
 texture = ExtResource( 12 )
 
 [node name="Orignal" type="Sprite" parent="Node2D" index="4"]
-position = Vector2( 93, 699.747 )
-scale = Vector2( 0.305473, 0.305473 )
+position = Vector2( 179.5, 750.674 )
+scale = Vector2( 0.269228, 0.269228 )
 texture = ExtResource( 14 )
 
 [node name="ETG" type="Node2D" parent="Node2D" index="5"]
-position = Vector2( -145.5, 58.5 )
-scale = Vector2( 0.5, 0.5 )
+position = Vector2( -287, -276.826 )
 
 [node name="Label2" type="Label" parent="Node2D/ETG" index="0"]
 modulate = Color( 1, 1, 1, 0.360784 )
-margin_left = 245.0
-margin_top = 671.0
-margin_right = 491.0
-margin_bottom = 703.0
+margin_left = 190.0
+margin_top = 663.197
+margin_right = 436.0
+margin_bottom = 695.197
 rect_pivot_offset = Vector2( 88, 61 )
 theme = ExtResource( 5 )
 text = "Music, sound design:"
 
 [node name="Label4" type="Label" parent="Node2D/ETG" index="1"]
-margin_left = 370.0
-margin_top = 889.0
-margin_right = 506.0
-margin_bottom = 921.0
+margin_left = 323.5
+margin_top = 764.197
+margin_right = 459.5
+margin_bottom = 796.197
 rect_pivot_offset = Vector2( 88, 61 )
 theme = SubResource( 4 )
 text = "ETG_Music"
@@ -241,9 +273,16 @@ theme = SubResource( 4 )
 text = "pibe"
 
 [node name="Test2" type="Sprite" parent="Node2D" index="8"]
-position = Vector2( 117.5, 957.5 )
-scale = Vector2( 0.229607, 0.229607 )
+position = Vector2( 210.5, 972.333 )
+scale = Vector2( 0.241342, 0.241342 )
 texture = ExtResource( 11 )
+
+[node name="Test4" type="Sprite" parent="Node2D/Test2" index="0"]
+show_behind_parent = true
+position = Vector2( -678.166, 92.6016 )
+scale = Vector2( 1, 1 )
+texture = ExtResource( 15 )
+hframes = 3
 
 [node name="Bk" type="Sprite" parent="Node2D" index="9"]
 position = Vector2( 112, 1509.5 )
@@ -264,3 +303,8 @@ margin_bottom = 2911.5
 rect_pivot_offset = Vector2( 88, 61 )
 theme = ExtResource( 5 )
 text = "Thanks for playing!"
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="." index="8"]
+autoplay = "carIdle"
+anims/RESET = SubResource( 5 )
+anims/carIdle = SubResource( 6 )

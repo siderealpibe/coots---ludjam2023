@@ -9,9 +9,11 @@ func _ready():
 		$AnimatedSprite.offset = Vector2(0,0)
 		$AnimatedSprite.play("emiting")
 	else:
+		$AudioStreamPlayer2D.stop()
 		$AnimatedSprite.offset = Vector2(202,-202)
 		$AnimatedSprite.rotation_degrees += 45
 		$AnimatedSprite.play("receiving")
+		
 
 func _process(delta):
 	if CONTROLLER != null and is_instance_valid(CONTROLLER):

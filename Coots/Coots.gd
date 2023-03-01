@@ -20,6 +20,7 @@ onready var animations : AnimationPlayer = $AnimationPlayer
 onready var states = $StateManager
 onready var laser_timer = $LaserTimer
 onready var paw_timer = $PawTimer
+onready var laser_sound = load("res://Assets/Sfx/laser.wav") 
 
 var fight_stage : int = 0
 var can_shoot : bool = false
@@ -35,6 +36,10 @@ func _ready():
 func shoot_laser() -> void:
 		#animations.play("Shoot_Laser")
 		#yield(animations,"animation_finished")
+	$AudioStreamPlayer.stop()
+	$AudioStreamPlayer.stream = laser_sound
+	$AudioStreamPlayer.volume_db = -2
+	$AudioStreamPlayer.play()
 	var laser = LASER_SCENE.instance()
 	get_parent().add_child(laser)
 	laser.position = global_position + $Body/Head.offset + Vector2(-200,-100)
@@ -85,3 +90,8 @@ func start_walking() -> void:
 
 func start_walking_turned() -> void:
 	states.start_walking_turned()
+
+func disable_paws_col():
+	$PawAttackLeft/PawCharge.disabled = true
+	$PawAttackLeft/PawSwipe.disabled = true
+	$PawAttackLeft/PawCooldown.disabled = true
