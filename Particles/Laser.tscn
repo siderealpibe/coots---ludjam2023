@@ -140,7 +140,7 @@ vframes = 4
 frame = 6
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( -4, 1 )
+position = Vector2( 0, -1 )
 rotation = 1.5708
 shape = SubResource( 5 )
 

@@ -145,6 +145,7 @@ func _update_stage(stage: int) -> void:
 			coots.start_walking_turned()
 			coots._on_laser_timer_timeout()
 		2:
+			player.invulnerable = true
 			coots.can_shoot = false
 			controller.disable_shield()
 			controller.falling()

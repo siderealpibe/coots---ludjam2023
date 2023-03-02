@@ -20,6 +20,7 @@ export var KNOCK_FORCE_X : int = 500
 #export(Vector2) var SPAWN
 export(NodePath) var UI_PATH
 var velocity : Vector2 = Vector2.ZERO
+var invulnerable : bool = false
 
 onready var animations : AnimationPlayer = $AnimationPlayer
 onready var damage_animation : AnimationPlayer = $DamagePlayer
@@ -46,6 +47,8 @@ func _physics_process(delta: float) -> void:
 	deflect_indicator()
 	
 func take_damage(hitbox) -> void:
+	if invulnerable:
+		return
 	current_health -= 1
 	emit_signal("life_changed", current_health)
 	var direction = global_position.x - hitbox.global_position.x

@@ -38,7 +38,7 @@ func shoot_laser() -> void:
 		#yield(animations,"animation_finished")
 	$AudioStreamPlayer.stop()
 	$AudioStreamPlayer.stream = laser_sound
-	$AudioStreamPlayer.volume_db = -10
+	$AudioStreamPlayer.volume_db = -5
 	$AudioStreamPlayer.play()
 	var laser = LASER_SCENE.instance()
 	get_parent().add_child(laser)

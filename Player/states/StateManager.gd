@@ -68,3 +68,5 @@ func knock_left() -> void:
 func force_idle() -> void:
 	change_state(BaseState.State.ForcedIdle)
 
+func is_forced_idle() -> bool:
+	return current_state == states[BaseState.State.ForcedIdle]
